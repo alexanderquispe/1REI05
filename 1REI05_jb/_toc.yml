@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: md/intro
+chapters:
+- file: notebooks/tutorial2_modelo_keynesiano
+- file: notebooks/tutorial3
+- file: notebooks/tutorial4_mercado_monetario_curva_lm
+- file: notebooks/tutorial5_modelo_is_lm
+- file: notebooks/tutorial6_modelo_da_oa
+- file: notebooks/tutorial7_modelo_is_lm_r_exogena

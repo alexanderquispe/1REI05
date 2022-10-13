@@ -1,0 +1,1772 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MODELO DE DEMANDA Y OFERTA AGREGADA &#8212; 1REI05 at PUCP (Python scripts)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MODELO IS-LM CON TASA DE INTERÉS EXÓGENA \((r)\) FIJADA POR EL BANCO CENTRAL:" href="tutorial7_modelo_is_lm_r_exogena.html" />
+    <link rel="prev" title="EL MODELO MACROECONÓMICO IS-LM:" href="tutorial5_modelo_is_lm.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">1REI05 at PUCP (Python scripts)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../md/intro.html">
+   Fundamentals of Macroeconomics
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial2_modelo_keynesiano.html">
+   MERCADO DE BIENES: CONSUMO, INVERSIÓN, DETERMINACIÓN DEL PRODUCTO Y LA POLÍTICA FISCAL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial3.html">
+   2. El modelo de Ingreso-Gasto Keynesiano:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial4_mercado_monetario_curva_lm.html">
+   EL MERCADO MONETARIO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial5_modelo_is_lm.html">
+   EL MODELO MACROECONÓMICO IS-LM:
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   MODELO DE DEMANDA Y OFERTA AGREGADA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial7_modelo_is_lm_r_exogena.html">
+   MODELO IS-LM CON TASA DE INTERÉS EXÓGENA
+   <span class="math notranslate nohighlight">
+    \((r)\)
+   </span>
+   FIJADA POR EL BANCO CENTRAL:
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/tutorial6_modelo_da_oa.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/alexanderquispe/1REI05"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/alexanderquispe/1REI05/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tutorial6_modelo_da_oa.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/alexanderquispe/1REI05/edit/jupyterbook/1REI05_jb/_build/jupyter_execute/notebooks/tutorial6_modelo_da_oa.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/alexanderquispe/1REI05/jupyterbook?urlpath=tree/1REI05_jb/_build/jupyter_execute/notebooks/tutorial6_modelo_da_oa.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/alexanderquispe/1REI05/blob/jupyterbook/1REI05_jb/_build/jupyter_execute/notebooks/tutorial6_modelo_da_oa.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   MODELO DE DEMANDA Y OFERTA AGREGADA
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demanda-agregada-da">
+     1. Demanda Agregada
+     <span class="math notranslate nohighlight">
+      \((DA)\)
+     </span>
+     :
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oferta-agregada-oa">
+     2. Oferta Agregada
+     <span class="math notranslate nohighlight">
+      \((OA)\)
+     </span>
+     :
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oferta-agregada-en-el-corto-plazo">
+     - Oferta Agregada en el corto plazo:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equilibrio-entre-la-demanda-agregada-y-la-oferta-agregada-modelo-da-oa">
+     3. Equilibrio entre la Demanda Agregada y la Oferta Agregada: Modelo DA-OA
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecuaciones-de-equilibrio-da-oa">
+   3.1 Ecuaciones de equilibrio DA-OA:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tienen-que-recordar-que-en-el-modelo-da-oa-tenemos-tres-variables-endogenas-y-eq-r-eq-p-eq">
+   Tienen que recordar que en el modelo DA-OA tenemos tres variables endógenas. $
+   <span class="math notranslate nohighlight">
+    \(Y^{eq}, r^{eq} , P^{eq}\)
+   </span>
+   $
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#los-valores-de-equilibrio-de-las-tres-principales-variables-endogenas">
+   Los valores de equilibrio de las tres principales variables endógenas
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estatica-comparativa-da-oa">
+     4. Estática comparativa DA-OA:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incremento-en-el-precio-esperado-p-e">
+     - Incremento en el Precio Esperado
+     <span class="math notranslate nohighlight">
+      \((P^e)\)
+     </span>
+     :
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incremento-en-la-masa-monetaria-m-o-s">
+     Incremento en la Masa Monetaria
+     <span class="math notranslate nohighlight">
+      \((M_o^s)\)
+     </span>
+     :
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>MODELO DE DEMANDA Y OFERTA AGREGADA</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   MODELO DE DEMANDA Y OFERTA AGREGADA
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demanda-agregada-da">
+     1. Demanda Agregada
+     <span class="math notranslate nohighlight">
+      \((DA)\)
+     </span>
+     :
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oferta-agregada-oa">
+     2. Oferta Agregada
+     <span class="math notranslate nohighlight">
+      \((OA)\)
+     </span>
+     :
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oferta-agregada-en-el-corto-plazo">
+     - Oferta Agregada en el corto plazo:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equilibrio-entre-la-demanda-agregada-y-la-oferta-agregada-modelo-da-oa">
+     3. Equilibrio entre la Demanda Agregada y la Oferta Agregada: Modelo DA-OA
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecuaciones-de-equilibrio-da-oa">
+   3.1 Ecuaciones de equilibrio DA-OA:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tienen-que-recordar-que-en-el-modelo-da-oa-tenemos-tres-variables-endogenas-y-eq-r-eq-p-eq">
+   Tienen que recordar que en el modelo DA-OA tenemos tres variables endógenas. $
+   <span class="math notranslate nohighlight">
+    \(Y^{eq}, r^{eq} , P^{eq}\)
+   </span>
+   $
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#los-valores-de-equilibrio-de-las-tres-principales-variables-endogenas">
+   Los valores de equilibrio de las tres principales variables endógenas
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estatica-comparativa-da-oa">
+     4. Estática comparativa DA-OA:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incremento-en-el-precio-esperado-p-e">
+     - Incremento en el Precio Esperado
+     <span class="math notranslate nohighlight">
+      \((P^e)\)
+     </span>
+     :
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incremento-en-la-masa-monetaria-m-o-s">
+     Incremento en la Masa Monetaria
+     <span class="math notranslate nohighlight">
+      \((M_o^s)\)
+     </span>
+     :
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1">#from causalgraphicalmodels import CausalGraphicalModel</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_8524</span><span class="o">/</span><span class="mf">3680031957.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;widget&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\IPython\core\interactiveshell.py</span> in <span class="ni">run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2362</span>                 <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2363</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2364</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2365</span>             <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">   </span><span class="mi">2366</span> 
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\decorator.py</span> in <span class="ni">fun</span><span class="nt">(*args, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">kwsyntax</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span>                 <span class="n">args</span><span class="p">,</span> <span class="n">kw</span> <span class="o">=</span> <span class="n">fix</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">232</span>             <span class="k">return</span> <span class="n">caller</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">extras</span> <span class="o">+</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">fun</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="n">fun</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__doc__</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\IPython\core\magic.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(f, *a, **k)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="c1"># but it&#39;s overkill for just that one bit of state.</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">def</span> <span class="nf">magic_deco</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">call</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> 
+<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\IPython\core\magics\pylab.py</span> in <span class="ni">matplotlib</span><span class="nt">(self, line)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available matplotlib backends: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">backends_list</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">99</span>             <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">enable_matplotlib</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_show_matplotlib_backend</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> 
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\IPython\core\interactiveshell.py</span> in <span class="ni">enable_matplotlib</span><span class="nt">(self, gui)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3544</span>                 <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">find_gui_and_backend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pylab_gui_select</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3545</span> 
+<span class="ne">-&gt; </span><span class="mi">3546</span>         <span class="n">pt</span><span class="o">.</span><span class="n">activate_matplotlib</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3547</span>         <span class="n">configure_inline_support</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3548</span> 
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\IPython\core\pylabtools.py</span> in <span class="ni">activate_matplotlib</span><span class="nt">(backend)</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span>     <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span> 
+<span class="ne">--&gt; </span><span class="mi">359</span>     <span class="n">plt</span><span class="o">.</span><span class="n">switch_backend</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span> 
+<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">_needmain</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\matplotlib\pyplot.py</span> in <span class="ni">switch_backend</span><span class="nt">(newbackend)</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span>     <span class="n">backend_name</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">_backend_module_name</span><span class="p">(</span><span class="n">newbackend</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span> 
+<span class="ne">--&gt; </span><span class="mi">267</span>     <span class="k">class</span> <span class="nc">backend_mod</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">backend_bases</span><span class="o">.</span><span class="n">_Backend</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>         <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">backend_name</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span> 
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\matplotlib\pyplot.py</span> in <span class="ni">backend_mod</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span> 
+<span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="k">class</span> <span class="nc">backend_mod</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">backend_bases</span><span class="o">.</span><span class="n">_Backend</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">268</span>         <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">backend_name</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span> 
+<span class="g g-Whitespace">    </span><span class="mi">270</span>     <span class="n">required_framework</span> <span class="o">=</span> <span class="n">_get_required_interactive_framework</span><span class="p">(</span><span class="n">backend_mod</span><span class="p">)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\__init__.py</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>                 <span class="k">break</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>             <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">127</span>     <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span> 
+<span class="g g-Whitespace">    </span><span class="mi">129</span> 
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_call_with_frames_removed</span><span class="nt">(f, *args, **kwds)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;ipympl&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="modelo-de-demanda-y-oferta-agregada">
+<h1>MODELO DE DEMANDA Y OFERTA AGREGADA<a class="headerlink" href="#modelo-de-demanda-y-oferta-agregada" title="Permalink to this headline">¶</a></h1>
+<p><img alt="Lab5.png" src="notebooks/attachment:Lab5.png" /></p>
+<div class="section" id="demanda-agregada-da">
+<h2>1. Demanda Agregada <span class="math notranslate nohighlight">\((DA)\)</span>:<a class="headerlink" href="#demanda-agregada-da" title="Permalink to this headline">¶</a></h2>
+<p>Matemáticamente, la forma de la función de demanda agregada se puede obtener de las ecuaciones de la IS y la LM, eliminando “r” y despejando P. Para efectuar esta operación se supondrá que P no está dado.</p>
+<p>Considernado, por un lado, la Curva IS:</p>
+<div class="math notranslate nohighlight">
+\[ r = \frac{B_o}{h} - \frac{B_1}{h}Y \]</div>
+<p>Donde <span class="math notranslate nohighlight">\( B_0 = C_o + I_o + G_o + X_o \)</span> y <span class="math notranslate nohighlight">\( B_1 = 1 - (b - m)(1 - t)\)</span></p>
+<p>Y, por otro, la ecuación de la LM</p>
+<div class="math notranslate nohighlight">
+\[  r = -\frac{1}{j}\frac{Mo^s}{P} + \frac{k}{j}Y \]</div>
+<p>Eliminando “r” y despejando P, se obtiene:</p>
+<div class="math notranslate nohighlight">
+\[  P = -\frac{h Mo^s}{-j B_o + (jB_1 + hk)Y} \]</div>
+<p>O, en función del nivel de ingresos <span class="math notranslate nohighlight">\((Y)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[  Y = \frac{jB_o}{jB_1 + hk} + (\frac{hMo^s}{jB_1 + hk})\frac{1}{P} \]</div>
+<p>Ahora bien, considernado la <strong>nueva ecuación</strong> de equilibrio en el mercado monetario donde hacemos el reemplazo de</p>
+<div class="math notranslate nohighlight">
+\[ \frac{Mo^s}{P} ----&gt; Mo^s - P \]</div>
+<div class="math notranslate nohighlight">
+\[ Mo^s - P = kY - jr \]</div>
+<p>Se reemplaza <span class="math notranslate nohighlight">\((r)\)</span>, y se obtiene la ecuación de la demanda agregada <span class="math notranslate nohighlight">\((DA)\)</span>, que ahora es una recta y no una hipérbola</p>
+<div class="math notranslate nohighlight">
+\[  P = \frac{h Mo^s + jB_o}{h} - \frac{jB_1 + hk}{h}Y \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span> 
+
+<span class="n">Co</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">Io</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">Go</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">Xo</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>                
+<span class="n">Ms</span> <span class="o">=</span> <span class="mi">200</span>             
+<span class="n">P</span>  <span class="o">=</span> <span class="mi">20</span>  
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+
+<span class="c1"># Ecuación</span>
+<span class="n">B0</span> <span class="o">=</span> <span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span>
+<span class="n">B1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># Funcion de la demanda agregaga P(Y)</span>
+<span class="k">def</span> <span class="nf">P_AD</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">P_AD</span> <span class="o">=</span> <span class="p">((</span><span class="n">h</span><span class="o">*</span><span class="n">Ms</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">B0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Y</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">B1</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">P_AD</span>
+
+<span class="n">P_AD</span> <span class="o">=</span> <span class="n">P_AD</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">P_AD</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Aggregate Demand&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_AD</span><span class="p">,</span> <span class="s2">&quot;#EE7600&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AD&quot;</span><span class="p">)</span>  
+
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tutorial6_modelo_da_oa_10_0.png" src="../_images/tutorial6_modelo_da_oa_10_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primero declarar los simbolos</span>
+<span class="n">h</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;h, Ms, j, B0, B1, k, Y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ecuacion de la curva DA </span>
+<span class="n">r_eq_DA</span> <span class="o">=</span> <span class="p">((</span><span class="n">h</span><span class="o">*</span><span class="n">Ms</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">B0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Y</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">B1</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># tomar diferenciales</span>
+<span class="n">df_r_eq_DA_Y</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">r_eq_DA</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La pendiente de la curva DA es&quot;</span><span class="p">,</span> <span class="n">df_r_eq_DA_Y</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La pendiente de la curva DA es -(B1*j + h*k)/h
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#--------------------------------------------------</span>
+    <span class="c1"># Curva IS</span>
+
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span> 
+
+<span class="n">Co</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">Io</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">Go</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">Xo</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+
+<span class="c1"># Ecuación </span>
+<span class="k">def</span> <span class="nf">r_IS</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Co</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">Go</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">r_IS</span> <span class="o">=</span> <span class="p">(</span><span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span> <span class="o">-</span> <span class="n">Y</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)))</span><span class="o">/</span><span class="n">h</span>
+    <span class="k">return</span> <span class="n">r_IS</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">r_IS</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Co</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">Go</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+
+<span class="c1">#--------------------------------------------------</span>
+    <span class="c1"># Curva LM </span>
+
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>                
+<span class="n">Ms</span> <span class="o">=</span> <span class="mi">200</span>             
+<span class="n">P</span>  <span class="o">=</span> <span class="mi">20</span>               
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+<span class="c1"># Ecuación</span>
+
+<span class="k">def</span> <span class="nf">i_LM</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">i_LM</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">Ms</span><span class="o">/</span><span class="n">P</span><span class="p">)</span><span class="o">/</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="o">/</span><span class="n">j</span><span class="o">*</span><span class="n">Y</span>
+    <span class="k">return</span> <span class="n">i_LM</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">i_LM</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="c1"># Dos curvas adicionales</span>
+
+<span class="n">Ms</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="k">def</span> <span class="nf">i_LM</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">i_LM</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">Ms</span><span class="o">/</span><span class="n">P</span><span class="p">)</span><span class="o">/</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="o">/</span><span class="n">j</span><span class="o">*</span><span class="n">Y</span>
+    <span class="k">return</span> <span class="n">i_LM</span>
+
+<span class="n">i_Ms1</span> <span class="o">=</span> <span class="n">i_LM</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="n">Ms</span> <span class="o">=</span> <span class="mi">1400</span>
+<span class="k">def</span> <span class="nf">i_LM</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">i_LM</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">Ms</span><span class="o">/</span><span class="n">P</span><span class="p">)</span><span class="o">/</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="o">/</span><span class="n">j</span><span class="o">*</span><span class="n">Y</span>
+    <span class="k">return</span> <span class="n">i_LM</span>
+
+<span class="n">i_Ms2</span> <span class="o">=</span> <span class="n">i_LM</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setemos caracteristicas de figura</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span> 
+
+<span class="c1"># Ploteamos las 4 rectas</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Derivación de la Curva de Demanda Agregada&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;IS&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span> <span class="c1">#IS</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;LM_0&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>  <span class="c1">#LM_0</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">i_Ms1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;LM_1&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;skyblue&quot;</span><span class="p">)</span>  <span class="c1">#LM_1</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">i_Ms2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;LM_2&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#3D59AB&quot;</span><span class="p">)</span>  <span class="c1">#LM_2</span>
+
+<span class="c1"># Quitamos los &quot;numeros&quot; de las rectas </span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>   
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>
+
+<span class="c1"># Agregamos las lineas punteadas - I</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">51.5</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mf">0.62</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">61</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mf">0.58</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mf">0.54</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+
+<span class="c1"># Agregamos las lineas punteadas - II</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">93</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.52</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">68</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.68</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+
+<span class="c1"># Agregamos los labels de los puntos de equilibrio</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;$A$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span> <span class="s1">&#39;$B$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">69</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span> <span class="s1">&#39;$C$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="c1"># Agregamos los labels de los puntos de equilibrio - r </span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span> <span class="s1">&#39;$r_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span> <span class="s1">&#39;$r_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span> <span class="s1">&#39;$r_2$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="c1"># Agregamos los labels de los puntos de equilibrio - Y</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">53</span><span class="p">,</span><span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;$Y_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">63</span><span class="p">,</span><span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;$Y_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">73</span><span class="p">,</span><span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;$Y_2$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1">#------</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set</span><span class="p">(</span> <span class="n">xlabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_AD</span><span class="p">,</span> <span class="s2">&quot;#EE7600&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AD&quot;</span><span class="p">)</span>  
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>   
+<span class="n">ax2</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">51.5</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">61</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">190</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.52</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">160</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">130</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.68</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">53</span><span class="p">,</span><span class="mi">193</span><span class="p">,</span> <span class="s1">&#39;$A$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">63</span><span class="p">,</span><span class="mi">163</span><span class="p">,</span> <span class="s1">&#39;$B$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span><span class="mi">133</span><span class="p">,</span> <span class="s1">&#39;$C$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span> <span class="s1">&#39;$P_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span> <span class="s1">&#39;$P_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">135</span><span class="p">,</span> <span class="s1">&#39;$P_2$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">53</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;$Y_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">63</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;$Y_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">73</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;$Y_2$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tutorial6_modelo_da_oa_13_0.png" src="../_images/tutorial6_modelo_da_oa_13_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="oferta-agregada-oa">
+<h2>2. Oferta Agregada <span class="math notranslate nohighlight">\((OA)\)</span>:<a class="headerlink" href="#oferta-agregada-oa" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="oferta-agregada-en-el-corto-plazo">
+<h2>- Oferta Agregada en el corto plazo:<a class="headerlink" href="#oferta-agregada-en-el-corto-plazo" title="Permalink to this headline">¶</a></h2>
+<p>El corto plazo es un periodo en el cual el producto <span class="math notranslate nohighlight">\((Y)\)</span> se ubica por debajo o por encima de su nivel de largo plazo o Producto Potencial <span class="math notranslate nohighlight">\((\bar{Y})\)</span>.</p>
+<p>Entonces, curva de <span class="math notranslate nohighlight">\(OA\)</span> de corto plazo se puede representar con la siguiente ecuación:</p>
+<div class="math notranslate nohighlight">
+\[ P = P^e + θ(Y - \bar{Y}) \]</div>
+<ul class="simple">
+<li><p>Donde <span class="math notranslate nohighlight">\((P)\)</span> is the nivel de precios, <span class="math notranslate nohighlight">\((P^e)\)</span> el precio esperado y <span class="math notranslate nohighlight">\(\bar{Y}\)</span> el producto potencial.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parámetros</span>
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">Pe</span> <span class="o">=</span> <span class="mi">150</span>   <span class="c1">#precio esperado</span>
+<span class="n">θ</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">_Y</span> <span class="o">=</span> <span class="mi">62</span>   <span class="c1">#producto potencial</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+
+<span class="c1"># Función de curva de oferta</span>
+<span class="k">def</span> <span class="nf">P_AS</span><span class="p">(</span><span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span><span class="p">):</span>
+    <span class="n">P_AS</span> <span class="o">=</span> <span class="n">Pe</span> <span class="o">+</span> <span class="n">θ</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="n">_Y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">P_AS</span>
+
+<span class="n">P_AS</span> <span class="o">=</span> <span class="n">P_AS</span><span class="p">(</span><span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">P_AS</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Aggregate Supply&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_AS</span><span class="p">,</span> <span class="s2">&quot;k-&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AS&quot;</span><span class="p">)</span>  
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tutorial6_modelo_da_oa_17_0.png" src="../_images/tutorial6_modelo_da_oa_17_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primero declarar los simbolos</span>
+<span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;Pe, _Y, Y, θ&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ecuacion de la curva DA </span>
+<span class="n">r_eq_OA</span> <span class="o">=</span> <span class="n">Pe</span> <span class="o">+</span> <span class="n">θ</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="n">_Y</span><span class="p">)</span>
+
+<span class="c1"># tomar diferenciales</span>
+<span class="n">df_r_eq_OA_Y</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">r_eq_OA</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La pendiente de la curva OA es&quot;</span><span class="p">,</span> <span class="n">df_r_eq_OA_Y</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La pendiente de la curva OA es θ
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="equilibrio-entre-la-demanda-agregada-y-la-oferta-agregada-modelo-da-oa">
+<h2>3. Equilibrio entre la Demanda Agregada y la Oferta Agregada: Modelo DA-OA<a class="headerlink" href="#equilibrio-entre-la-demanda-agregada-y-la-oferta-agregada-modelo-da-oa" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1--------------------------</span>
+    <span class="c1"># Demanda Agregada</span>
+    
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span> 
+
+<span class="n">Co</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">Io</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">Go</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">Xo</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>                
+<span class="n">Ms</span> <span class="o">=</span> <span class="mi">200</span>             
+<span class="n">P</span>  <span class="o">=</span> <span class="mi">8</span>  
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+
+<span class="c1"># Ecuación</span>
+
+<span class="n">B0</span> <span class="o">=</span> <span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span>
+<span class="n">B1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">P_AD</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">P_AD</span> <span class="o">=</span> <span class="p">((</span><span class="n">h</span><span class="o">*</span><span class="n">Ms</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">B0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Y</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">B1</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">P_AD</span>
+
+<span class="n">P_AD</span> <span class="o">=</span> <span class="n">P_AD</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+
+<span class="c1">#2--------------------------</span>
+    <span class="c1"># Oferta Agregada</span>
+    
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">Pe</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">θ</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">_Y</span> <span class="o">=</span> <span class="mi">20</span>   
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+
+<span class="c1"># Ecuación</span>
+
+<span class="k">def</span> <span class="nf">P_AS</span><span class="p">(</span><span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span><span class="p">):</span>
+    <span class="n">P_AS</span> <span class="o">=</span> <span class="n">Pe</span> <span class="o">+</span> <span class="n">θ</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="n">_Y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">P_AS</span>
+
+<span class="n">P_AS</span> <span class="o">=</span> <span class="n">P_AS</span><span class="p">(</span><span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># líneas punteadas autómaticas</span>
+
+<span class="c1"># definir la función line_intersection</span>
+<span class="k">def</span> <span class="nf">line_intersection</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">):</span>
+    <span class="n">xdiff</span> <span class="o">=</span> <span class="p">(</span><span class="n">line1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">line1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">line2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">line2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">ydiff</span> <span class="o">=</span> <span class="p">(</span><span class="n">line1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">line1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">line2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">line2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">det</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">div</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">xdiff</span><span class="p">,</span> <span class="n">ydiff</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">div</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+       <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;lines do not intersect&#39;</span><span class="p">)</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">det</span><span class="p">(</span><span class="o">*</span><span class="n">line1</span><span class="p">),</span> <span class="n">det</span><span class="p">(</span><span class="o">*</span><span class="n">line2</span><span class="p">))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">xdiff</span><span class="p">)</span> <span class="o">/</span> <span class="n">div</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">ydiff</span><span class="p">)</span> <span class="o">/</span> <span class="n">div</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+    <span class="c1"># coordenadas de las curvas (x,y)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="n">P_AD</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># DA, coordenada inicio</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="n">P_AD</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># DA, coordenada fin</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="n">P_AS</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># L_45, coordenada inicio</span>
+<span class="n">D</span> <span class="o">=</span> <span class="p">[</span><span class="n">P_AS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># L_45, coordenada fin</span>
+
+    <span class="c1"># creación de intersección</span>
+
+<span class="n">intersec</span> <span class="o">=</span> <span class="n">line_intersection</span><span class="p">((</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">),</span> <span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">))</span>
+<span class="n">intersec</span> <span class="c1"># (y,x)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(192.39043824701196, 50.79681274900399)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Gráfico del modelo DA-OA</span>
+
+<span class="c1"># Dimensiones del gráfico</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Curvas a graficar </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_AD</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;DA&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C4&quot;</span><span class="p">)</span> <span class="c1">#DA</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_AS</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;OA&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C8&quot;</span><span class="p">)</span> <span class="c1">#OA</span>
+
+<span class="c1"># Líneas punteadas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">intersec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">intersec</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mf">0.49</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+
+<span class="c1"># Texto agregado</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;$P_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">53</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;$Y_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="s1">&#39;$E_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Eliminar valores de ejes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>
+
+<span class="c1"># Título, ejes y leyenda</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;DA-OA&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tutorial6_modelo_da_oa_22_0.png" src="../_images/tutorial6_modelo_da_oa_22_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ecuaciones-de-equilibrio-da-oa">
+<h1>3.1 Ecuaciones de equilibrio DA-OA:<a class="headerlink" href="#ecuaciones-de-equilibrio-da-oa" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="tienen-que-recordar-que-en-el-modelo-da-oa-tenemos-tres-variables-endogenas-y-eq-r-eq-p-eq">
+<h1>Tienen que recordar que en el modelo DA-OA tenemos tres variables endógenas. $<span class="math notranslate nohighlight">\(Y^{eq}, r^{eq} , P^{eq}\)</span>$<a class="headerlink" href="#tienen-que-recordar-que-en-el-modelo-da-oa-tenemos-tres-variables-endogenas-y-eq-r-eq-p-eq" title="Permalink to this headline">¶</a></h1>
+<p>Considerando la ecuación de la demanda agregada <span class="math notranslate nohighlight">\((DA)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[  P = \frac{h Mo^s + jB_o}{h} - \frac{jB_1 + hk}{h}Y \ ...(1)\]</div>
+<p>Y la ecuación de la oferta agregada <span class="math notranslate nohighlight">\((OA)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ P = P^e + θ(Y - \bar{Y}) \ ...(2)\]</div>
+<ul class="simple">
+<li><p>Para hallar <span class="math notranslate nohighlight">\(Y^{eq\_da\_oa}\)</span> igualamos ecuaciones 1 y 2:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \frac{h Mo^s + jB_o}{h} - \frac{jB_1 + hk}{h}Y = P^e + θ(Y - \bar{Y}) \]</div>
+<div class="math notranslate nohighlight">
+\[ Y^{eq\_da\_oa} = [ \frac{1}{(θ + \frac{jB_1 + hk}{h})} ]*[(\frac{h Mo^s + jB_o}{h} - P^e + θ\bar{Y})]\]</div>
+<ul class="simple">
+<li><p>Para encontrar <span class="math notranslate nohighlight">\(P^{eq}\)</span> solamente reemplazamos <span class="math notranslate nohighlight">\(Y^{eq}\)</span> en la ecuación de oferta agregada</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ P^{eq\_da\_oa} = P^e + θ( Y^{eq\_da\_oa} - \bar{Y} ) \]</div>
+<div class="math notranslate nohighlight">
+\[ P^{eq\_da\_oa} = P^e + θ( [ \frac{1}{(θ + \frac{jB_1 + hk}{h})} ]*[(\frac{h Mo^s + jB_o}{h} - P^e + θ\bar{Y})] - \bar{Y} ) \]</div>
+<!-- - Para hallar P^e, despejamos la ecuación de $OA$ en función de Y:
+
+$$ P = P^e + θ(Y - \bar{Y}) $$ 
+
+$$ Y = \frac{P - P^e - θ\bar{Y}}{θ} $$
+
+Y reemplazamos $Y$ en la ecuación de $DA$:
+
+$$ P^e = (\frac{h Mo^s + jB_o}{h} - \frac{jB_1 + hk}{h}) * (\frac{P - P^e - θ\bar{Y}}{θ}) $$ --><ul class="simple">
+<li><p>Para encontrar <span class="math notranslate nohighlight">\(r^{eq\_da\_oa}\)</span> solamente reemplazamos <span class="math notranslate nohighlight">\(P^{eq\_da\_oa}\)</span> en la ecuación de tasa de interés de equilibrio del modelo IS-LM.</p></li>
+<li><p>Tasa de interés de equilibrio:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ r^{eq\_is\_lm} = \frac{kB_o}{kh + jB_1} - (\frac{B_1}{kh + jB_1})*(Ms_o - P)\]</div>
+<ul class="simple">
+<li><p>Tasa de interés de equilibrio en DA-OA
+$<span class="math notranslate nohighlight">\( r^{eq\_is\_lm} = \frac{kB_o}{kh + jB_1} - (\frac{B_1}{kh + jB_1})*(Ms_o - P^{eq\_da\_oa})\)</span>$</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ r^{eq\_da\_oa} = \frac{kB_o}{kh + jB_1} - (\frac{B_1}{kh + jB_1})*(Ms_o - P^e + θ( [ \frac{1}{(θ + \frac{jB_1 + hk}{h})} ]*[(\frac{h Mo^s + jB_o}{h} - P^e + θ\bar{Y})] - \bar{Y} ) ) \]</div>
+</div>
+<div class="section" id="los-valores-de-equilibrio-de-las-tres-principales-variables-endogenas">
+<h1>Los valores de equilibrio de las tres principales variables endógenas<a class="headerlink" href="#los-valores-de-equilibrio-de-las-tres-principales-variables-endogenas" title="Permalink to this headline">¶</a></h1>
+<ol>
+<li><div class="math notranslate nohighlight">
+\[ Y^{eq\_da\_oa} = [ \frac{1}{(θ + \frac{jB_1 + hk}{h})} ]*[(\frac{h Mo^s + jB_o}{h} - P^e + θ\bar{Y})]\]</div>
+</li>
+<li><div class="math notranslate nohighlight">
+\[\begin{split} r^{eq\_da\_oa} = \frac{kB_o}{kh + jB_1} - (\frac{B_1}{kh + jB_1})*(Ms_o - P^e + θ( [ \frac{1}{(θ + \frac{jB_1 + hk}{h})} ]*\\
+[(\frac{h Mo^s + jB_o}{h} - P^e + θ\bar{Y})] - \bar{Y} ) ) \end{split}\]</div>
+</li>
+<li><div class="math notranslate nohighlight">
+\[ P^{eq\_da\_oa} = P^e + θ( [ \frac{1}{(θ + \frac{jB_1 + hk}{h})} ]*[(\frac{h Mo^s + jB_o}{h} - P^e + θ\bar{Y})] - \bar{Y} ) \]</div>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nombrar variables como símbolos de IS</span>
+<span class="n">Co</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">Go</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">beta_0</span><span class="p">,</span> <span class="n">beta_1</span>  <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;Co Io Go Xo h r b m t beta_0, beta_1&#39;</span><span class="p">)</span>
+
+<span class="c1"># nombrar variables como símbolos de LM </span>
+<span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k j Ms P Y&#39;</span><span class="p">)</span>
+
+<span class="c1"># nombrar variables como símbolos para curva de oferta agregada</span>
+<span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;Pe, _Y, Y, θ&#39;</span><span class="p">)</span>
+
+<span class="c1"># Beta_0 y beta_1</span>
+<span class="n">beta_0</span> <span class="o">=</span> <span class="p">(</span><span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span><span class="p">)</span>
+<span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Producto de equilibrio en el modelo DA-OA</span>
+<span class="n">Y_eq</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">θ</span> <span class="o">+</span> <span class="p">(</span> <span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">beta_1</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="p">(</span> <span class="p">(</span> <span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">Ms</span><span class="o">+</span><span class="n">j</span><span class="o">*</span><span class="n">beta_0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span> <span class="p">)</span> <span class="o">-</span> <span class="n">Pe</span> <span class="o">+</span> <span class="n">θ</span><span class="o">*</span><span class="n">_Y</span> <span class="p">)</span>
+
+<span class="c1"># Precio de equilibrio en el modelo DA-OA </span>
+<span class="n">P_eq</span> <span class="o">=</span> <span class="n">Pe</span> <span class="o">+</span> <span class="n">θ</span><span class="o">*</span><span class="p">(</span><span class="n">Y_eq</span> <span class="o">-</span> <span class="n">_Y</span><span class="p">)</span>
+
+<span class="c1"># Tasa de interés de equilibrio en el modelo DA-OA</span>
+<span class="n">r_eq</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">beta_0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">h</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">beta_1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="n">h</span> <span class="o">/</span> <span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">h</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">beta_1</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Ms</span> <span class="o">-</span> <span class="n">P_eq</span><span class="p">)</span>
+<span class="c1">#((h*Ms+j*beta_0)/h) - ((j*beta_1+h*r)/h)*((P-Pe-θ*_Y)/θ)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="estatica-comparativa-da-oa">
+<h2>4. Estática comparativa DA-OA:<a class="headerlink" href="#estatica-comparativa-da-oa" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="incremento-en-el-precio-esperado-p-e">
+<h2>- Incremento en el Precio Esperado <span class="math notranslate nohighlight">\((P^e)\)</span>:<a class="headerlink" href="#incremento-en-el-precio-esperado-p-e" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Intuición:</p></li>
+</ul>
+<p>Modelo DA-OA:</p>
+<div class="math notranslate nohighlight">
+\[ Pe↑ → P↑ \]</div>
+<p>Modelo IS-LM:
+$<span class="math notranslate nohighlight">\( P↑ → M^s↓ → M^s &lt; M^d → r↑ \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( r↑ → I↓ → DA↓ → DA &lt; Y → Y↓ \)</span>$</p>
+<ul class="simple">
+<li><p>Matemática:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Efecto del cambio en Precio esperado sobre el producto en el modelo DA-OA</span>
+<span class="n">df_Y_eq_Pe</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Y_eq</span><span class="p">,</span> <span class="n">Pe</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El Diferencial del Producto con respecto al diferencial del precio esperado = &quot;</span><span class="p">,</span> <span class="n">df_Y_eq_Pe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El Diferencial del Producto con respecto al diferencial del precio esperado =  -1/(θ + (h*k + j*(-(1 - t)*(b - m) + 1))/h)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Efecto del cambio de Precio esperado sobre Tasa de Interés en el modelo DA-OA</span>
+<span class="n">df_r_eq_Pe</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">r_eq</span><span class="p">,</span> <span class="n">Pe</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El Diferencial del nivel de precios con respecto al diferencial del precio esperado = &quot;</span><span class="p">,</span> <span class="n">df_r_eq_Pe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El Diferencial del nivel de precios con respecto al diferencial del precio esperado =  h*(θ/(θ + (h*k + j*(-(1 - t)*(b - m) + 1))/h) - 1)/(h*k + j*(-(1 - t)*(b - m) + 1))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Efecto del cambio en Precio esperado sobre el nivel de Precios en el modelo DA-OA</span>
+<span class="n">df_P_eq_Pe</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">P_eq</span><span class="p">,</span> <span class="n">Pe</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El Diferencial del nivel de precios con respecto al diferencial del precio esperado = &quot;</span><span class="p">,</span> <span class="n">df_P_eq_Pe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El Diferencial del nivel de precios con respecto al diferencial del precio esperado =  -θ/(θ + (h*k + j*(-(1 - t)*(b - m) + 1))/h) + 1
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Gráfico:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1--------------------------------------------------</span>
+    <span class="c1"># Curva IS ORIGINAL</span>
+
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span> 
+
+<span class="n">Co</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">Io</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">Go</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">Xo</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+
+<span class="c1"># Ecuación </span>
+<span class="k">def</span> <span class="nf">r_IS</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Co</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">Go</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">r_IS</span> <span class="o">=</span> <span class="p">(</span><span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span> <span class="o">-</span> <span class="n">Y</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)))</span><span class="o">/</span><span class="n">h</span>
+    <span class="k">return</span> <span class="n">r_IS</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">r_IS</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Co</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">Go</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+
+<span class="c1">#2--------------------------------------------------</span>
+    <span class="c1"># Curva LM ORIGINAL</span>
+
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>                
+<span class="n">Ms</span> <span class="o">=</span> <span class="mi">200</span>             
+<span class="n">P</span>  <span class="o">=</span> <span class="mi">8</span>           
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+<span class="c1"># Ecuación</span>
+
+<span class="k">def</span> <span class="nf">i_LM</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">i_LM</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">Ms</span><span class="o">/</span><span class="n">P</span><span class="p">)</span><span class="o">/</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="o">/</span><span class="n">j</span><span class="o">*</span><span class="n">Y</span>
+    <span class="k">return</span> <span class="n">i_LM</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">i_LM</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="c1">#--------------------------------------------------</span>
+    <span class="c1"># NUEVA curva LM: incremento en la Masa Monetaria (Ms)</span>
+
+<span class="c1"># Definir SOLO el parámetro cambiado</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="c1"># Generar la ecuación con el nuevo parámetro</span>
+<span class="k">def</span> <span class="nf">i_LM_P</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">i_LM</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">Ms</span><span class="o">/</span><span class="n">P</span><span class="p">)</span><span class="o">/</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="o">/</span><span class="n">j</span><span class="o">*</span><span class="n">Y</span>
+    <span class="k">return</span> <span class="n">i_LM</span>
+
+<span class="n">i_P</span> <span class="o">=</span> <span class="n">i_LM_P</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+    <span class="c1"># Gráfico del modelo IS-LM</span>
+
+<span class="c1"># Dimensiones del gráfico</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Curvas a graficar</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;IS&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C1&quot;</span><span class="p">)</span> <span class="c1">#IS</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;LM&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C0&quot;</span><span class="p">)</span>  <span class="c1">#LM</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">i_P</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;LM_P&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>  <span class="c1">#LM_P</span>
+
+<span class="c1"># Título, ejes y leyenda</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;IS-LM Model&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tutorial6_modelo_da_oa_38_0.png" src="../_images/tutorial6_modelo_da_oa_38_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1--------------------------</span>
+    <span class="c1"># Demanda Agregada ORGINAL</span>
+    
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span> 
+
+<span class="n">Co</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">Io</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">Go</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">Xo</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>                
+<span class="n">Ms</span> <span class="o">=</span> <span class="mi">200</span>             
+<span class="n">P</span>  <span class="o">=</span> <span class="mi">8</span>  
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+
+<span class="c1"># Ecuación</span>
+
+<span class="n">B0</span> <span class="o">=</span> <span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span>
+<span class="n">B1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">P_AD</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">P_AD</span> <span class="o">=</span> <span class="p">((</span><span class="n">h</span><span class="o">*</span><span class="n">Ms</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">B0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Y</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">B1</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">P_AD</span>
+
+<span class="n">P_AD</span> <span class="o">=</span> <span class="n">P_AD</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+
+<span class="c1">#2--------------------------</span>
+    <span class="c1"># Oferta Agregada ORIGINAL</span>
+    
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">Pe</span> <span class="o">=</span> <span class="mi">70</span>
+<span class="n">θ</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">_Y</span> <span class="o">=</span> <span class="mi">20</span>  
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+<span class="c1"># Ecuación</span>
+
+<span class="k">def</span> <span class="nf">P_AS</span><span class="p">(</span><span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span><span class="p">):</span>
+    <span class="n">P_AS</span> <span class="o">=</span> <span class="n">Pe</span> <span class="o">+</span> <span class="n">θ</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="n">_Y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">P_AS</span>
+
+<span class="n">P_AS</span> <span class="o">=</span> <span class="n">P_AS</span><span class="p">(</span><span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span><span class="p">)</span>
+
+
+<span class="c1">#--------------------------------------------------</span>
+    <span class="c1"># NUEVA Oferta Agregada</span>
+
+<span class="c1"># Definir SOLO el parámetro cambiado</span>
+
+<span class="n">Pe</span> <span class="o">=</span> <span class="mi">103</span>
+
+<span class="c1"># Generar la ecuación con el nuevo parámetro</span>
+
+<span class="k">def</span> <span class="nf">P_AS_Pe</span><span class="p">(</span><span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span><span class="p">):</span>
+    <span class="n">P_AS</span> <span class="o">=</span> <span class="n">Pe</span> <span class="o">+</span> <span class="n">θ</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="n">_Y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">P_AS</span>
+
+<span class="n">P_Pe</span> <span class="o">=</span> <span class="n">P_AS_Pe</span><span class="p">(</span><span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span><span class="p">)</span>
+
+    <span class="c1"># Gráfico del modelo DA-OA</span>
+
+<span class="c1"># Dimensiones del gráfico</span>
+
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Curvas a graficar </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_AD</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AD&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C4&quot;</span><span class="p">)</span> <span class="c1">#DA</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_AS</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AS&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C8&quot;</span><span class="p">)</span> <span class="c1">#OA</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_Pe</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AS_Pe&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C8&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;dashed&#39;</span><span class="p">)</span> <span class="c1">#OA_Pe</span>
+
+<span class="c1"># Eliminar valores de ejes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>
+
+<span class="c1"># Título, ejes y leyenda</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;AD-AS&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tutorial6_modelo_da_oa_39_0.png" src="../_images/tutorial6_modelo_da_oa_39_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dos gráficos en un solo cuadro</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span> 
+
+<span class="c1">#---------------------------------</span>
+    <span class="c1"># Gráfico 1: IS-LM</span>
+    
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;IS&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C1&quot;</span><span class="p">)</span> <span class="c1">#IS</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;LM&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C0&quot;</span><span class="p">)</span>  <span class="c1">#LM</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">i_P</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;LM_P&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>  <span class="c1">#LM</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mf">0.55</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">56</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mf">0.51</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">94.5</span><span class="p">,</span>  <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">86</span><span class="p">,</span>  <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.56</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="s1">&#39;←&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">51</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;←&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="s1">&#39;↑&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">58</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;$Y_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;$Y_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="s1">&#39;$r_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;$r_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
+
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Efectos de un aumento en el precio esperado&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+
+<span class="c1">#---------------------------------</span>
+    <span class="c1"># Gráfico 2:</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_AD</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AD&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C4&quot;</span><span class="p">)</span> <span class="c1">#DA</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_AS</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AS&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C8&quot;</span><span class="p">)</span> <span class="c1">#OA</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_Pe</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AS_Pe&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C8&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;dashed&#39;</span><span class="p">)</span> <span class="c1">#OA_Pe</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">56</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">193</span><span class="p">,</span>  <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span>  <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.56</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">51</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;←&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="s1">&#39;←&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="s1">&#39;↑&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">58</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;$Y_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;$Y_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C8&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="s1">&#39;$P_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;$P_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C8&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function matplotlib.pyplot.show(close=None, block=None)&gt;
+</pre></div>
+</div>
+<img alt="../_images/tutorial6_modelo_da_oa_40_1.png" src="../_images/tutorial6_modelo_da_oa_40_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="incremento-en-la-masa-monetaria-m-o-s">
+<h2>Incremento en la Masa Monetaria <span class="math notranslate nohighlight">\((M_o^s)\)</span>:<a class="headerlink" href="#incremento-en-la-masa-monetaria-m-o-s" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Intuición:</p></li>
+</ul>
+<p>Modelo IS-LM:
+$<span class="math notranslate nohighlight">\( Ms↑ → M^s↑ → M^s &gt; M^d → r↓ \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( r↓ → I↑ → DA↑ → DA &gt; Y → Y↑ \)</span>$</p>
+<p>Modelo DA-OA:
+$<span class="math notranslate nohighlight">\( Y↑ → θ(Y-\bar{Y})↑ → P↑\)</span>$</p>
+<ul class="simple">
+<li><p>Matemática:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nombrar variables como símbolos de IS</span>
+<span class="n">Co</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">Go</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">beta_0</span><span class="p">,</span> <span class="n">beta_1</span>  <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;Co Io Go Xo h r b m t beta_0, beta_1&#39;</span><span class="p">)</span>
+
+<span class="c1"># nombrar variables como símbolos de LM </span>
+<span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k j Ms P Y&#39;</span><span class="p">)</span>
+
+<span class="c1"># nombrar variables como símbolos para curva de oferta agregada</span>
+<span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;Pe, _Y, Y, θ&#39;</span><span class="p">)</span>
+
+<span class="c1"># Beta_0 y beta_1</span>
+<span class="n">beta_0</span> <span class="o">=</span> <span class="p">(</span><span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span><span class="p">)</span>
+<span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Producto de equilibrio en el modelo DA-OA</span>
+<span class="n">Y_eq</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">θ</span> <span class="o">+</span> <span class="p">(</span> <span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">beta_1</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="p">(</span> <span class="p">(</span> <span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">Ms</span><span class="o">+</span><span class="n">j</span><span class="o">*</span><span class="n">beta_0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span> <span class="p">)</span> <span class="o">-</span> <span class="n">Pe</span> <span class="o">+</span> <span class="n">θ</span><span class="o">*</span><span class="n">_Y</span> <span class="p">)</span>
+
+<span class="c1"># Precio de equilibrio en el modelo DA-OA </span>
+<span class="n">P_eq</span> <span class="o">=</span> <span class="n">Pe</span> <span class="o">+</span> <span class="n">θ</span><span class="o">*</span><span class="p">(</span><span class="n">Y_eq</span> <span class="o">-</span> <span class="n">_Y</span><span class="p">)</span>
+
+<span class="c1"># Tasa de interés de equilibrio en el modelo DA-OA</span>
+<span class="n">r_eq</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">beta_0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">h</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">beta_1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="n">h</span> <span class="o">/</span> <span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">h</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">beta_1</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Ms</span> <span class="o">-</span> <span class="n">P_eq</span><span class="p">)</span>
+<span class="c1">#((h*Ms+j*beta_0)/h) - ((j*beta_1+h*r)/h)*((P-Pe-θ*_Y)/θ)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Efecto del cambio de Precio esperado sobre Tasa de Interés en el modelo DA-OA</span>
+<span class="n">df_Y_eq_Ms</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Y_eq</span><span class="p">,</span> <span class="n">Ms</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El Diferencial del Producto con respecto al diferencial de la masa monetaria = &quot;</span><span class="p">,</span> <span class="n">df_Y_eq_Ms</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Efecto del cambio de Precio esperado sobre Tasa de Interés en el modelo DA-OA</span>
+<span class="n">df_r_eq_Ms</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">r_eq</span><span class="p">,</span> <span class="n">Ms</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El Diferencial de la tasa de interés con respecto al diferencial de la masa monetaria = &quot;</span><span class="p">,</span> <span class="n">df_r_eq_Ms</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Efecto del cambio de Precio esperado sobre Tasa de Interés en el modelo DA-OA</span>
+<span class="n">df_P_eq_Ms</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">P_eq</span><span class="p">,</span> <span class="n">Ms</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El Diferencial del nivel de precios con respecto al diferencial de la masa monetaria = &quot;</span><span class="p">,</span> <span class="n">df_P_eq_Ms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El Diferencial del Producto con respecto al diferencial de la masa monetaria =  1/(θ + (h*k + j*(-(1 - t)*(b - m) + 1))/h)
+
+
+El Diferencial de la tasa de interés con respecto al diferencial de la masa monetaria =  h*(-θ/(θ + (h*k + j*(-(1 - t)*(b - m) + 1))/h) + 1)/(h*k + j*(-(1 - t)*(b - m) + 1))
+
+
+El Diferencial del nivel de precios con respecto al diferencial de la masa monetaria =  θ/(θ + (h*k + j*(-(1 - t)*(b - m) + 1))/h)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Gráfico</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># IS-LM</span>
+
+<span class="c1">#1--------------------------------------------------</span>
+    <span class="c1"># Curva IS ORIGINAL</span>
+
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span> 
+
+<span class="n">Co</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">Io</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">Go</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">Xo</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+
+<span class="c1"># Ecuación </span>
+<span class="k">def</span> <span class="nf">r_IS</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Co</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">Go</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">r_IS</span> <span class="o">=</span> <span class="p">(</span><span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span> <span class="o">-</span> <span class="n">Y</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)))</span><span class="o">/</span><span class="n">h</span>
+    <span class="k">return</span> <span class="n">r_IS</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">r_IS</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Co</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">Go</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+
+<span class="c1">#2--------------------------------------------------</span>
+    <span class="c1"># Curva LM ORIGINAL</span>
+
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>                
+<span class="n">Ms</span> <span class="o">=</span> <span class="mi">200</span>             
+<span class="n">P</span>  <span class="o">=</span> <span class="mi">8</span>           
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+<span class="c1"># Ecuación</span>
+
+<span class="k">def</span> <span class="nf">i_LM</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">i_LM</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">Ms</span><span class="o">/</span><span class="n">P</span><span class="p">)</span><span class="o">/</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="o">/</span><span class="n">j</span><span class="o">*</span><span class="n">Y</span>
+    <span class="k">return</span> <span class="n">i_LM</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">i_LM</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="c1">#--------------------------------------------------</span>
+    <span class="c1"># NUEVA curva LM: incremento en la Masa Monetaria (Ms)</span>
+
+<span class="c1"># Definir SOLO el parámetro cambiado</span>
+<span class="n">Ms</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="c1"># Generar la ecuación con el nuevo parámetro</span>
+<span class="k">def</span> <span class="nf">i_LM_Ms</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">i_LM</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">Ms</span><span class="o">/</span><span class="n">P</span><span class="p">)</span><span class="o">/</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="o">/</span><span class="n">j</span><span class="o">*</span><span class="n">Y</span>
+    <span class="k">return</span> <span class="n">i_LM</span>
+
+<span class="n">i_Ms</span> <span class="o">=</span> <span class="n">i_LM_Ms</span><span class="p">(</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="c1">#DA-OA</span>
+
+<span class="c1">#1--------------------------</span>
+    <span class="c1"># Demanda Agregada ORGINAL</span>
+    
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span> 
+
+<span class="n">Co</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">Io</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">Go</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">Xo</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>                
+<span class="n">Ms</span> <span class="o">=</span> <span class="mi">200</span>             
+<span class="n">P</span>  <span class="o">=</span> <span class="mi">8</span>  
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+
+<span class="c1"># Ecuación</span>
+
+<span class="n">B0</span> <span class="o">=</span> <span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span>
+<span class="n">B1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">P_AD</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">P_AD</span> <span class="o">=</span> <span class="p">((</span><span class="n">h</span><span class="o">*</span><span class="n">Ms</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">B0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Y</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">B1</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">P_AD</span>
+
+<span class="n">P_AD</span> <span class="o">=</span> <span class="n">P_AD</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="c1">#--------------------------------------------------</span>
+    <span class="c1"># NUEVA Demanda Agregada</span>
+
+<span class="c1"># Definir SOLO el parámetro cambiado</span>
+
+<span class="n">Ms</span> <span class="o">=</span> <span class="mi">275</span>
+
+<span class="c1"># Generar la ecuación con el nuevo parámetro</span>
+
+<span class="k">def</span> <span class="nf">P_AD_Ms</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">P_AD</span> <span class="o">=</span> <span class="p">((</span><span class="n">h</span><span class="o">*</span><span class="n">Ms</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">B0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Y</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">B1</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">P_AD</span>
+
+<span class="n">P_Ms</span> <span class="o">=</span> <span class="n">P_AD_Ms</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+
+<span class="c1">#2--------------------------</span>
+    <span class="c1"># Oferta Agregada ORIGINAL</span>
+    
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">Pe</span> <span class="o">=</span> <span class="mi">70</span>
+<span class="n">θ</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">_Y</span> <span class="o">=</span> <span class="mi">20</span>  
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+<span class="c1"># Ecuación</span>
+
+<span class="k">def</span> <span class="nf">P_AS</span><span class="p">(</span><span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span><span class="p">):</span>
+    <span class="n">P_AS</span> <span class="o">=</span> <span class="n">Pe</span> <span class="o">+</span> <span class="n">θ</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="n">_Y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">P_AS</span>
+
+<span class="n">P_AS</span> <span class="o">=</span> <span class="n">P_AS</span><span class="p">(</span><span class="n">Pe</span><span class="p">,</span> <span class="n">_Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">θ</span><span class="p">)</span>
+
+<span class="c1"># Dos gráficos en un solo cuadro</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span> 
+
+<span class="c1">#---------------------------------</span>
+    <span class="c1"># Gráfico 1: IS-LM</span>
+    
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;IS&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C1&quot;</span><span class="p">)</span> <span class="c1">#IS</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;LM&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C0&quot;</span><span class="p">)</span>  <span class="c1">#LM</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">i_Ms</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;LM_Ms&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>  <span class="c1">#LM</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">67.5</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">56</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span>  <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.66</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">87</span><span class="p">,</span>  <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.56</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="s1">&#39;∆$M_s$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">76</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="s1">&#39;→&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;→&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="s1">&#39;↓&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="o">-</span><span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;$Y_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="o">-</span><span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;$Y_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="s1">&#39;$r_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="s1">&#39;$r_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
+
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Efectos de un aumento en la masa monetaria&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+
+<span class="c1">#---------------------------------</span>
+    <span class="c1"># Gráfico 2: DA-OA</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_AD</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AD&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C4&quot;</span><span class="p">)</span> <span class="c1">#DA</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_Ms</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AD_Ms&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C4&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;dashed&#39;</span><span class="p">)</span> <span class="c1">#DA_Ms</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P_AS</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;AS&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C8&quot;</span><span class="p">)</span> <span class="c1">#OA</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">67.5</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">56</span><span class="p">,</span>  <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">213</span><span class="p">,</span>  <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.67</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span>  <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span> <span class="mf">0.56</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;→&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">260</span><span class="p">,</span> <span class="s1">&#39;→&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">272</span><span class="p">,</span> <span class="s1">&#39;∆$M_s$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">187</span><span class="p">,</span> <span class="s1">&#39;↑&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">58</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;$Y_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;$Y_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C4&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">158</span><span class="p">,</span> <span class="s1">&#39;$P_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="s1">&#39;$P_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C4&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function matplotlib.pyplot.show(close=None, block=None)&gt;
+</pre></div>
+</div>
+<img alt="../_images/tutorial6_modelo_da_oa_47_1.png" src="../_images/tutorial6_modelo_da_oa_47_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "alexanderquispe/1REI05",
+            ref: "jupyterbook",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="tutorial5_modelo_is_lm.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">EL MODELO MACROECONÓMICO IS-LM:</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="tutorial7_modelo_is_lm_r_exogena.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MODELO IS-LM CON TASA DE INTERÉS EXÓGENA <span class="math notranslate nohighlight">\((r)\)</span> FIJADA POR EL BANCO CENTRAL:</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By M.Sc. Alexander Quispe Rojas<br/>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

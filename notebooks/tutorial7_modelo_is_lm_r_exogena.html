@@ -1,0 +1,1214 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MODELO IS-LM CON TASA DE INTERÉS EXÓGENA \((r)\) FIJADA POR EL BANCO CENTRAL: &#8212; 1REI05 at PUCP (Python scripts)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="MODELO DE DEMANDA Y OFERTA AGREGADA" href="tutorial6_modelo_da_oa.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">1REI05 at PUCP (Python scripts)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../md/intro.html">
+   Fundamentals of Macroeconomics
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial2_modelo_keynesiano.html">
+   MERCADO DE BIENES: CONSUMO, INVERSIÓN, DETERMINACIÓN DEL PRODUCTO Y LA POLÍTICA FISCAL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial3.html">
+   2. El modelo de Ingreso-Gasto Keynesiano:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial4_mercado_monetario_curva_lm.html">
+   EL MERCADO MONETARIO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial5_modelo_is_lm.html">
+   EL MODELO MACROECONÓMICO IS-LM:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial6_modelo_da_oa.html">
+   MODELO DE DEMANDA Y OFERTA AGREGADA
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   MODELO IS-LM CON TASA DE INTERÉS EXÓGENA
+   <span class="math notranslate nohighlight">
+    \((r)\)
+   </span>
+   FIJADA POR EL BANCO CENTRAL:
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/tutorial7_modelo_is_lm_r_exogena.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/alexanderquispe/1REI05"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/alexanderquispe/1REI05/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tutorial7_modelo_is_lm_r_exogena.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/alexanderquispe/1REI05/edit/jupyterbook/1REI05_jb/_build/jupyter_execute/notebooks/tutorial7_modelo_is_lm_r_exogena.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/alexanderquispe/1REI05/jupyterbook?urlpath=tree/1REI05_jb/_build/jupyter_execute/notebooks/tutorial7_modelo_is_lm_r_exogena.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/alexanderquispe/1REI05/blob/jupyterbook/1REI05_jb/_build/jupyter_execute/notebooks/tutorial7_modelo_is_lm_r_exogena.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   MODELO IS-LM CON TASA DE INTERÉS EXÓGENA
+   <span class="math notranslate nohighlight">
+    \((r)\)
+   </span>
+   FIJADA POR EL BANCO CENTRAL:
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ecuaciones">
+     2. Ecuaciones:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equilibrio-is-lm-con-r-exogena">
+     3. Equilibrio IS-LM con
+     <span class="math notranslate nohighlight">
+      \(r\)
+     </span>
+     exógena:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#curva-is">
+   Curva IS
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#curva-lm">
+   Curva LM
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funcion-para-encontrar-el-cruce-de-rectas">
+   Funcion para encontrar el cruce de rectas
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#encontrar-puntos-de-cruce">
+   Encontrar puntos de cruce
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grafico-del-modelo-is-lm-pm">
+   Gráfico del modelo IS-LM-PM
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estatica-comparativa">
+   4. Estática comparativa:
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incremento-tasa-de-interes-r">
+     Incremento tasa de interés
+     <span class="math notranslate nohighlight">
+      \((r)\)
+     </span>
+     :
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>MODELO IS-LM CON TASA DE INTERÉS EXÓGENA (r) FIJADA POR EL BANCO CENTRAL:</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   MODELO IS-LM CON TASA DE INTERÉS EXÓGENA
+   <span class="math notranslate nohighlight">
+    \((r)\)
+   </span>
+   FIJADA POR EL BANCO CENTRAL:
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ecuaciones">
+     2. Ecuaciones:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equilibrio-is-lm-con-r-exogena">
+     3. Equilibrio IS-LM con
+     <span class="math notranslate nohighlight">
+      \(r\)
+     </span>
+     exógena:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#curva-is">
+   Curva IS
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#curva-lm">
+   Curva LM
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funcion-para-encontrar-el-cruce-de-rectas">
+   Funcion para encontrar el cruce de rectas
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#encontrar-puntos-de-cruce">
+   Encontrar puntos de cruce
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grafico-del-modelo-is-lm-pm">
+   Gráfico del modelo IS-LM-PM
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estatica-comparativa">
+   4. Estática comparativa:
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incremento-tasa-de-interes-r">
+     Incremento tasa de interés
+     <span class="math notranslate nohighlight">
+      \((r)\)
+     </span>
+     :
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1">#from causalgraphicalmodels import CausalGraphicalModel</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_6544</span><span class="o">/</span><span class="mf">3680031957.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;widget&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\IPython\core\interactiveshell.py</span> in <span class="ni">run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2362</span>                 <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2363</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2364</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2365</span>             <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">   </span><span class="mi">2366</span> 
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\decorator.py</span> in <span class="ni">fun</span><span class="nt">(*args, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">kwsyntax</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span>                 <span class="n">args</span><span class="p">,</span> <span class="n">kw</span> <span class="o">=</span> <span class="n">fix</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">232</span>             <span class="k">return</span> <span class="n">caller</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">extras</span> <span class="o">+</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">fun</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="n">fun</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__doc__</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\IPython\core\magic.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(f, *a, **k)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="c1"># but it&#39;s overkill for just that one bit of state.</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">def</span> <span class="nf">magic_deco</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">call</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> 
+<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\IPython\core\magics\pylab.py</span> in <span class="ni">matplotlib</span><span class="nt">(self, line)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available matplotlib backends: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">backends_list</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">99</span>             <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">enable_matplotlib</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_show_matplotlib_backend</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> 
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\IPython\core\interactiveshell.py</span> in <span class="ni">enable_matplotlib</span><span class="nt">(self, gui)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3544</span>                 <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">find_gui_and_backend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pylab_gui_select</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3545</span> 
+<span class="ne">-&gt; </span><span class="mi">3546</span>         <span class="n">pt</span><span class="o">.</span><span class="n">activate_matplotlib</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3547</span>         <span class="n">configure_inline_support</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3548</span> 
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\IPython\core\pylabtools.py</span> in <span class="ni">activate_matplotlib</span><span class="nt">(backend)</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span>     <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span> 
+<span class="ne">--&gt; </span><span class="mi">359</span>     <span class="n">plt</span><span class="o">.</span><span class="n">switch_backend</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span> 
+<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">_needmain</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\matplotlib\pyplot.py</span> in <span class="ni">switch_backend</span><span class="nt">(newbackend)</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span>     <span class="n">backend_name</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">_backend_module_name</span><span class="p">(</span><span class="n">newbackend</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span> 
+<span class="ne">--&gt; </span><span class="mi">267</span>     <span class="k">class</span> <span class="nc">backend_mod</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">backend_bases</span><span class="o">.</span><span class="n">_Backend</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>         <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">backend_name</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span> 
+
+<span class="nn">~\anaconda3\envs\renv\lib\site-packages\matplotlib\pyplot.py</span> in <span class="ni">backend_mod</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span> 
+<span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="k">class</span> <span class="nc">backend_mod</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">backend_bases</span><span class="o">.</span><span class="n">_Backend</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">268</span>         <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">backend_name</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span> 
+<span class="g g-Whitespace">    </span><span class="mi">270</span>     <span class="n">required_framework</span> <span class="o">=</span> <span class="n">_get_required_interactive_framework</span><span class="p">(</span><span class="n">backend_mod</span><span class="p">)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\__init__.py</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>                 <span class="k">break</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>             <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">127</span>     <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span> 
+<span class="g g-Whitespace">    </span><span class="mi">129</span> 
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_call_with_frames_removed</span><span class="nt">(f, *args, **kwds)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">~\anaconda3\envs\renv\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;ipympl&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="modelo-is-lm-con-tasa-de-interes-exogena-r-fijada-por-el-banco-central">
+<h1>MODELO IS-LM CON TASA DE INTERÉS EXÓGENA <span class="math notranslate nohighlight">\((r)\)</span> FIJADA POR EL BANCO CENTRAL:<a class="headerlink" href="#modelo-is-lm-con-tasa-de-interes-exogena-r-fijada-por-el-banco-central" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ecuaciones">
+<h2>2. Ecuaciones:<a class="headerlink" href="#ecuaciones" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Ecuación de la IS:</p></li>
+</ul>
+<p>Partiendo de:</p>
+<div class="math notranslate nohighlight">
+\[ Y = C + I + G + X - M \]</div>
+<p>donde</p>
+<div class="math notranslate nohighlight">
+\[ C = C_0 + b(1-t)Y \]</div>
+<div class="math notranslate nohighlight">
+\[ I = I_0 - hr \]</div>
+<div class="math notranslate nohighlight">
+\[ G = G_0 \]</div>
+<div class="math notranslate nohighlight">
+\[ X = X_0 \]</div>
+<div class="math notranslate nohighlight">
+\[ M = mY \]</div>
+<p>Reemplazando:</p>
+<div class="math notranslate nohighlight">
+\[ Y = C_0 + b(1-t)Y + I_0 - hr + G_0 + X_0 - mY \]</div>
+<p>La ecuación de la IS es en función de <span class="math notranslate nohighlight">\(Y\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[ Y = \frac{1}{1 - (b - m)(1 - t)} (C_o + I_o + G_o + X_o - hr) \]</div>
+<p>o,</p>
+<div class="math notranslate nohighlight">
+\[ Y = \frac{1}{B_1} (B_0) \]</div>
+<p>Donde <span class="math notranslate nohighlight">\( B_0 = C_o + I_o + G_o + X_o - hr \)</span> y <span class="math notranslate nohighlight">\( B_1 = 1 - (b - m)(1 - t) \)</span></p>
+<ul class="simple">
+<li><p>Ecuación de la LM:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \frac{M_o^s}{P_0} = kY - jr \]</div>
+<p>Ahora <span class="math notranslate nohighlight">\(M^s\)</span> es la variable endogena, por eso escribimos la LM En función de <span class="math notranslate nohighlight">\((M^s)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ M^s = P_0(kY - jr) \]</div>
+</div>
+<div class="section" id="equilibrio-is-lm-con-r-exogena">
+<h2>3. Equilibrio IS-LM con <span class="math notranslate nohighlight">\(r\)</span> exógena:<a class="headerlink" href="#equilibrio-is-lm-con-r-exogena" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Ingreso de equilibrio: es igual a la ecuación de la IS</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ Y^e = \frac{1}{1 - (b - m)(1 - t)} (C_o + I_o + G_o + X_o - hr) \]</div>
+<ul class="simple">
+<li><p>Masa monetaria: reemplazamos <span class="math notranslate nohighlight">\(Y\)</span> en <span class="math notranslate nohighlight">\(M_s\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ M^e_s = P_0(kY - jr) \]</div>
+<div class="math notranslate nohighlight">
+\[ M^e_s = (\frac{B_0}{B_1})P_0k - P_0jr \]</div>
+<div class="math notranslate nohighlight">
+\[ M^e_s = P_0k(\frac{1}{1 - (b - m)(1 - t)} (C_o + I_o + G_o + X_o - hr)) - P_0jr \]</div>
+</div>
+</div>
+<div class="section" id="curva-is">
+<h1>Curva IS<a class="headerlink" href="#curva-is" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#--------------------------------------------------</span>
+
+<span class="c1"># Curva IS</span>
+
+<span class="n">r_size</span> <span class="o">=</span> <span class="mi">100</span> 
+
+<span class="n">Co</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">Io</span> <span class="o">=</span> <span class="mf">6.4</span>
+<span class="n">Go</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">Xo</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.4</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">r_size</span><span class="p">)</span>
+
+<span class="c1"># Ecuación</span>
+
+<span class="k">def</span> <span class="nf">IS_CB</span><span class="p">(</span><span class="n">Co</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">Go</span><span class="p">):</span>
+    <span class="n">IS_CB</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">)))</span><span class="o">*</span><span class="p">(</span><span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span> <span class="o">-</span> <span class="n">h</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">IS_CB</span>
+
+<span class="n">IS_CB</span> <span class="o">=</span> <span class="n">IS_CB</span><span class="p">(</span><span class="n">Co</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">Go</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="curva-lm">
+<h1>Curva LM<a class="headerlink" href="#curva-lm" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#--------------------------------------------------</span>
+<span class="c1"># Curva LM</span>
+    
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">P</span> <span class="o">=</span> <span class="mf">3.5</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1.76</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+<span class="c1"># Ecuación</span>
+
+<span class="k">def</span> <span class="nf">LM_CB</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">LM_CB</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">Y</span> <span class="o">-</span> <span class="n">j</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">LM_CB</span>
+
+<span class="n">LM_CB</span> <span class="o">=</span> <span class="n">LM_CB</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funcion-para-encontrar-el-cruce-de-rectas">
+<h1>Funcion para encontrar el cruce de rectas<a class="headerlink" href="#funcion-para-encontrar-el-cruce-de-rectas" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># líneas punteadas autómaticas</span>
+
+    <span class="c1"># definir la función line_intersection</span>
+<span class="k">def</span> <span class="nf">line_intersection</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">):</span>
+    <span class="n">xdiff</span> <span class="o">=</span> <span class="p">(</span><span class="n">line1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">line1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">line2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">line2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">ydiff</span> <span class="o">=</span> <span class="p">(</span><span class="n">line1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">line1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">line2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">line2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">det</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">div</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">xdiff</span><span class="p">,</span> <span class="n">ydiff</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">div</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+       <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;lines do not intersect&#39;</span><span class="p">)</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">det</span><span class="p">(</span><span class="o">*</span><span class="n">line1</span><span class="p">),</span> <span class="n">det</span><span class="p">(</span><span class="o">*</span><span class="n">line2</span><span class="p">))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">xdiff</span><span class="p">)</span> <span class="o">/</span> <span class="n">div</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">ydiff</span><span class="p">)</span> <span class="o">/</span> <span class="n">div</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="encontrar-puntos-de-cruce">
+<h1>Encontrar puntos de cruce<a class="headerlink" href="#encontrar-puntos-de-cruce" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_ec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">100</span><span class="p">),</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># coordenadas de las curvas (x,y)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="n">IS_CB</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># DA, coordenada inicio</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="n">IS_CB</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># DA, coordenada fin</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="n">r_ec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># L_45, coordenada inicio</span>
+<span class="n">D</span> <span class="o">=</span> <span class="p">[</span><span class="n">r_ec</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># L_45, coordenada fin</span>
+
+<span class="c1"># creación de intersección</span>
+
+<span class="n">intersec_1</span> <span class="o">=</span> <span class="n">line_intersection</span><span class="p">((</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">),</span> <span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">))</span>
+<span class="n">intersec_1</span> <span class="c1"># (y,x)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(15.000000000000002, 49.25)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="grafico-del-modelo-is-lm-pm">
+<h1>Gráfico del modelo IS-LM-PM<a class="headerlink" href="#grafico-del-modelo-is-lm-pm" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfico del modelo IS-PM</span>
+
+<span class="c1"># Dimensiones del gráfico</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Curvas a graficar</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">IS_CB</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;IS&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C1&quot;</span><span class="p">)</span> <span class="c1">#IS</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r_ec</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s2">&quot;PM&quot;</span><span class="p">)</span> <span class="c1">#r: tasa de interés</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">intersec_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axline</span><span class="p">((</span><span class="n">intersec_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">intersec_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">slope</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;LM&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">NullLocator</span><span class="p">())</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;$r_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">51</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;$Y_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="mf">16.5</span><span class="p">,</span> <span class="s1">&#39;$E_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;IS-LM con r exógena&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tutorial7_modelo_is_lm_r_exogena_16_0.png" src="../_images/tutorial7_modelo_is_lm_r_exogena_16_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="estatica-comparativa">
+<h1>4. Estática comparativa:<a class="headerlink" href="#estatica-comparativa" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nombrar variables como símbolos</span>
+<span class="n">Co</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">Go</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">beta_0</span><span class="p">,</span> <span class="n">beta_1</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;Co, Io, Go, Xo, h, b, m, t, P, k, j, r, beta_0, beta_1&#39;</span><span class="p">)</span>
+
+<span class="c1"># # Beta_0 y beta_1</span>
+<span class="c1"># beta_0 = (Co + Io + Go + Xo - h*r)</span>
+<span class="c1"># beta_1 = (1-(b-m)*(1-t))</span>
+
+<span class="c1"># Producto de equilibrio y la tasa de interes de equilibrio en el modelo IS-LM</span>
+<span class="n">Y_eq</span> <span class="o">=</span> <span class="p">(</span><span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span> <span class="o">-</span> <span class="n">h</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)))</span>
+<span class="n">Ms_eq</span> <span class="o">=</span> <span class="p">(</span><span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span> <span class="o">-</span> <span class="n">h</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)))</span><span class="o">*</span><span class="p">(</span><span class="n">P</span><span class="o">*</span><span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">P</span><span class="o">*</span><span class="n">j</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="incremento-tasa-de-interes-r">
+<h2>Incremento tasa de interés <span class="math notranslate nohighlight">\((r)\)</span>:<a class="headerlink" href="#incremento-tasa-de-interes-r" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Matemática:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_Y_eq_r</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Y_eq</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El Diferencial del Producto con respecto al diferencial de la tasa de interés = &quot;</span><span class="p">,</span> <span class="n">df_Y_eq_r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El Diferencial del Producto con respecto al diferencial de la tasa de interés =  -h/(-(1 - t)*(b - m) + 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>¿<span class="math notranslate nohighlight">\(∆Y\)</span> sabiendo que <span class="math notranslate nohighlight">\(∆r &gt; 0\)</span>?</p>
+<div class="math notranslate nohighlight">
+\[ \frac{∆Y}{∆r} = (-) \]</div>
+<div class="math notranslate nohighlight">
+\[ \frac{∆Y}{(+)} = (-) \]</div>
+<div class="math notranslate nohighlight">
+\[ ∆Y = (-) \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_Ms_eq_r</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">Ms_eq</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El Diferencial de la Masa Monetaria con respecto al diferencial de la tasa de interés = &quot;</span><span class="p">,</span> <span class="n">df_Ms_eq_r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El Diferencial de la Masa Monetaria con respecto al diferencial de la tasa de interés =  -P*h*k/(-(1 - t)*(b - m) + 1) - P*j
+</pre></div>
+</div>
+</div>
+</div>
+<p>¿<span class="math notranslate nohighlight">\(∆M^s\)</span> sabiendo que <span class="math notranslate nohighlight">\(∆r &gt; 0\)</span>?</p>
+<div class="math notranslate nohighlight">
+\[ \frac{∆M^s}{∆r} = (-) \]</div>
+<div class="math notranslate nohighlight">
+\[ \frac{∆M^s}{(+)} = (-) \]</div>
+<div class="math notranslate nohighlight">
+\[ ∆M^s = (-) \]</div>
+<ul class="simple">
+<li><p>Intuición:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ r↑ → I↓ → DA↓ → DA &lt; Y → Y↓ \]</div>
+<div class="math notranslate nohighlight">
+\[ r↑ → M^d&lt;M^s → M^s↓ \]</div>
+<ul class="simple">
+<li><p>Gráfico:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#--------------------------------------------------</span>
+    <span class="c1"># Curva IS</span>
+
+<span class="n">r_size</span> <span class="o">=</span> <span class="mi">100</span> 
+
+<span class="n">Co</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">Io</span> <span class="o">=</span> <span class="mf">6.4</span>
+<span class="n">Go</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">Xo</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.4</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">r_size</span><span class="p">)</span>
+
+<span class="c1"># Ecuación</span>
+
+<span class="k">def</span> <span class="nf">IS_CB</span><span class="p">(</span><span class="n">Co</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">Go</span><span class="p">):</span>
+    <span class="n">IS_CB</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">)))</span><span class="o">*</span><span class="p">(</span><span class="n">Co</span> <span class="o">+</span> <span class="n">Io</span> <span class="o">+</span> <span class="n">Go</span> <span class="o">+</span> <span class="n">Xo</span> <span class="o">-</span> <span class="n">h</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">IS_CB</span>
+
+<span class="n">IS_CB</span> <span class="o">=</span> <span class="n">IS_CB</span><span class="p">(</span><span class="n">Co</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Io</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">Xo</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">Go</span><span class="p">)</span>
+
+
+<span class="c1">#--------------------------------------------------</span>
+    <span class="c1"># Curva LM</span>
+    
+<span class="c1"># Parámetros</span>
+
+<span class="n">Y_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">P</span> <span class="o">=</span> <span class="mf">3.5</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1.76</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Y_size</span><span class="p">)</span>
+
+<span class="c1"># Ecuación</span>
+
+<span class="k">def</span> <span class="nf">LM_CB</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">LM_CB</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">Y</span> <span class="o">-</span> <span class="n">j</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">LM_CB</span>
+
+<span class="n">LM_CB</span> <span class="o">=</span> <span class="n">LM_CB</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+
+<span class="c1">#---------------------------------------------------</span>
+    <span class="c1"># Nueva LM</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mi">20</span> 
+
+<span class="k">def</span> <span class="nf">LM_CB_2</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">LM_CB_2</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">Y</span> <span class="o">-</span> <span class="n">j</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">LM_CB_2</span>
+
+<span class="n">LM_CB_2</span> <span class="o">=</span> <span class="n">LM_CB_2</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_ec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">100</span><span class="p">),</span> <span class="mi">15</span><span class="p">)</span>
+
+    <span class="c1"># coordenadas de las curvas (x,y)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="n">IS_CB</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># DA, coordenada inicio</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="n">IS_CB</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># DA, coordenada fin</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="n">r_ec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># L_45, coordenada inicio</span>
+<span class="n">D</span> <span class="o">=</span> <span class="p">[</span><span class="n">r_ec</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># L_45, coordenada fin</span>
+
+    <span class="c1"># creación de intersección</span>
+
+<span class="n">intersec_1</span> <span class="o">=</span> <span class="n">line_intersection</span><span class="p">((</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">),</span> <span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">))</span>
+<span class="n">intersec_1</span> <span class="c1"># (y,x)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(15.000000000000002, 49.25)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_ec_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">100</span><span class="p">),</span> <span class="mi">20</span><span class="p">)</span>
+
+    <span class="c1"># coordenadas de las curvas (x,y)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="n">IS_CB</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># DA, coordenada inicio</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="n">IS_CB</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># DA, coordenada fin</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="n">r_ec_2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># L_45, coordenada inicio</span>
+<span class="n">D</span> <span class="o">=</span> <span class="p">[</span><span class="n">r_ec_2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># L_45, coordenada fin</span>
+
+    <span class="c1"># creación de intersección</span>
+
+<span class="n">intersec_2</span> <span class="o">=</span> <span class="n">line_intersection</span><span class="p">((</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">),</span> <span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">))</span>
+<span class="n">intersec_2</span> <span class="c1"># (y,x)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20.0, 36.333333333333336)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Gráfico del modelo IS-PM</span>
+
+<span class="c1"># Dimensiones del gráfico</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Curvas a graficar</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">IS_CB</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;IS&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;C1&quot;</span><span class="p">)</span> <span class="c1">#IS</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r_ec</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s2">&quot;PM&quot;</span><span class="p">)</span> <span class="c1">#r: tasa de interés</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r_ec_2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s2">&quot;PM_2&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;dashed&#39;</span><span class="p">)</span> <span class="c1">#r: tasa de interés</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axline</span><span class="p">((</span><span class="n">intersec_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">intersec_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">slope</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;LM&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axline</span><span class="p">((</span><span class="n">intersec_2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">intersec_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">slope</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;LM_2&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">intersec_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">intersec_2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ymin</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;$r_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">51</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;$Y_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="mf">16.5</span><span class="p">,</span> <span class="s1">&#39;$E_0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;$r_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;$Y_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;$E_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Incremento de la tasa de interés en el plano $(Y, r)$&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tutorial7_modelo_is_lm_r_exogena_31_0.png" src="../_images/tutorial7_modelo_is_lm_r_exogena_31_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#     # Gráfico del modelo IS-PM</span>
+
+<span class="c1"># # Dimensiones del gráfico</span>
+<span class="c1"># y_max = np.max(Y)</span>
+<span class="c1"># fig, ax = plt.subplots(figsize=(10, 8))</span>
+
+<span class="c1"># # Curvas a graficar</span>
+<span class="c1"># ax.plot(LM_CB, label = &quot;LM&quot;, color = &quot;C0&quot;) #LM</span>
+<span class="c1"># plt.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = &quot;C8&quot;, label = &#39;YY&#39;)</span>
+<span class="c1"># plt.axvline(x=intersec_2[1], ymin= 0, ymax= 1, color = &quot;C8&quot;, label = &#39;YY_t&#39;, linestyle = &#39;dashed&#39;)</span>
+
+<span class="c1"># plt.axhline(y=145, xmin= 0, xmax= 0.5, color = &quot;grey&quot;, linestyle = &#39;:&#39;)</span>
+<span class="c1"># plt.axhline(y=65, xmin= 0, xmax= 0.38, color = &quot;grey&quot;, linestyle = &#39;:&#39;)</span>
+
+<span class="c1"># ax.text(0, 160, &#39;$m_0^s$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+<span class="c1"># ax.text(51, -155, &#39;$Y_0$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+
+<span class="c1"># ax.text(0, 75, &#39;$m_1^s$&#39;, fontsize = 13, color = &#39;C8&#39;)</span>
+<span class="c1"># ax.text(38, -155, &#39;$Y_1$&#39;, fontsize = 13, color = &#39;C8&#39;)</span>
+
+<span class="c1"># ax.yaxis.set_major_locator(plt.NullLocator())   </span>
+<span class="c1"># ax.xaxis.set_major_locator(plt.NullLocator())</span>
+
+<span class="c1"># ax.set(title=&quot;Incremento de la tasa de interés en el plano $(Y, m)$&quot;, xlabel= &#39;Y&#39;, ylabel= &#39;$m^s$&#39;)</span>
+<span class="c1"># ax.legend()</span>
+
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Dos gráficos en un solo cuadro</span>
+<span class="c1"># fig, (ax1, ax2) = plt.subplots(2, figsize=(8, 16)) </span>
+
+<span class="c1"># #---------------------------------</span>
+<span class="c1">#     # IS_PM</span>
+
+<span class="c1"># # Curvas a graficar</span>
+<span class="c1"># ax1.plot(IS_CB, label = &quot;IS&quot;, color = &quot;C1&quot;) #IS</span>
+<span class="c1"># ax1.plot(r_ec, color = &quot;red&quot;, label =&quot;PM&quot;) #r: tasa de interés</span>
+<span class="c1"># ax1.plot(r_ec_2, color = &quot;red&quot;, label =&quot;PM_2&quot;, linestyle = &#39;dashed&#39;) #r: tasa de interés</span>
+
+<span class="c1"># ax1.axline((intersec_1[1], intersec_1[0]), slope=0.25, color=&quot;C0&quot;, label = &#39;LM&#39;)</span>
+<span class="c1"># ax1.axline((intersec_2[1], intersec_2[0]), slope=0.25, color=&quot;C0&quot;, label = &#39;LM_2&#39;, linestyle = &#39;dashed&#39;)</span>
+
+<span class="c1"># ax1.axvline(x=intersec_1[1], ymin= 0, ymax= 1, linestyle = &quot;:&quot;, color = &quot;grey&quot;)</span>
+<span class="c1"># ax1.axvline(x=intersec_2[1], ymin= 0, ymax= 1, linestyle = &quot;:&quot;, color = &quot;grey&quot;)</span>
+
+<span class="c1"># ax1.text(0, 16, &#39;$r_0$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+<span class="c1"># ax1.text(51, -5, &#39;$Y_0$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+<span class="c1"># ax1.text(48, 16.5, &#39;$E_0$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+
+<span class="c1"># ax1.text(0, 21, &#39;$r_1$&#39;, fontsize = 13, color = &#39;red&#39;)</span>
+<span class="c1"># ax1.text(40, -5, &#39;$Y_1$&#39;, fontsize = 13, color = &#39;red&#39;)</span>
+<span class="c1"># ax1.text(35, 22, &#39;$E_1$&#39;, fontsize = 13, color = &#39;red&#39;)</span>
+
+<span class="c1"># ax1.set(title=&quot;Incremento de la tasa de interés $(r)$&quot;, xlabel= &#39;Y&#39;, ylabel= &#39;r&#39;)</span>
+<span class="c1"># ax1.legend()</span>
+
+
+<span class="c1"># #---------------------------------</span>
+<span class="c1">#     # YY-MM</span>
+    
+<span class="c1"># ax2.plot(LM_CB, label = &quot;LM&quot;, color = &quot;C0&quot;) #LM</span>
+<span class="c1"># ax2.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = &quot;C8&quot;, label = &#39;YY&#39;)</span>
+<span class="c1"># ax2.axvline(x=intersec_2[1], ymin= 0, ymax= 1, color = &quot;C8&quot;, label = &#39;YY_t&#39;, linestyle = &#39;dashed&#39;)</span>
+
+<span class="c1"># ax2.axhline(y=145, xmin= 0, xmax= 0.5, color = &quot;grey&quot;, linestyle = &#39;:&#39;)</span>
+<span class="c1"># ax2.axhline(y=65, xmin= 0, xmax= 0.38, color = &quot;grey&quot;, linestyle = &#39;:&#39;)</span>
+
+<span class="c1"># ax2.text(0, 160, &#39;$m_0^s$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+<span class="c1"># ax2.text(51, -155, &#39;$Y_0$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+
+<span class="c1"># ax2.text(0, 75, &#39;$m_1^s$&#39;, fontsize = 13, color = &#39;C8&#39;)</span>
+<span class="c1"># ax2.text(38, -155, &#39;$Y_1$&#39;, fontsize = 13, color = &#39;C8&#39;)</span>
+
+<span class="c1"># ax2.set(xlabel= &#39;Y&#39;, ylabel= &#39;$m^s$&#39;)</span>
+<span class="c1"># ax2.legend()</span>
+
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># #--------------------------------------------------</span>
+<span class="c1">#     # Curva LM</span>
+    
+<span class="c1"># # Parámetros</span>
+
+<span class="c1"># Y_size = 100</span>
+
+<span class="c1"># P = 3.5</span>
+<span class="c1"># k = 1.76</span>
+<span class="c1"># j = 3</span>
+<span class="c1"># r = 15</span>
+
+<span class="c1"># Y = np.arange(Y_size)</span>
+
+<span class="c1"># # Ecuación</span>
+
+<span class="c1"># def LM_CB(Y, P, k, j, r):</span>
+<span class="c1">#     LM_CB = P*(k*Y - j*r)</span>
+<span class="c1">#     return LM_CB</span>
+
+<span class="c1"># LM_CB = LM_CB(Y, P, k, j, r)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#     # Gráfico del modelo IS-PM</span>
+
+<span class="c1"># # Dimensiones del gráfico</span>
+<span class="c1"># y_max = np.max(Y)</span>
+<span class="c1"># fig, ax = plt.subplots(figsize=(10, 8))</span>
+
+<span class="c1"># # Curvas a graficar</span>
+<span class="c1"># ax.plot(LM_CB, label = &quot;LM&quot;, color = &quot;C0&quot;) #IS</span>
+<span class="c1"># plt.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = &quot;C8&quot;, label = &#39;YY&#39;)</span>
+
+<span class="c1"># plt.axhline(y=145, xmin= 0, xmax= 0.5, color = &quot;grey&quot;, linestyle = &#39;:&#39;)</span>
+
+<span class="c1"># ax.text(0, 160, &#39;$m_0^s$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+<span class="c1"># ax.text(51, -155, &#39;$Y_0$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+<span class="c1"># ax.text(45, 160, &#39;$E_0$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+
+<span class="c1"># ax.yaxis.set_major_locator(plt.NullLocator())   </span>
+<span class="c1"># ax.xaxis.set_major_locator(plt.NullLocator())</span>
+
+<span class="c1"># ax.set(title=&quot;IS-LM con tasa de interés $(r)$ exógena en el plano $(Y, m)$&quot;, xlabel= &#39;Y&#39;, ylabel= &#39;$m^s$&#39;)</span>
+<span class="c1"># ax.legend()</span>
+
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Dos gráficos en un solo cuadro</span>
+<span class="c1"># fig, (ax1, ax2) = plt.subplots(2, figsize=(8, 16)) </span>
+
+<span class="c1"># #---------------------------------</span>
+<span class="c1">#     # IS_PM</span>
+
+<span class="c1"># # Curvas a graficar</span>
+<span class="c1"># ax1.plot(IS_CB, label = &quot;IS&quot;, color = &quot;C1&quot;) #IS</span>
+<span class="c1"># ax1.plot(r_ec, color = &quot;red&quot;, label =&quot;PM&quot;) #r: tasa de interés</span>
+
+<span class="c1"># ax1.axvline(intersec_1[1], ymin= 0, ymax= 1, linestyle = &quot;:&quot;, color = &quot;grey&quot;)</span>
+<span class="c1"># ax1.axline((intersec_1[1], intersec_1[0]), slope=0.25, color=&quot;C0&quot;, label = &#39;LM&#39;)</span>
+
+<span class="c1"># ax1.yaxis.set_major_locator(plt.NullLocator())   </span>
+<span class="c1"># ax1.xaxis.set_major_locator(plt.NullLocator())</span>
+
+<span class="c1"># ax1.text(0, 16, &#39;$r_0$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+<span class="c1"># ax1.text(51, -5, &#39;$Y_0$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+<span class="c1"># ax1.text(48, 16.5, &#39;$E_0$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+
+<span class="c1"># ax1.set(title=&quot;IS-LM con r exógena&quot;, xlabel= &#39;Y&#39;, ylabel= &#39;r&#39;)</span>
+<span class="c1"># ax1.legend()</span>
+
+
+<span class="c1"># #---------------------------------</span>
+<span class="c1">#     # YY-MM</span>
+    
+<span class="c1"># ax2.plot(LM_CB, label = &quot;MM&quot;, color = &quot;C0&quot;) #IS</span>
+<span class="c1"># ax2.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = &quot;C8&quot;, label = &#39;YY&#39;)</span>
+
+<span class="c1"># ax2.axhline(y=145, xmin= 0, xmax= 0.5, color = &quot;grey&quot;, linestyle = &#39;:&#39;)</span>
+
+<span class="c1"># ax1.yaxis.set_major_locator(plt.NullLocator())   </span>
+<span class="c1"># ax1.xaxis.set_major_locator(plt.NullLocator())</span>
+
+<span class="c1"># ax2.text(0, 160, &#39;$m_0^s$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+<span class="c1"># ax2.text(51, -155, &#39;$Y_0$&#39;, fontsize = 13, color = &#39;black&#39;)</span>
+
+<span class="c1"># ax2.set(xlabel= &#39;Y&#39;, ylabel= &#39;m&#39;)</span>
+<span class="c1"># ax2.legend()</span>
+
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # nombrar variables como símbolos</span>
+<span class="c1"># Co, Io, Go, Xo, h, b, m, t, P, k, j, r, beta_0, beta_1 = symbols(&#39;Co, Io, Go, Xo, h, b, m, t, P, k, j, r, beta_0, beta_1&#39;)</span>
+
+<span class="c1"># # # Beta_0 y beta_1</span>
+<span class="c1"># # beta_0 = (Co + Io + Go + Xo - h*r)</span>
+<span class="c1"># # beta_1 = (1-(b-m)*(1-t))</span>
+
+<span class="c1"># # Producto de equilibrio y la tasa de interes de equilibrio en el modelo IS-LM</span>
+<span class="c1"># Y_eq = (Co + Io + Go + Xo - h*r/(1-(b-m)*(1-t)))</span>
+<span class="c1"># Ms_eq = (Co + Io + Go + Xo - h*r/(1-(b-m)*(1-t)))*(P*k) - (P*j*r)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "alexanderquispe/1REI05",
+            ref: "jupyterbook",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="tutorial6_modelo_da_oa.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">MODELO DE DEMANDA Y OFERTA AGREGADA</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By M.Sc. Alexander Quispe Rojas<br/>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

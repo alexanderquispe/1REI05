@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EL MODELO MACROECONÓMICO IS-LM: &#8212; 1REI05 at PUCP (Python scripts)</title>
+    <title>4.El Modelo Macroeconómico IS-LM &#8212; 1REI05 at PUCP (Python scripts)</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="MODELO DE DEMANDA Y OFERTA AGREGADA" href="tutorial6_modelo_da_oa.html" />
-    <link rel="prev" title="EL MERCADO MONETARIO" href="tutorial4_mercado_monetario_curva_lm.html" />
+    <link rel="next" title="5. Modelo de Oferta y Demanda Agregada" href="tutorial6_modelo_da_oa.html" />
+    <link rel="prev" title="3. El Mercado Monetario" href="tutorial4_mercado_monetario_curva_lm.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -103,36 +103,36 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial2_modelo_keynesiano.html">
-   MERCADO DE BIENES: CONSUMO, INVERSIÓN, DETERMINACIÓN DEL PRODUCTO Y LA POLÍTICA FISCAL
+   1. Mercado de Bienes: Consumo, Inversión, Determinación del Precio, y la Política Fiscal
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial3.html">
-   2. El modelo de Ingreso-Gasto Keynesiano:
+   2. La curva IS (Inversión-Ahorro)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial4_mercado_monetario_curva_lm.html">
-   EL MERCADO MONETARIO
+   3. El Mercado Monetario
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   EL MODELO MACROECONÓMICO IS-LM:
+   4.El Modelo Macroeconómico IS-LM
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial6_modelo_da_oa.html">
-   MODELO DE DEMANDA Y OFERTA AGREGADA
+   5. Modelo de Oferta y Demanda Agregada
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial7_modelo_is_lm_r_exogena.html">
-   MODELO IS-LM CON TASA DE INTERÉS EXÓGENA
+   6. Modelo IS-LM con Tasa de Interés Exógena
    <span class="math notranslate nohighlight">
     \((r)\)
    </span>
-   FIJADA POR EL BANCO CENTRAL:
+   fijada por el Banco Central:
   </a>
  </li>
 </ul>
@@ -249,51 +249,41 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   EL MODELO MACROECONÓMICO IS-LM:
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#como-son-las-pendientes-de-las-curvas-is-lm">
-   Cómo son las pendientes de las curvas IS LM ?
+   4.1. ¿Cómo son las pendientes de las curvas IS-LM?
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#el-elquilibrio-en-el-modelo-is-lm">
-   1. El elquilibrio en el modelo IS-LM:
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-equilibrio-en-el-modelo-is-lm">
+   4.2. El equilibrio en el Modelo IS-LM
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grafico-del-equilibhrio-en-el-modelo-is-lm">
-     2. Gráfico del equilibhrio en el modelo IS-LM
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grafico-del-equilibrio-en-el-modelo-is-lm">
+     4.2.1. Gráfico del equilibrio en el Modelo IS-LM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ecuaciones-de-equilibrio">
+     4.2.2. Ecuaciones de equilibrio
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graficar-el-equilibrio">
-   Graficar el equilibrio
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estatica-comparativa">
+   4.3. Estática comparativa
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#encontramos-las-ecuaciones-de-equilibrio">
-   Encontramos las ecuaciones de equilibrio
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estatica-comparativa">
-     3. Estática comparativa:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#politica-fiscal-expansiva">
-     - Política Fiscal Expansiva:
+     4.3.1. Política Fiscal Expansiva:
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#politica-monetaria-expansiva">
-     - Política Monetaria Expansiva:
+     4.3.2. Política Monetaria Expansiva
     </a>
    </li>
   </ul>
@@ -308,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>EL MODELO MACROECONÓMICO IS-LM:</h1>
+                <h1>4.El Modelo Macroeconómico IS-LM</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -318,51 +308,41 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   EL MODELO MACROECONÓMICO IS-LM:
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#como-son-las-pendientes-de-las-curvas-is-lm">
-   Cómo son las pendientes de las curvas IS LM ?
+   4.1. ¿Cómo son las pendientes de las curvas IS-LM?
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#el-elquilibrio-en-el-modelo-is-lm">
-   1. El elquilibrio en el modelo IS-LM:
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-equilibrio-en-el-modelo-is-lm">
+   4.2. El equilibrio en el Modelo IS-LM
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grafico-del-equilibhrio-en-el-modelo-is-lm">
-     2. Gráfico del equilibhrio en el modelo IS-LM
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grafico-del-equilibrio-en-el-modelo-is-lm">
+     4.2.1. Gráfico del equilibrio en el Modelo IS-LM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ecuaciones-de-equilibrio">
+     4.2.2. Ecuaciones de equilibrio
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graficar-el-equilibrio">
-   Graficar el equilibrio
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estatica-comparativa">
+   4.3. Estática comparativa
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#encontramos-las-ecuaciones-de-equilibrio">
-   Encontramos las ecuaciones de equilibrio
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estatica-comparativa">
-     3. Estática comparativa:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#politica-fiscal-expansiva">
-     - Política Fiscal Expansiva:
+     4.3.1. Política Fiscal Expansiva:
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#politica-monetaria-expansiva">
-     - Política Monetaria Expansiva:
+     4.3.2. Política Monetaria Expansiva
     </a>
    </li>
   </ul>
@@ -386,14 +366,16 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
 <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="c1">#from causalgraphicalmodels import CausalGraphicalModel</span>
+<span class="kn">from</span> <span class="nn">causalgraphicalmodels</span> <span class="kn">import</span> <span class="n">CausalGraphicalModel</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_5620</span><span class="o">/</span><span class="mf">3680031957.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_16640</span><span class="o">/</span><span class="mf">3856461433.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;widget&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
@@ -482,12 +464,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="el-modelo-macroeconomico-is-lm">
-<h1>EL MODELO MACROECONÓMICO IS-LM:<a class="headerlink" href="#el-modelo-macroeconomico-is-lm" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="el-modelo-macroeconomico-is-lm">
+<h1>4.El Modelo Macroeconómico IS-LM<a class="headerlink" href="#el-modelo-macroeconomico-is-lm" title="Permalink to this headline">¶</a></h1>
 <p><img alt="download.png" src="notebooks/attachment:9e26dade-c7ff-4570-981e-ec7efb7a26f6.png" /><img alt="Lab4.png" src="notebooks/attachment:Lab4.png" /></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="como-son-las-pendientes-de-las-curvas-is-lm">
-<h1>Cómo son las pendientes de las curvas IS LM ?<a class="headerlink" href="#como-son-las-pendientes-de-las-curvas-is-lm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="como-son-las-pendientes-de-las-curvas-is-lm">
+<h2>4.1. ¿Cómo son las pendientes de las curvas IS-LM?<a class="headerlink" href="#como-son-las-pendientes-de-las-curvas-is-lm" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#--------------------------------------------------</span>
@@ -584,8 +565,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="el-elquilibrio-en-el-modelo-is-lm">
-<h1>1. El elquilibrio en el modelo IS-LM:<a class="headerlink" href="#el-elquilibrio-en-el-modelo-is-lm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="el-equilibrio-en-el-modelo-is-lm">
+<h2>4.2. El equilibrio en el Modelo IS-LM<a class="headerlink" href="#el-equilibrio-en-el-modelo-is-lm" title="Permalink to this headline">¶</a></h2>
 <p>Por un lado, considerando la ecuación de la curva IS</p>
 <div class="math notranslate nohighlight">
 \[ r = \frac{B_o}{h} - \frac{B_1}{h}Y \]</div>
@@ -609,8 +590,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="math notranslate nohighlight">
 \[ r^e = \frac{kB_o}{kh + jB_1} - (\frac{B_1}{kh + jB_1})\frac{Ms_o}{P_o} \]</div>
 <p>Estas dos ecuaciones representan el modelo IS-LM</p>
-<div class="section" id="grafico-del-equilibhrio-en-el-modelo-is-lm">
-<h2>2. Gráfico del equilibhrio en el modelo IS-LM<a class="headerlink" href="#grafico-del-equilibhrio-en-el-modelo-is-lm" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="grafico-del-equilibrio-en-el-modelo-is-lm">
+<h3>4.2.1. Gráfico del equilibrio en el Modelo IS-LM<a class="headerlink" href="#grafico-del-equilibrio-en-el-modelo-is-lm" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#--------------------------------------------------</span>
@@ -665,10 +646,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="graficar-el-equilibrio">
-<h1>Graficar el equilibrio<a class="headerlink" href="#graficar-el-equilibrio" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfico del modelo IS-LM</span>
@@ -707,12 +684,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/tutorial5_modelo_is_lm_14_0.png" src="../_images/tutorial5_modelo_is_lm_14_0.png" />
+<img alt="../_images/tutorial5_modelo_is_lm_13_0.png" src="../_images/tutorial5_modelo_is_lm_13_0.png" />
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="encontramos-las-ecuaciones-de-equilibrio">
-<h1>Encontramos las ecuaciones de equilibrio<a class="headerlink" href="#encontramos-las-ecuaciones-de-equilibrio" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ecuaciones-de-equilibrio">
+<h3>4.2.2. Ecuaciones de equilibrio<a class="headerlink" href="#ecuaciones-de-equilibrio" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Beta_0 y beta_1</span>
@@ -726,11 +703,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="estatica-comparativa">
-<h2>3. Estática comparativa:<a class="headerlink" href="#estatica-comparativa" title="Permalink to this headline">¶</a></h2>
 </div>
+</div>
+<div class="section" id="estatica-comparativa">
+<h2>4.3. Estática comparativa<a class="headerlink" href="#estatica-comparativa" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="politica-fiscal-expansiva">
-<h2>- Política Fiscal Expansiva:<a class="headerlink" href="#politica-fiscal-expansiva" title="Permalink to this headline">¶</a></h2>
+<h3>4.3.1. Política Fiscal Expansiva:<a class="headerlink" href="#politica-fiscal-expansiva" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Mercado de Bienes
 $<span class="math notranslate nohighlight">\( Go↑ → DA↑ → DA&gt;Y → Y↑ \)</span>$</p></li>
@@ -901,12 +879,12 @@ $<span class="math notranslate nohighlight">\( Y↑ → Md↑ → Md&gt;Ms → r
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/tutorial5_modelo_is_lm_27_0.png" src="../_images/tutorial5_modelo_is_lm_27_0.png" />
+<img alt="../_images/tutorial5_modelo_is_lm_26_0.png" src="../_images/tutorial5_modelo_is_lm_26_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="politica-monetaria-expansiva">
-<h2>- Política Monetaria Expansiva:<a class="headerlink" href="#politica-monetaria-expansiva" title="Permalink to this headline">¶</a></h2>
+<h3>4.3.2. Política Monetaria Expansiva<a class="headerlink" href="#politica-monetaria-expansiva" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Mercado de dinero
 $<span class="math notranslate nohighlight">\( Ms↑ → M^o↑ → M^o &gt; M^d → r↓ \)</span>$</p></li>
@@ -1072,7 +1050,8 @@ $<span class="math notranslate nohighlight">\( r↓ → I↑ → DA&gt;Y → Y�
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/tutorial5_modelo_is_lm_35_0.png" src="../_images/tutorial5_modelo_is_lm_35_0.png" />
+<img alt="../_images/tutorial5_modelo_is_lm_34_0.png" src="../_images/tutorial5_modelo_is_lm_34_0.png" />
+</div>
 </div>
 </div>
 </div>
@@ -1107,13 +1086,13 @@ $<span class="math notranslate nohighlight">\( r↓ → I↑ → DA&gt;Y → Y�
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">EL MERCADO MONETARIO</p>
+            <p class="prev-next-title">3. El Mercado Monetario</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="tutorial6_modelo_da_oa.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">MODELO DE DEMANDA Y OFERTA AGREGADA</p>
+        <p class="prev-next-title">5. Modelo de Oferta y Demanda Agregada</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

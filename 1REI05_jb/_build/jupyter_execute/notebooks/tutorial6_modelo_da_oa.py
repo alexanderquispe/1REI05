@@ -13,13 +13,20 @@ import sympy as sy
 from sympy import *
 import pandas as pd
 #from causalgraphicalmodels import CausalGraphicalModel
+from IPython.display import Image
+import warnings
+warnings.filterwarnings('ignore')
 
 
-# ### MODELO DE DEMANDA Y OFERTA AGREGADA
+# # 5. Modelo de Oferta y Demanda Agregada
 
-# ![Lab5.png](attachment:Lab5.png)
+# In[6]:
 
-# #### 1. Demanda Agregada $(DA)$:
+
+Image('tutorial6.png')
+
+
+# ## 5.1. Demanda Agregada $(DA)$:
 
 # Matemáticamente, la forma de la función de demanda agregada se puede obtener de las ecuaciones de la IS y la LM, eliminando “r” y despejando P. Para efectuar esta operación se supondrá que P no está dado.
 
@@ -268,9 +275,9 @@ ax2.legend()
 plt.show()
 
 
-# #### 2. Oferta Agregada $(OA)$:
+# ## 5.2. Oferta Agregada $(OA)$
 
-# #### - Oferta Agregada en el corto plazo:
+# ### 5.2.1. Oferta Agregada en el corto plazo
 # 
 # El corto plazo es un periodo en el cual el producto $(Y)$ se ubica por debajo o por encima de su nivel de largo plazo o Producto Potencial $(\bar{Y})$.
 # 
@@ -332,7 +339,7 @@ df_r_eq_OA_Y = diff(r_eq_OA, Y)
 print("La pendiente de la curva OA es", df_r_eq_OA_Y)  
 
 
-# #### 3. Equilibrio entre la Demanda Agregada y la Oferta Agregada: Modelo DA-OA
+# ## 5.3. Equilibrio entre la Demanda Agregada y la Oferta Agregada: Modelo DA-OA
 
 # In[10]:
 
@@ -465,8 +472,9 @@ ax.legend()
 plt.show()
 
 
-# ### 3.1 Ecuaciones de equilibrio DA-OA:
-# ### Tienen que recordar que en el modelo DA-OA tenemos tres variables endógenas. $$Y^{eq}, r^{eq} , P^{eq}$$
+# ## 5.4. Ecuaciones de equilibrio DA-OA
+
+# Tienen que recordar que en el modelo DA-OA tenemos tres variables endógenas. $$Y^{eq}, r^{eq} , P^{eq}$$
 
 # Considerando la ecuación de la demanda agregada $(DA)$:
 # 
@@ -511,7 +519,8 @@ plt.show()
 # $$ r^{eq\_da\_oa} = \frac{kB_o}{kh + jB_1} - (\frac{B_1}{kh + jB_1})*(Ms_o - P^e + θ( [ \frac{1}{(θ + \frac{jB_1 + hk}{h})} ]*[(\frac{h Mo^s + jB_o}{h} - P^e + θ\bar{Y})] - \bar{Y} ) ) $$
 # 
 
-# ## Los valores de equilibrio de las tres principales variables endógenas 
+# Los valores de equilibrio de las tres principales variables endógenas 
+# 
 # 1. $$ Y^{eq\_da\_oa} = [ \frac{1}{(θ + \frac{jB_1 + hk}{h})} ]*[(\frac{h Mo^s + jB_o}{h} - P^e + θ\bar{Y})]$$
 # 
 # 2. $$ r^{eq\_da\_oa} = \frac{kB_o}{kh + jB_1} - (\frac{B_1}{kh + jB_1})*(Ms_o - P^e + θ( [ \frac{1}{(θ + \frac{jB_1 + hk}{h})} ]*\\
@@ -547,9 +556,9 @@ r_eq = (j*beta_0)/(k*h + j*beta_1) + ( h / (k*h + j*beta_1) )*(Ms - P_eq)
 #((h*Ms+j*beta_0)/h) - ((j*beta_1+h*r)/h)*((P-Pe-θ*_Y)/θ)
 
 
-# #### 4. Estática comparativa DA-OA:
+# ## 5.5. Estática comparativa DA-OA
 
-# #### - Incremento en el Precio Esperado $(P^e)$:
+# ### 5.5.1. Incremento en el Precio Esperado $(P^e)$:
 
 # - Intuición:
 # 
@@ -830,7 +839,7 @@ ax2.legend()
 plt.show
 
 
-# #### Incremento en la Masa Monetaria $(M_o^s)$:
+# ### 5.5.2. Incremento en la Masa Monetaria $(M_o^s)$:
 
 # - Intuición:
 # 
@@ -1087,16 +1096,4 @@ ax2.set(xlabel= r'Y', ylabel= r'P')
 ax2.legend()
 
 plt.show
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 

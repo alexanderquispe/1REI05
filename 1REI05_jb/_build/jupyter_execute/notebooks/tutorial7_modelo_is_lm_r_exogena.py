@@ -13,11 +13,14 @@ import sympy as sy
 from sympy import *
 import pandas as pd
 #from causalgraphicalmodels import CausalGraphicalModel
+from IPython.display import Image
+import warnings
+warnings.filterwarnings('ignore')
 
 
-# ### MODELO IS-LM CON TASA DE INTERÉS EXÓGENA $(r)$ FIJADA POR EL BANCO CENTRAL:
+# # 6. Modelo IS-LM con Tasa de Interés Exógena $(r)$ fijada por el Banco Central:
 
-# #### 2. Ecuaciones:
+# ## 6.1. Ecuaciones
 
 # - Ecuación de la IS: 
 # 
@@ -59,7 +62,7 @@ import pandas as pd
 # 
 # $$ M^s = P_0(kY - jr) $$
 
-# #### 3. Equilibrio IS-LM con $r$ exógena:
+# ## 6.2. Equilibrio IS-LM con $r$ exógena
 
 # - Ingreso de equilibrio: es igual a la ecuación de la IS
 # 
@@ -74,7 +77,7 @@ import pandas as pd
 # 
 # $$ M^e_s = P_0k(\frac{1}{1 - (b - m)(1 - t)} (C_o + I_o + G_o + X_o - hr)) - P_0jr $$
 
-# ### Curva IS
+# ## 6.3. Curva IS
 
 # In[ ]:
 
@@ -105,7 +108,7 @@ def IS_CB(Co, b, t, Io, h, Xo, m, Go):
 IS_CB = IS_CB(Co, b, t, Io, h, Xo, m, Go)
 
 
-# ### Curva LM
+# ## 6.4.Curva LM
 
 # In[22]:
 
@@ -133,7 +136,7 @@ def LM_CB(Y, P, k, j, r):
 LM_CB = LM_CB(Y, P, k, j, r)
 
 
-# ### Funcion para encontrar el cruce de rectas
+# ## 6.5. Funcion para encontrar el cruce de rectas
 
 # In[23]:
 
@@ -178,7 +181,7 @@ intersec_1 = line_intersection((A, B), (C, D))
 intersec_1 # (y,x)
 
 
-# ### Gráfico del modelo IS-LM-PM
+# ## 6.6. Gráfico del modelo IS-LM-PM
 
 # In[27]:
 
@@ -209,7 +212,7 @@ ax.legend()
 plt.show()
 
 
-# ### 4. Estática comparativa:
+# ## 6.7. Estática comparativa
 
 # In[29]:
 
@@ -226,7 +229,7 @@ Y_eq = (Co + Io + Go + Xo - h*r/(1-(b-m)*(1-t)))
 Ms_eq = (Co + Io + Go + Xo - h*r/(1-(b-m)*(1-t)))*(P*k) - (P*j*r)
 
 
-# #### Incremento tasa de interés $(r)$:
+# ### 6.7.1. Incremento tasa de interés $(r)$
 
 # - Matemática:
 

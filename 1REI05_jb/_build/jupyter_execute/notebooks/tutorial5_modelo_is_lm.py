@@ -12,14 +12,16 @@ import numpy as np
 import sympy as sy
 from sympy import *
 import pandas as pd
-#from causalgraphicalmodels import CausalGraphicalModel
+from causalgraphicalmodels import CausalGraphicalModel
+import warnings
+warnings.filterwarnings('ignore')
 
 
-# ### EL MODELO MACROECONÓMICO IS-LM:
+# # 4.El Modelo Macroeconómico IS-LM
 
 # ![download.png](attachment:9e26dade-c7ff-4570-981e-ec7efb7a26f6.png)![Lab4.png](attachment:Lab4.png)
 
-# # Cómo son las pendientes de las curvas IS LM ? 
+# ## 4.1. ¿Cómo son las pendientes de las curvas IS-LM? 
 
 # In[2]:
 
@@ -103,7 +105,7 @@ df_r_eq_lm_y = diff(r_eq_lm, Y)
 print("La pendiente de la curva IS es", df_r_eq_lm_y)  # este diferencial es positivo
 
 
-# # 1. El elquilibrio en el modelo IS-LM:
+# ## 4.2. El equilibrio en el Modelo IS-LM
 
 # Por un lado, considerando la ecuación de la curva IS
 # 
@@ -129,7 +131,7 @@ print("La pendiente de la curva IS es", df_r_eq_lm_y)  # este diferencial es pos
 # 
 # Estas dos ecuaciones representan el modelo IS-LM
 
-# #### 2. Gráfico del equilibhrio en el modelo IS-LM
+# ### 4.2.1. Gráfico del equilibrio en el Modelo IS-LM
 
 # In[5]:
 
@@ -184,8 +186,6 @@ def r_LM(k, j, Ms, P, Y):
 r_lm = r_LM( k, j, Ms, P, Y)
 
 
-# # Graficar el equilibrio
-
 # In[6]:
 
 
@@ -223,8 +223,7 @@ ax.legend()
 plt.show()
 
 
-# # Encontramos las ecuaciones de equilibrio 
-# 
+# ### 4.2.2. Ecuaciones de equilibrio 
 
 # In[7]:
 
@@ -238,9 +237,9 @@ Y_eq = (k*beta_0)/(k*h + j*beta_1) - ( beta_1 / (k*h + j*beta_1) )*(Ms/P)
 r_eq = (j*beta_0)/(k*h + j*beta_1) + ( h / (k*h + j*beta_1) )*(Ms/P)
 
 
-# #### 3. Estática comparativa:
+# ## 4.3. Estática comparativa
 
-# #### - Política Fiscal Expansiva:
+# ### 4.3.1. Política Fiscal Expansiva:
 # 
 
 # - Mercado de Bienes
@@ -394,7 +393,7 @@ ax.legend()
 plt.show()
 
 
-# #### - Política Monetaria Expansiva:
+# ### 4.3.2. Política Monetaria Expansiva
 
 # - Mercado de dinero
 # $$ Ms↑ → M^o↑ → M^o > M^d → r↓ $$
@@ -543,22 +542,4 @@ ax.set(title="Efecto de un incremento de la masa monetaria", xlabel= r'Y', ylabe
 ax.legend()
 
 plt.show()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 

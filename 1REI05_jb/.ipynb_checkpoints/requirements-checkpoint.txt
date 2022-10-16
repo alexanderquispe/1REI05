@@ -3,3 +3,4 @@ matplotlib
 numpy
 panel
 holoviews
+ipympl

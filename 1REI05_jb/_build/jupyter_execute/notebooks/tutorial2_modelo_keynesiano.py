@@ -4,18 +4,16 @@
 # In[1]:
 
 
-#pip install sympy
+# !pip install sympy
+# !pip install ipywidgets
+# !pip install causalgraphicalmodels
+# !pip install ipympl
 
 
 # In[2]:
 
 
-#pip install ipywidgets
-
-
-# In[3]:
-
-
+# import ipympl
 get_ipython().run_line_magic('matplotlib', 'widget')
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
@@ -25,15 +23,22 @@ import sympy as sy
 from sympy import *
 import pandas as pd
 from causalgraphicalmodels import CausalGraphicalModel
+from IPython.display import Image
+import warnings
+warnings.filterwarnings('ignore')
 
 
-# ### MERCADO DE BIENES: CONSUMO, INVERSIÓN, DETERMINACIÓN DEL PRODUCTO Y LA POLÍTICA FISCAL
+# # 1. Mercado de Bienes: Consumo, Inversión, Determinación del Precio, y la Política Fiscal
 
-# #### 1. Modelo Keynesiano: 
+# ## 1.1. Modelo Keynesiano: 
 
-# ![Lab2.jpg](attachment:Lab2.jpg)
+# In[22]:
 
-# #### 2. El modelo de Ingreso-Gasto Keynesiano:
+
+Image('tutorial2.jpg')
+
+
+# ## 1.2. El modelo de Ingreso-Gasto Keynesiano:
 
 # La ecuación de equilibrio para el Ingreso Agregado se deriva de la condición de equilibrio donde el ingreso es igual a la demanda agregada: $DA = Y$:
 # 
@@ -224,9 +229,9 @@ ax.legend() #mostrar leyenda
 plt.show()
 
 
-# #### 2.1. Estática comparativa del modelo de Ingreso-Gasto Keynesiano:
+# ### 1.2.1. Estática comparativa del modelo de Ingreso-Gasto Keynesiano:
 
-# #### - Política Fiscal contractiva con reducción del Gasto del Gobierno $(G_0)$:
+# #### Política Fiscal contractiva con reducción del Gasto del Gobierno $(G_0)$:
 
 # In[77]:
 
@@ -396,7 +401,7 @@ df_Go = diff(f, Go) # diff(función, variable_analizar
 df_Go #∆Y/∆Go
 
 
-# #### - Política fiscal expansiva con una reducción de la Tasa de Tributación $(t)$:
+# #### Política fiscal expansiva con una reducción de la Tasa de Tributación $(t)$:
 
 # In[84]:
 

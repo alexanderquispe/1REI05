@@ -4,7 +4,7 @@
 # In[1]:
 
 
-get_ipython().run_line_magic('matplotlib', 'widget')
+# %matplotlib widget
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
 import matplotlib.pyplot as plt
@@ -79,7 +79,7 @@ warnings.filterwarnings('ignore')
 
 # ## 6.3. Curva IS
 
-# In[ ]:
+# In[2]:
 
 
 #--------------------------------------------------
@@ -110,7 +110,7 @@ IS_CB = IS_CB(Co, b, t, Io, h, Xo, m, Go)
 
 # ## 6.4.Curva LM
 
-# In[22]:
+# In[3]:
 
 
 #--------------------------------------------------
@@ -138,7 +138,7 @@ LM_CB = LM_CB(Y, P, k, j, r)
 
 # ## 6.5. Funcion para encontrar el cruce de rectas
 
-# In[23]:
+# In[4]:
 
 
 # líneas punteadas autómaticas
@@ -163,7 +163,7 @@ def line_intersection(line1, line2):
 
 # ### Encontrar puntos de cruce
 
-# In[26]:
+# In[5]:
 
 
 r_ec = np.full((100), 15)
@@ -183,7 +183,7 @@ intersec_1 # (y,x)
 
 # ## 6.6. Gráfico del modelo IS-LM-PM
 
-# In[27]:
+# In[6]:
 
 
 # Gráfico del modelo IS-PM
@@ -214,7 +214,7 @@ plt.show()
 
 # ## 6.7. Estática comparativa
 
-# In[29]:
+# In[7]:
 
 
 # nombrar variables como símbolos
@@ -233,7 +233,7 @@ Ms_eq = (Co + Io + Go + Xo - h*r/(1-(b-m)*(1-t)))*(P*k) - (P*j*r)
 
 # - Matemática:
 
-# In[30]:
+# In[8]:
 
 
 df_Y_eq_r = diff(Y_eq, r)
@@ -250,7 +250,7 @@ print("El Diferencial del Producto con respecto al diferencial de la tasa de int
 # 
 # 
 
-# In[31]:
+# In[9]:
 
 
 df_Ms_eq_r = diff(Ms_eq, r)
@@ -276,7 +276,7 @@ print("El Diferencial de la Masa Monetaria con respecto al diferencial de la tas
 
 # - Gráfico:
 
-# In[32]:
+# In[10]:
 
 
 #--------------------------------------------------
@@ -338,7 +338,7 @@ def LM_CB_2(Y, P, k, j, r):
 LM_CB_2 = LM_CB_2(Y, P, k, j, r)
 
 
-# In[33]:
+# In[11]:
 
 
 r_ec = np.full((100), 15)
@@ -356,7 +356,7 @@ intersec_1 = line_intersection((A, B), (C, D))
 intersec_1 # (y,x)
 
 
-# In[34]:
+# In[12]:
 
 
 r_ec_2 = np.full((100), 20)
@@ -374,7 +374,7 @@ intersec_2 = line_intersection((A, B), (C, D))
 intersec_2 # (y,x)
 
 
-# In[35]:
+# In[13]:
 
 
 # Gráfico del modelo IS-PM
@@ -408,7 +408,7 @@ ax.legend()
 plt.show()
 
 
-# In[38]:
+# In[14]:
 
 
 #     # Gráfico del modelo IS-PM
@@ -440,7 +440,7 @@ plt.show()
 # plt.show()
 
 
-# In[39]:
+# In[15]:
 
 
 # # Dos gráficos en un solo cuadro
@@ -494,7 +494,7 @@ plt.show()
 # plt.show()
 
 
-# In[40]:
+# In[16]:
 
 
 # #--------------------------------------------------
@@ -520,7 +520,7 @@ plt.show()
 # LM_CB = LM_CB(Y, P, k, j, r)
 
 
-# In[41]:
+# In[17]:
 
 
 #     # Gráfico del modelo IS-PM
@@ -548,7 +548,7 @@ plt.show()
 # plt.show()
 
 
-# In[42]:
+# In[18]:
 
 
 # # Dos gráficos en un solo cuadro
@@ -595,7 +595,7 @@ plt.show()
 # plt.show()
 
 
-# In[43]:
+# In[19]:
 
 
 # # nombrar variables como símbolos

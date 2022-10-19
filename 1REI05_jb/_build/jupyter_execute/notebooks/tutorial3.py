@@ -4,14 +4,14 @@
 # In[1]:
 
 
-get_ipython().run_line_magic('matplotlib', 'widget')
+# %matplotlib widget
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
 import matplotlib.pyplot as plt
 import numpy as np
 import sympy as sy
 import pandas as pd
-from causalgraphicalmodels import CausalGraphicalModel
+# from causalgraphicalmodels import CausalGraphicalModel
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -84,7 +84,7 @@ warnings.filterwarnings('ignore')
 
 # Y la curva IS se grafica de la siguiente manera:
 
-# In[23]:
+# In[2]:
 
 
 # Parámetros
@@ -111,7 +111,7 @@ def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
 r = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
 
 
-# In[20]:
+# In[3]:
 
 
 # Gráfico de la curva IS
@@ -154,7 +154,7 @@ plt.show()
 
 # - **Demanda Agregada**:
 
-# In[34]:
+# In[4]:
 
 
 # Parámetros
@@ -208,7 +208,7 @@ DA_G = DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y)
 
 # **- Curva IS**:
 
-# In[35]:
+# In[5]:
 
 
 # Parámetros
@@ -235,7 +235,7 @@ def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
 r = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
 
 
-# In[43]:
+# In[6]:
 
 
 # Gráfico de la derivación de la curva IS a partir de la igualdad (DA = Y)
@@ -294,7 +294,7 @@ plt.show()
 
 # #### 2.3.1. Disminución en el Gasto de Gobierno $(G_0)$:
 
-# In[37]:
+# In[7]:
 
 
 #--------------------------------------------------
@@ -338,7 +338,7 @@ def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
 r_G = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
 
 
-# In[38]:
+# In[8]:
 
 
 # Gráfico
@@ -362,7 +362,7 @@ ax.legend()
 plt.show()
 
 
-# In[39]:
+# In[9]:
 
 
 # Gráfico con movimiento
@@ -407,7 +407,7 @@ widgets.interact(r_IS_1, Go = Go_slide) #widgets.interact(nombre_función, pará
 
 # #### 2.3.2. Incremento en la tasa impositiva $(t)$:
 
-# In[40]:
+# In[10]:
 
 
 #--------------------------------------------------
@@ -451,7 +451,7 @@ def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
 r_t = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
 
 
-# In[32]:
+# In[11]:
 
 
 # Gráfico
@@ -475,7 +475,7 @@ ax.legend()
 plt.show()
 
 
-# In[42]:
+# In[12]:
 
 
 # Gráfico con movimiento

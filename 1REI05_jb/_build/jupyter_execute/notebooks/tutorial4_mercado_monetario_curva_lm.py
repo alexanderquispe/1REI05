@@ -18,7 +18,7 @@ import networkx
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from statsmodels.iolib.summary2 import summary_col
-from causalgraphicalmodels import CausalGraphicalModel
+# from causalgraphicalmodels import CausalGraphicalModel
 from IPython.display import Image
 import warnings
 warnings.filterwarnings('ignore')
@@ -30,6 +30,12 @@ warnings.filterwarnings('ignore')
 
 
 Image('tutorial3.png')
+
+
+# In[3]:
+
+
+Image('tutorial4.png')
 
 
 # ## 3.1. El equilibrio en el Mercado de Dinero
@@ -49,7 +55,7 @@ Image('tutorial3.png')
 # 
 # Y puede graficarse de la siguiente manera:
 
-# In[3]:
+# In[4]:
 
 
 # Parameters
@@ -74,7 +80,7 @@ MS = MS_0 / P
 MS
 
 
-# In[4]:
+# In[5]:
 
 
 # Equilibrio en el mercado de dinero
@@ -107,7 +113,7 @@ plt.show()
 
 # ### 3.1.1. ¿Qué sucede en el Mercado de Dinero si el producto se incrementa? 
 
-# In[5]:
+# In[6]:
 
 
 # Parameters con cambio en el nivel del producto
@@ -173,7 +179,7 @@ plt.show()
 
 # ### 3.1.2. ¿Qué sucede en el Mercado de Dinero si la cantidad de dinero se incrementa? 
 
-# In[6]:
+# In[7]:
 
 
 # Parameters con cambio en el nivel del producto
@@ -198,7 +204,7 @@ MS_1 = MS_0 / P_1
 MS
 
 
-# In[7]:
+# In[8]:
 
 
 # Equilibrio en el mercado de dinero
@@ -244,7 +250,7 @@ plt.show()
 
 # ## 3.2. Derivación de la Curva LM a partir del Equilibrio en el Mercado de Dinero
 
-# In[8]:
+# In[9]:
 
 
 #1----------------------Equilibrio mercado monetario
@@ -308,7 +314,7 @@ def i_LM( k, j, Ms, P, Y):
 i = i_LM( k, j, Ms, P, Y)
 
 
-# In[9]:
+# In[10]:
 
 
 # Gráfico de la derivación de la curva LM a partir del equilibrio en el mercado monetario
@@ -384,7 +390,7 @@ plt.show()
 # 
 # $$ r = -\frac{1}{j}\frac{M_o^s}{P_o} + \frac{k}{j}Y $$
 
-# In[10]:
+# In[11]:
 
 
 # Parameters
@@ -407,7 +413,7 @@ def i_LM( k, j, Ms, P, Y):
 i = i_LM( k, j, Ms, P, Y)
 
 
-# In[11]:
+# In[12]:
 
 
 # Gráfico de la curva LM
@@ -436,7 +442,7 @@ plt.show()
 
 # ### 3.4.1 Política monetaria expansiva: incremento en la Masa Monetaria $(M^s)$
 
-# In[12]:
+# In[13]:
 
 
 #--------------------------------------------------
@@ -475,7 +481,7 @@ def i_LM_Ms( k, j, Ms, P, Y):
 i_Ms = i_LM_Ms( k, j, Ms, P, Y)
 
 
-# In[13]:
+# In[14]:
 
 
 # Dimensiones del gráfico

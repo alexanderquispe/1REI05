@@ -4,7 +4,7 @@
 # In[1]:
 
 
-get_ipython().run_line_magic('matplotlib', 'widget')
+# %matplotlib widget
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
 import matplotlib.pyplot as plt
@@ -20,7 +20,7 @@ warnings.filterwarnings('ignore')
 
 # # 5. Modelo de Oferta y Demanda Agregada
 
-# In[6]:
+# In[2]:
 
 
 Image('tutorial6.png')
@@ -61,7 +61,7 @@ Image('tutorial6.png')
 # $$  P = \frac{h Mo^s + jB_o}{h} - \frac{jB_1 + hk}{h}Y $$
 # 
 
-# In[23]:
+# In[3]:
 
 
 # Parámetros
@@ -97,7 +97,7 @@ def P_AD(h, Ms, j, B0, B1, k, Y):
 P_AD = P_AD(h, Ms, j, B0, B1, k, Y)
 
 
-# In[24]:
+# In[4]:
 
 
 y_max = np.max(P_AD)
@@ -113,7 +113,7 @@ ax.legend()
 plt.show()
 
 
-# In[25]:
+# In[5]:
 
 
 # Primero declarar los simbolos
@@ -128,7 +128,7 @@ df_r_eq_DA_Y = diff(r_eq_DA, Y)
 print("La pendiente de la curva DA es", df_r_eq_DA_Y)  
 
 
-# In[26]:
+# In[6]:
 
 
 #--------------------------------------------------
@@ -197,7 +197,7 @@ def i_LM( k, j, Ms, P, Y):
 i_Ms2 = i_LM( k, j, Ms, P, Y)
 
 
-# In[27]:
+# In[7]:
 
 
 # Setemos caracteristicas de figura
@@ -287,7 +287,7 @@ plt.show()
 # 
 # - Donde $(P)$ is the nivel de precios, $(P^e)$ el precio esperado y $\bar{Y}$ el producto potencial.
 
-# In[7]:
+# In[8]:
 
 
 # Parámetros
@@ -308,7 +308,7 @@ def P_AS(Pe, _Y, Y, θ):
 P_AS = P_AS(Pe, _Y, Y, θ)
 
 
-# In[8]:
+# In[9]:
 
 
 y_max = np.max(P_AS)
@@ -324,7 +324,7 @@ ax.xaxis.set_major_locator(plt.NullLocator())
 plt.show()
 
 
-# In[9]:
+# In[10]:
 
 
 # Primero declarar los simbolos
@@ -341,7 +341,7 @@ print("La pendiente de la curva OA es", df_r_eq_OA_Y)
 
 # ## 5.3. Equilibrio entre la Demanda Agregada y la Oferta Agregada: Modelo DA-OA
 
-# In[10]:
+# In[11]:
 
 
 #1--------------------------
@@ -403,7 +403,7 @@ def P_AS(Pe, _Y, Y, θ):
 P_AS = P_AS(Pe, _Y, Y, θ)
 
 
-# In[11]:
+# In[12]:
 
 
 # líneas punteadas autómaticas
@@ -438,7 +438,7 @@ intersec = line_intersection((A, B), (C, D))
 intersec # (y,x)
 
 
-# In[12]:
+# In[13]:
 
 
 # Gráfico del modelo DA-OA
@@ -529,7 +529,7 @@ plt.show()
 # 3. $$ P^{eq\_da\_oa} = P^e + θ( [ \frac{1}{(θ + \frac{jB_1 + hk}{h})} ]*[(\frac{h Mo^s + jB_o}{h} - P^e + θ\bar{Y})] - \bar{Y} ) $$ 
 # 
 
-# In[13]:
+# In[14]:
 
 
 # nombrar variables como símbolos de IS
@@ -573,7 +573,7 @@ r_eq = (j*beta_0)/(k*h + j*beta_1) + ( h / (k*h + j*beta_1) )*(Ms - P_eq)
 
 # - Matemática:
 
-# In[14]:
+# In[15]:
 
 
 # Efecto del cambio en Precio esperado sobre el producto en el modelo DA-OA
@@ -581,7 +581,7 @@ df_Y_eq_Pe = diff(Y_eq, Pe)
 print("El Diferencial del Producto con respecto al diferencial del precio esperado = ", df_Y_eq_Pe)
 
 
-# In[15]:
+# In[16]:
 
 
 # Efecto del cambio de Precio esperado sobre Tasa de Interés en el modelo DA-OA
@@ -589,7 +589,7 @@ df_r_eq_Pe = diff(r_eq, Pe)
 print("El Diferencial del nivel de precios con respecto al diferencial del precio esperado = ", df_r_eq_Pe)
 
 
-# In[16]:
+# In[17]:
 
 
 # Efecto del cambio en Precio esperado sobre el nivel de Precios en el modelo DA-OA
@@ -599,7 +599,7 @@ print("El Diferencial del nivel de precios con respecto al diferencial del preci
 
 # - Gráfico:
 
-# In[17]:
+# In[18]:
 
 
 #1--------------------------------------------------
@@ -682,7 +682,7 @@ ax.legend()
 plt.show()
 
 
-# In[18]:
+# In[19]:
 
 
 #1--------------------------
@@ -781,7 +781,7 @@ ax.legend()
 plt.show()
 
 
-# In[19]:
+# In[20]:
 
 
 # Dos gráficos en un solo cuadro
@@ -853,7 +853,7 @@ plt.show
 
 # - Matemática:
 
-# In[20]:
+# In[21]:
 
 
 # nombrar variables como símbolos de IS
@@ -880,7 +880,7 @@ r_eq = (j*beta_0)/(k*h + j*beta_1) + ( h / (k*h + j*beta_1) )*(Ms - P_eq)
 #((h*Ms+j*beta_0)/h) - ((j*beta_1+h*r)/h)*((P-Pe-θ*_Y)/θ)
 
 
-# In[21]:
+# In[22]:
 
 
 # Efecto del cambio de Precio esperado sobre Tasa de Interés en el modelo DA-OA
@@ -900,7 +900,7 @@ print("El Diferencial del nivel de precios con respecto al diferencial de la mas
 
 # - Gráfico
 
-# In[22]:
+# In[23]:
 
 
 # IS-LM

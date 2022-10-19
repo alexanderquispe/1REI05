@@ -8,21 +8,23 @@
 # !pip install ipywidgets
 # !pip install causalgraphicalmodels
 # !pip install ipympl
+# !pip install ipywidgets
 
 
 # In[2]:
 
 
 # import ipympl
-get_ipython().run_line_magic('matplotlib', 'widget')
+# %matplotlib widget
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
 import matplotlib.pyplot as plt
+import matplotlib.widgets as widget
 import numpy as np
 import sympy as sy
 from sympy import *
 import pandas as pd
-from causalgraphicalmodels import CausalGraphicalModel
+# from causalgraphicalmodels import CausalGraphicalModel
 from IPython.display import Image
 import warnings
 warnings.filterwarnings('ignore')
@@ -32,7 +34,7 @@ warnings.filterwarnings('ignore')
 
 # ## 1.1. Modelo Keynesiano: 
 
-# In[22]:
+# In[3]:
 
 
 Image('tutorial2.jpg')
@@ -72,7 +74,7 @@ Image('tutorial2.jpg')
 
 # El ingreso de Equilibrio a corto plazo se grafica de la siguiente forma:
 
-# In[66]:
+# In[4]:
 
 
 # Parámetros
@@ -100,7 +102,7 @@ def DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y):
 DA_IS_K = DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y)
 
 
-# In[65]:
+# In[5]:
 
 
 # Recta de 45°
@@ -114,7 +116,7 @@ def L_45(a, Y):
 L_45 = L_45(a, Y)
 
 
-# In[70]:
+# In[6]:
 
 
 # Gráfico
@@ -151,13 +153,13 @@ ax.legend() #mostrar leyenda
 plt.show()
 
 
-# In[74]:
+# In[7]:
 
 
 DA_IS_K
 
 
-# In[72]:
+# In[8]:
 
 
 # líneas punteadas autómaticas
@@ -192,7 +194,7 @@ intersec = line_intersection((A, B), (C, D))
 intersec # (y,x)
 
 
-# In[73]:
+# In[9]:
 
 
 # Gráfico
@@ -233,7 +235,7 @@ plt.show()
 
 # #### Política Fiscal contractiva con reducción del Gasto del Gobierno $(G_0)$:
 
-# In[77]:
+# In[10]:
 
 
 #--------------------------------------------------
@@ -276,7 +278,7 @@ def DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y):
 DA_G = DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y)
 
 
-# In[78]:
+# In[11]:
 
 
 # Gráfico
@@ -312,7 +314,7 @@ ax.legend()
 plt.show()
 
 
-# In[80]:
+# In[12]:
 
 
 # Gráfico con movimiento
@@ -352,7 +354,7 @@ widgets.interact(DA_K, Go = Go_slide) #widgets.interact(nombre_función, paráme
 # 
 # $$ ↓Go → ↓DA → DA < Y → ↓Y $$
 
-# In[81]:
+# In[13]:
 
 
 # Gráfico de causalidad

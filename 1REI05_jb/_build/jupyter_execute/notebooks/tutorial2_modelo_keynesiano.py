@@ -14,8 +14,8 @@
 # In[2]:
 
 
-# import ipympl
-# %matplotlib widget
+import ipympl
+get_ipython().run_line_magic('matplotlib', 'widget')
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
 import matplotlib.pyplot as plt
@@ -24,15 +24,17 @@ import numpy as np
 import sympy as sy
 from sympy import *
 import pandas as pd
-# from causalgraphicalmodels import CausalGraphicalModel
+from causalgraphicalmodels import CausalGraphicalModel
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'
 from IPython.display import Image
 import warnings
 warnings.filterwarnings('ignore')
 
 
-# # 1. Mercado de Bienes: Consumo, Inversión, Determinación del Precio, y la Política Fiscal
+# # Mercado de Bienes: Consumo, Inversión, Determinación del Precio, y la Política Fiscal
 
-# ## 1.1. Modelo Keynesiano: 
+# ## Modelo Keynesiano: 
 
 # In[3]:
 
@@ -40,7 +42,7 @@ warnings.filterwarnings('ignore')
 Image('tutorial2.jpg')
 
 
-# ## 1.2. El modelo de Ingreso-Gasto Keynesiano:
+# ## El modelo de Ingreso-Gasto Keynesiano:
 
 # La ecuación de equilibrio para el Ingreso Agregado se deriva de la condición de equilibrio donde el ingreso es igual a la demanda agregada: $DA = Y$:
 # 
@@ -156,12 +158,6 @@ plt.show()
 # In[7]:
 
 
-DA_IS_K
-
-
-# In[8]:
-
-
 # líneas punteadas autómaticas
 
     # definir la función line_intersection
@@ -194,7 +190,7 @@ intersec = line_intersection((A, B), (C, D))
 intersec # (y,x)
 
 
-# In[9]:
+# In[8]:
 
 
 # Gráfico
@@ -231,11 +227,11 @@ ax.legend() #mostrar leyenda
 plt.show()
 
 
-# ### 1.2.1. Estática comparativa del modelo de Ingreso-Gasto Keynesiano:
+# ### Estática comparativa del modelo de Ingreso-Gasto Keynesiano:
 
 # #### Política Fiscal contractiva con reducción del Gasto del Gobierno $(G_0)$:
 
-# In[10]:
+# In[9]:
 
 
 #--------------------------------------------------
@@ -278,7 +274,7 @@ def DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y):
 DA_G = DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y)
 
 
-# In[11]:
+# In[10]:
 
 
 # Gráfico
@@ -314,7 +310,7 @@ ax.legend()
 plt.show()
 
 
-# In[12]:
+# In[11]:
 
 
 # Gráfico con movimiento
@@ -354,7 +350,7 @@ widgets.interact(DA_K, Go = Go_slide) #widgets.interact(nombre_función, paráme
 # 
 # $$ ↓Go → ↓DA → DA < Y → ↓Y $$
 
-# In[13]:
+# In[12]:
 
 
 # Gráfico de causalidad
@@ -387,7 +383,7 @@ sprinkler.draw()
 # $$ ∆Y = (+)(-) $$
 # $$ ∆Y < 0 $$
 
-# In[83]:
+# In[13]:
 
 
 # Diferenciales
@@ -405,7 +401,7 @@ df_Go #∆Y/∆Go
 
 # #### Política fiscal expansiva con una reducción de la Tasa de Tributación $(t)$:
 
-# In[84]:
+# In[14]:
 
 
 #--------------------------------------------------
@@ -448,7 +444,7 @@ def DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y):
 DA_t = DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y)
 
 
-# In[85]:
+# In[15]:
 
 
 # Gráfico
@@ -484,12 +480,12 @@ ax.legend()
 plt.show()
 
 
-# In[87]:
+# In[16]:
 
 
 # Gráfico con movimiento
 
-    # Parámetros
+# Parámetros
 Y_size = 100 
 
 Co = 35
@@ -528,13 +524,12 @@ widgets.interact(DA_K, t = t_slide) #widgets.interact(nombre_función, parámetr
 
 # - Matemáticamente: $∆t < 0  →  ¿∆Y?$
 
-# In[88]:
+# In[17]:
 
 
 Co, Io, Go, Xo, h, r, b, m, t = symbols('Co Io Go Xo h r b m t')
 
 f = (Co + Io + Go + Xo - h*r)/(1-(b-m)*(1-t))
-
 
 df_t = diff(f, t)
 df_t #∆Y/∆t

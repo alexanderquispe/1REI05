@@ -4,7 +4,8 @@
 # In[1]:
 
 
-# %matplotlib widget
+import ipympl
+get_ipython().run_line_magic('matplotlib', 'widget')
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
 import matplotlib.pyplot as plt
@@ -12,13 +13,15 @@ import numpy as np
 import sympy as sy
 from sympy import *
 import pandas as pd
-#from causalgraphicalmodels import CausalGraphicalModel
+from causalgraphicalmodels import CausalGraphicalModel
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'
 from IPython.display import Image
 import warnings
 warnings.filterwarnings('ignore')
 
 
-# # 5. Modelo de Oferta y Demanda Agregada
+# # Modelo de Oferta y Demanda Agregada
 
 # In[2]:
 
@@ -26,7 +29,7 @@ warnings.filterwarnings('ignore')
 Image('tutorial6.png')
 
 
-# ## 5.1. Demanda Agregada $(DA)$:
+# ## Demanda Agregada $(DA)$:
 
 # Matemáticamente, la forma de la función de demanda agregada se puede obtener de las ecuaciones de la IS y la LM, eliminando “r” y despejando P. Para efectuar esta operación se supondrá que P no está dado.
 
@@ -275,9 +278,9 @@ ax2.legend()
 plt.show()
 
 
-# ## 5.2. Oferta Agregada $(OA)$
+# ## Oferta Agregada $(OA)$
 
-# ### 5.2.1. Oferta Agregada en el corto plazo
+# ### Oferta Agregada en el corto plazo
 # 
 # El corto plazo es un periodo en el cual el producto $(Y)$ se ubica por debajo o por encima de su nivel de largo plazo o Producto Potencial $(\bar{Y})$.
 # 
@@ -339,7 +342,7 @@ df_r_eq_OA_Y = diff(r_eq_OA, Y)
 print("La pendiente de la curva OA es", df_r_eq_OA_Y)  
 
 
-# ## 5.3. Equilibrio entre la Demanda Agregada y la Oferta Agregada: Modelo DA-OA
+# ## Equilibrio entre la Demanda Agregada y la Oferta Agregada: Modelo DA-OA
 
 # In[11]:
 
@@ -472,7 +475,7 @@ ax.legend()
 plt.show()
 
 
-# ## 5.4. Ecuaciones de equilibrio DA-OA
+# ## Ecuaciones de equilibrio DA-OA
 
 # Tienen que recordar que en el modelo DA-OA tenemos tres variables endógenas. $$Y^{eq}, r^{eq} , P^{eq}$$
 
@@ -556,9 +559,9 @@ r_eq = (j*beta_0)/(k*h + j*beta_1) + ( h / (k*h + j*beta_1) )*(Ms - P_eq)
 #((h*Ms+j*beta_0)/h) - ((j*beta_1+h*r)/h)*((P-Pe-θ*_Y)/θ)
 
 
-# ## 5.5. Estática comparativa DA-OA
+# ## Estática comparativa DA-OA
 
-# ### 5.5.1. Incremento en el Precio Esperado $(P^e)$:
+# ### Incremento en el Precio Esperado $(P^e)$:
 
 # - Intuición:
 # 
@@ -839,7 +842,7 @@ ax2.legend()
 plt.show
 
 
-# ### 5.5.2. Incremento en la Masa Monetaria $(M_o^s)$:
+# ### Incremento en la Masa Monetaria $(M_o^s)$:
 
 # - Intuición:
 # 

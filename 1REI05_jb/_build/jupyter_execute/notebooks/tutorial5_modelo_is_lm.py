@@ -4,7 +4,8 @@
 # In[1]:
 
 
-# %matplotlib widget
+import ipympl
+get_ipython().run_line_magic('matplotlib', 'widget')
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
 import matplotlib.pyplot as plt
@@ -12,13 +13,15 @@ import numpy as np
 import sympy as sy
 from sympy import *
 import pandas as pd
-# from causalgraphicalmodels import CausalGraphicalModel
+from causalgraphicalmodels import CausalGraphicalModel
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'
 from IPython.display import Image
 import warnings
 warnings.filterwarnings('ignore')
 
 
-# # 4.El Modelo Macroeconómico IS-LM
+# # El Modelo Macroeconómico IS-LM
 
 # In[2]:
 
@@ -26,7 +29,7 @@ warnings.filterwarnings('ignore')
 Image('tutorial5.png')
 
 
-# ## 4.1. ¿Cómo son las pendientes de las curvas IS-LM? 
+# ## ¿Cómo son las pendientes de las curvas IS-LM? 
 
 # In[3]:
 
@@ -110,7 +113,7 @@ df_r_eq_lm_y = diff(r_eq_lm, Y)
 print("La pendiente de la curva IS es", df_r_eq_lm_y)  # este diferencial es positivo
 
 
-# ## 4.2. El equilibrio en el Modelo IS-LM
+# ## El equilibrio en el Modelo IS-LM
 
 # Por un lado, considerando la ecuación de la curva IS
 # 
@@ -136,7 +139,7 @@ print("La pendiente de la curva IS es", df_r_eq_lm_y)  # este diferencial es pos
 # 
 # Estas dos ecuaciones representan el modelo IS-LM
 
-# ### 4.2.1. Gráfico del equilibrio en el Modelo IS-LM
+# ### Gráfico del equilibrio en el Modelo IS-LM
 
 # In[6]:
 
@@ -228,7 +231,7 @@ ax.legend()
 plt.show()
 
 
-# ### 4.2.2. Ecuaciones de equilibrio 
+# ### Ecuaciones de equilibrio 
 
 # In[8]:
 
@@ -242,9 +245,9 @@ Y_eq = (k*beta_0)/(k*h + j*beta_1) - ( beta_1 / (k*h + j*beta_1) )*(Ms/P)
 r_eq = (j*beta_0)/(k*h + j*beta_1) + ( h / (k*h + j*beta_1) )*(Ms/P)
 
 
-# ## 4.3. Estática comparativa
+# ## Estática comparativa
 
-# ### 4.3.1. Política Fiscal Expansiva:
+# ### Política Fiscal Expansiva:
 # 
 
 # - Mercado de Bienes
@@ -398,7 +401,7 @@ ax.legend()
 plt.show()
 
 
-# ### 4.3.2. Política Monetaria Expansiva
+# ### Política Monetaria Expansiva
 
 # - Mercado de dinero
 # $$ Ms↑ → M^o↑ → M^o > M^d → r↓ $$

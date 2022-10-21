@@ -4,6 +4,8 @@
 # In[1]:
 
 
+import ipympl
+get_ipython().run_line_magic('matplotlib', 'widget')
 get_ipython().run_line_magic('matplotlib', 'inline')
 import matplotlib.pyplot as plt
 import numpy as np
@@ -18,13 +20,15 @@ import networkx
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from statsmodels.iolib.summary2 import summary_col
-# from causalgraphicalmodels import CausalGraphicalModel
+from causalgraphicalmodels import CausalGraphicalModel
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'
 from IPython.display import Image
 import warnings
 warnings.filterwarnings('ignore')
 
 
-# # 3. El Mercado Monetario 
+# # El Mercado Monetario 
 
 # In[2]:
 
@@ -38,7 +42,7 @@ Image('tutorial3.png')
 Image('tutorial4.png')
 
 
-# ## 3.1. El equilibrio en el Mercado de Dinero
+# ## El equilibrio en el Mercado de Dinero
 
 # El equilibrio en el Mercado de Dinero se deriva del equilibrio entre la Oferta de Dinero $(M^s)$ y Demanda de Dinero $(M^d)$:
 # 
@@ -111,7 +115,7 @@ ax1.legend()
 plt.show()
 
 
-# ### 3.1.1. ¿Qué sucede en el Mercado de Dinero si el producto se incrementa? 
+# ### ¿Qué sucede en el Mercado de Dinero si el producto se incrementa? 
 
 # In[6]:
 
@@ -177,7 +181,7 @@ ax1.legend()
 plt.show()
 
 
-# ### 3.1.2. ¿Qué sucede en el Mercado de Dinero si la cantidad de dinero se incrementa? 
+# ### ¿Qué sucede en el Mercado de Dinero si la cantidad de dinero se incrementa? 
 
 # In[7]:
 
@@ -248,7 +252,7 @@ ax1.legend()
 plt.show()
 
 
-# ## 3.2. Derivación de la Curva LM a partir del Equilibrio en el Mercado de Dinero
+# ## Derivación de la Curva LM a partir del Equilibrio en el Mercado de Dinero
 
 # In[9]:
 
@@ -384,7 +388,7 @@ ax2.legend()
 plt.show()
 
 
-# ## 3.3. Curva LM
+# ## Curva LM
 
 # Siguiendo la última ecuación de equilibrio, la curva LM se da en función de la tasa de interés:
 # 
@@ -438,9 +442,9 @@ ax.legend()
 plt.show()
 
 
-# ## 3.4. Estática comparativa
+# ## Estática comparativa
 
-# ### 3.4.1 Política monetaria expansiva: incremento en la Masa Monetaria $(M^s)$
+# ### Política monetaria expansiva: incremento en la Masa Monetaria $(M^s)$
 
 # In[13]:
 

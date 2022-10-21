@@ -4,21 +4,24 @@
 # In[1]:
 
 
-# %matplotlib widget
+import ipympl
+get_ipython().run_line_magic('matplotlib', 'widget')
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
 import matplotlib.pyplot as plt
 import numpy as np
 import sympy as sy
 import pandas as pd
-# from causalgraphicalmodels import CausalGraphicalModel
+from causalgraphicalmodels import CausalGraphicalModel
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'
 import warnings
 warnings.filterwarnings('ignore')
 
 
-# ## 2. La curva IS (Inversión-Ahorro)
+# # La curva IS (Inversión-Ahorro)
 
-# ### 2.1. Derivación de la curva IS
+# ## Derivación de la curva IS
 
 # La curva IS se deriva de la igualdad entre el ingreso $(Y)$ y la demanda agregada $(DA)$:
 # 
@@ -134,7 +137,7 @@ ax.legend()
 plt.show()
 
 
-# ### 2.2. Derivación de la curva IS a partir de la Demanda Agregada
+# ## Derivación de la curva IS a partir de la Demanda Agregada
 
 # Recordemos la ecuación del ingreso de equilibrio a corto plazo que fue obtenida a partir del equilibrio $(Y = DA)$:
 # 
@@ -290,9 +293,9 @@ ax2.legend()
 plt.show()
 
 
-# ### 2.3. Estática comparativa en la curva IS
+# ## Estática comparativa en la curva IS
 
-# #### 2.3.1. Disminución en el Gasto de Gobierno $(G_0)$:
+# ### Disminución en el Gasto de Gobierno $(G_0)$:
 
 # In[7]:
 
@@ -405,7 +408,7 @@ Go_slide = widgets.FloatSlider(value = 70, min = 0, max = 110)  #widgets.FloatSl
 widgets.interact(r_IS_1, Go = Go_slide) #widgets.interact(nombre_función, parámetro = parámetro:_con_mov)
 
 
-# #### 2.3.2. Incremento en la tasa impositiva $(t)$:
+# ### Incremento en la tasa impositiva $(t)$:
 
 # In[10]:
 

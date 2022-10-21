@@ -9,12 +9,12 @@ kernelspec:
   name: python3
 ---
 
-# Fundamentals of Macroeconomics
+# Fundamentos de Macroeconomía
 
 Clases del curso para la Especialidad de Relaciones Internacionales en la Pontificia Universidad Católica del Perú.
 
 
-# Authors
+# Autores
 
 <table style="margin-left: auto; margin-right: auto;">
   <tr>
@@ -46,7 +46,7 @@ Clases del curso para la Especialidad de Relaciones Internacionales en la Pontif
     <td> <img style="border-radius: 50%; width: 50%; text-align: center;
     width: 33%;"
       src="https://d2cml-ai.github.io/d2cml.ai/figs/sandra.jpg"  /> </td>
-    <td> <a href="https://valbarracing.github.io/Portafolio/" target="_blank"> 
+    <td> <a href="https://sandramartinezgutierrez.github.io/" target="_blank"> 
          <h4 style="text-align: center;"> <b>Sandra Martínez</b></h4>
          </a>
          <p style="text-align: center;"> Economics <br>PUCP</p>  </td>
@@ -101,11 +101,11 @@ Clases del curso para la Especialidad de Relaciones Internacionales en la Pontif
 ```
 
 
-```{admonition} Incoming website
-This JupyterBook will receive future updates. It's a draft. Not ready for publication.
+```{admonition} Website en proceso de lanzamiento
+Este JupyterBook estará en constante actualización. Es un bosquejo. Aún no se encuentra listo para ser publicado.
 ```
 
 
-```{admonition} Repository
-You can find all of these Python scripts in this [repository](https://github.com/alexanderquispe/1REI05/tree/main/1REI05_jb/notebooks). 
+```{admonition} Repositorio del curso
+Podrá encontrar todos estos scripts en el siguiente [repositorio](https://github.com/alexanderquispe/1REI05/tree/main/1REI05_jb/notebooks). 
 ```

@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Fundamentals of Macroeconomics
+# # Fundamentos de Macroeconomía
 # 
 # Clases del curso para la Especialidad de Relaciones Internacionales en la Pontificia Universidad Católica del Perú.
 # 
 # 
-# # Authors
+# # Autores
 # 
 # <table style="margin-left: auto; margin-right: auto;">
 #   <tr>
@@ -93,11 +93,11 @@
 # ```
 # 
 # 
-# ```{admonition} Incoming website
-# This JupyterBook will receive future updates. It's a draft. Not ready for publication.
+# ```{admonition} Website en proceso de lanzamiento
+# Este JupyterBook estará en constante actualización. Es un bosquejo. Aún no se encuentra listo para ser publicado.
 # ```
 # 
 # 
-# ```{admonition} Repository
-# You can find all of these Python scripts in this [repository](https://github.com/alexanderquispe/1REI05/tree/main/1REI05_jb/notebooks). 
+# ```{admonition} Repositorio del curso
+# Podrá encontrar todos estos scripts en el siguiente [repositorio](https://github.com/alexanderquispe/1REI05/tree/main/1REI05_jb/notebooks). 
 # ```

@@ -4,7 +4,7 @@
 format: jb-book
 root: md/intro
 parts:
-- caption: Topics
+- caption: Tópicos
   numbered: true
   chapters:
   - file: notebooks/tutorial2_modelo_keynesiano

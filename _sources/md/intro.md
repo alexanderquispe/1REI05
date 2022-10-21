@@ -22,7 +22,7 @@ Clases del curso para la Especialidad de Relaciones Internacionales en la Pontif
     width: 33%;"
       src="https://alexanderquispe.github.io/images/foto_alex_hd.jpg"  /> </td>
     <td WIDTH="250"> <a href="https://alexanderquispe.github.io/" target="_blank"> 
-         <h3 style="text-align: center;"> <b>Alexander Quispe</b></h3>
+         <h4 style="text-align: center;"> <b>Alexander Quispe</b></h4>
          </a>
          <p style="text-align: center;"> MSc. Quantitative Economics<br>Univerity of Munich<br>The World Bank - PUCP</p>	
     </td>
@@ -37,7 +37,7 @@ Clases del curso para la Especialidad de Relaciones Internacionales en la Pontif
     width: 33%;"
       src="https://valbarracing.github.io/Portafolio/assets/img/pic.png"  /> </td>
     <td > <a href="https://valbarracing.github.io/Portafolio/" target="_blank"> 
-         <h3 style="text-align: center;"> <b>Valeria Albarracín</b></h3>
+         <h4 style="text-align: center;"> <b>Valeria Albarracín</b></h4>
          </a>
          <p style="text-align: center;"> International Relations<br>PUCP</p>  </td>
   </tr>
@@ -46,8 +46,8 @@ Clases del curso para la Especialidad de Relaciones Internacionales en la Pontif
     <td> <img style="border-radius: 50%; width: 50%; text-align: center;
     width: 33%;"
       src="https://d2cml-ai.github.io/d2cml.ai/figs/sandra.jpg"  /> </td>
-    <td> <a href="https://valbarracing.github.io/Portafolio/" target="_blank"> 
-         <h3 style="text-align: center;"> <b>Sandra Martínez</b></h3>
+    <td> <a href="https://sandramartinezgutierrez.github.io/" target="_blank"> 
+         <h4 style="text-align: center;"> <b>Sandra Martínez</b></h4>
          </a>
          <p style="text-align: center;"> Economics <br>PUCP</p>  </td>
   </tr>

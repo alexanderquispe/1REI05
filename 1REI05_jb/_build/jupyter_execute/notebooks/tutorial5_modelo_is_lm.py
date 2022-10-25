@@ -4,6 +4,7 @@
 # In[1]:
 
 
+import ipympl
 get_ipython().run_line_magic('matplotlib', 'widget')
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
@@ -12,16 +13,25 @@ import numpy as np
 import sympy as sy
 from sympy import *
 import pandas as pd
-#from causalgraphicalmodels import CausalGraphicalModel
+from causalgraphicalmodels import CausalGraphicalModel
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'
+from IPython.display import Image
+import warnings
+warnings.filterwarnings('ignore')
 
 
-# ### EL MODELO MACROECONÓMICO IS-LM:
-
-# ![download.png](attachment:9e26dade-c7ff-4570-981e-ec7efb7a26f6.png)![Lab4.png](attachment:Lab4.png)
-
-# # Cómo son las pendientes de las curvas IS LM ? 
+# # El Modelo Macroeconómico IS-LM
 
 # In[2]:
+
+
+Image('tutorial5.png')
+
+
+# ## ¿Cómo son las pendientes de las curvas IS-LM? 
+
+# In[3]:
 
 
 #--------------------------------------------------
@@ -74,7 +84,7 @@ def r_LM(k, j, Ms, P, Y):
 r_lm = r_LM( k, j, Ms, P, Y)
 
 
-# In[3]:
+# In[4]:
 
 
 # Primero declarar los simbolos
@@ -89,7 +99,7 @@ df_r_eq_is_y = diff(r_eq_is, Y)
 print("La pendiente de la curva IS es", df_r_eq_is_y)  # este diferencial es positivo
 
 
-# In[4]:
+# In[5]:
 
 
 # Declaren todos los parametros de la curva lm como simbolos
@@ -103,7 +113,7 @@ df_r_eq_lm_y = diff(r_eq_lm, Y)
 print("La pendiente de la curva IS es", df_r_eq_lm_y)  # este diferencial es positivo
 
 
-# # 1. El elquilibrio en el modelo IS-LM:
+# ## El equilibrio en el Modelo IS-LM
 
 # Por un lado, considerando la ecuación de la curva IS
 # 
@@ -129,9 +139,9 @@ print("La pendiente de la curva IS es", df_r_eq_lm_y)  # este diferencial es pos
 # 
 # Estas dos ecuaciones representan el modelo IS-LM
 
-# #### 2. Gráfico del equilibhrio en el modelo IS-LM
+# ### Gráfico del equilibrio en el Modelo IS-LM
 
-# In[5]:
+# In[6]:
 
 
 #--------------------------------------------------
@@ -184,9 +194,7 @@ def r_LM(k, j, Ms, P, Y):
 r_lm = r_LM( k, j, Ms, P, Y)
 
 
-# # Graficar el equilibrio
-
-# In[6]:
+# In[7]:
 
 
 # Gráfico del modelo IS-LM
@@ -223,10 +231,9 @@ ax.legend()
 plt.show()
 
 
-# # Encontramos las ecuaciones de equilibrio 
-# 
+# ### Ecuaciones de equilibrio 
 
-# In[7]:
+# In[8]:
 
 
 # Beta_0 y beta_1
@@ -238,9 +245,9 @@ Y_eq = (k*beta_0)/(k*h + j*beta_1) - ( beta_1 / (k*h + j*beta_1) )*(Ms/P)
 r_eq = (j*beta_0)/(k*h + j*beta_1) + ( h / (k*h + j*beta_1) )*(Ms/P)
 
 
-# #### 3. Estática comparativa:
+# ## Estática comparativa
 
-# #### - Política Fiscal Expansiva:
+# ### Política Fiscal Expansiva:
 # 
 
 # - Mercado de Bienes
@@ -250,7 +257,7 @@ r_eq = (j*beta_0)/(k*h + j*beta_1) + ( h / (k*h + j*beta_1) )*(Ms/P)
 
 # - **Matemática**:
 
-# In[8]:
+# In[9]:
 
 
 # nombrar variables como símbolos
@@ -268,14 +275,14 @@ r_eq = (k*beta_0)/(k*h + j*beta_1) - ( beta_1 / (k*h + j*beta_1) )*(Ms/P)
 Y_eq = (j*beta_0)/(k*h + j*beta_1) + ( h / (k*h + j*beta_1) )*(Ms/P)
 
 
-# In[9]:
+# In[10]:
 
 
 df_Y_eq_Go = diff(Y_eq, Go)
 print("El Diferencial del Producto con respecto al diferencial del gasto autonomo = ", df_Y_eq_Go)  # este diferencial es positivo
 
 
-# In[10]:
+# In[11]:
 
 
 df_r_eq_Go = diff(r_eq, Go)
@@ -284,7 +291,7 @@ print("El Diferencial de la tasa de interes con respecto al diferencial del gast
 
 # - **Grafica**:
 
-# In[11]:
+# In[12]:
 
 
 #1--------------------------------------------------
@@ -337,7 +344,7 @@ def i_LM( k, j, Ms, P, Y):
 i = i_LM( k, j, Ms, P, Y)
 
 
-# In[12]:
+# In[13]:
 
 
 #--------------------------------------------------
@@ -354,7 +361,7 @@ def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
 r_G = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
 
 
-# In[13]:
+# In[14]:
 
 
 # Gráfico
@@ -394,7 +401,7 @@ ax.legend()
 plt.show()
 
 
-# #### - Política Monetaria Expansiva:
+# ### Política Monetaria Expansiva
 
 # - Mercado de dinero
 # $$ Ms↑ → M^o↑ → M^o > M^d → r↓ $$
@@ -402,7 +409,7 @@ plt.show()
 # - Mercado de Bienes
 # $$ r↓ → I↑ → DA>Y → Y↑ $$ 
 
-# In[14]:
+# In[15]:
 
 
 # nombrar variables como símbolos
@@ -420,21 +427,21 @@ Y_eq = (k*beta_0)/(k*h + j*beta_1) - ( beta_1 / (k*h + j*beta_1) )*(Ms/P)
 r_eq = (j*beta_0)/(k*h + j*beta_1) + ( h / (k*h + j*beta_1) )*(Ms/P)
 
 
-# In[15]:
+# In[16]:
 
 
 df_r_eq_Ms = diff(r_eq, Ms)
 print("El Diferencial de la tasa de interes con respecto al diferencial de la masa monetaria = ", df_r_eq_Ms)  # este diferencial es positivo
 
 
-# In[16]:
+# In[17]:
 
 
 df_Y_eq_Ms = diff(Y_eq, Ms)
 print("El Diferencial del producto con respecto al diferencial de la masa monetaria = ", df_Y_eq_Ms)  # este diferencial es positivo
 
 
-# In[17]:
+# In[18]:
 
 
 #1--------------------------------------------------
@@ -487,7 +494,7 @@ def i_LM( k, j, Ms, P, Y):
 i = i_LM( k, j, Ms, P, Y)
 
 
-# In[18]:
+# In[19]:
 
 
 # Definir SOLO el parámetro cambiado
@@ -501,7 +508,7 @@ def i_LM_Ms( k, j, Ms, P, Y):
 i_Ms = i_LM_Ms( k, j, Ms, P, Y)
 
 
-# In[19]:
+# In[20]:
 
 
 # Gráfico
@@ -543,22 +550,4 @@ ax.set(title="Efecto de un incremento de la masa monetaria", xlabel= r'Y', ylabe
 ax.legend()
 
 plt.show()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 

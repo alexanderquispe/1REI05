@@ -4,6 +4,8 @@
 # In[1]:
 
 
+import ipympl
+get_ipython().run_line_magic('matplotlib', 'widget')
 get_ipython().run_line_magic('matplotlib', 'inline')
 import matplotlib.pyplot as plt
 import numpy as np
@@ -19,13 +21,28 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from statsmodels.iolib.summary2 import summary_col
 from causalgraphicalmodels import CausalGraphicalModel
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'
+from IPython.display import Image
+import warnings
+warnings.filterwarnings('ignore')
 
 
-# ### EL MERCADO MONETARIO
+# # El Mercado Monetario 
 
-# ![Lab3.png](attachment:Lab3.png)
+# In[2]:
 
-# # 1. El equilibrio en el Mercado de Dinero:
+
+Image('tutorial3.png')
+
+
+# In[3]:
+
+
+Image('tutorial4.png')
+
+
+# ## El equilibrio en el Mercado de Dinero
 
 # El equilibrio en el Mercado de Dinero se deriva del equilibrio entre la Oferta de Dinero $(M^s)$ y Demanda de Dinero $(M^d)$:
 # 
@@ -42,7 +59,7 @@ from causalgraphicalmodels import CausalGraphicalModel
 # 
 # Y puede graficarse de la siguiente manera:
 
-# In[2]:
+# In[4]:
 
 
 # Parameters
@@ -67,7 +84,7 @@ MS = MS_0 / P
 MS
 
 
-# In[3]:
+# In[5]:
 
 
 # Equilibrio en el mercado de dinero
@@ -98,9 +115,9 @@ ax1.legend()
 plt.show()
 
 
-# ## a. Qué sucede en el mercado de dinero si el producto se incrementa? 
+# ### ¿Qué sucede en el Mercado de Dinero si el producto se incrementa? 
 
-# In[4]:
+# In[6]:
 
 
 # Parameters con cambio en el nivel del producto
@@ -164,9 +181,9 @@ ax1.legend()
 plt.show()
 
 
-# # a. Qué sucede en el mercado de dinero si la cantidad de dinero se incrementa? 
+# ### ¿Qué sucede en el Mercado de Dinero si la cantidad de dinero se incrementa? 
 
-# In[5]:
+# In[7]:
 
 
 # Parameters con cambio en el nivel del producto
@@ -191,7 +208,7 @@ MS_1 = MS_0 / P_1
 MS
 
 
-# In[6]:
+# In[8]:
 
 
 # Equilibrio en el mercado de dinero
@@ -235,9 +252,9 @@ ax1.legend()
 plt.show()
 
 
-# ## 3. Derivación de la Curva LM a partir del Equilibrio en el Mercado de Dinero:
+# ## Derivación de la Curva LM a partir del Equilibrio en el Mercado de Dinero
 
-# In[7]:
+# In[9]:
 
 
 #1----------------------Equilibrio mercado monetario
@@ -301,7 +318,7 @@ def i_LM( k, j, Ms, P, Y):
 i = i_LM( k, j, Ms, P, Y)
 
 
-# In[8]:
+# In[10]:
 
 
 # Gráfico de la derivación de la curva LM a partir del equilibrio en el mercado monetario
@@ -371,13 +388,13 @@ ax2.legend()
 plt.show()
 
 
-# # 2. Curva LM:
+# ## Curva LM
 
 # Siguiendo la última ecuación de equilibrio, la curva LM se da en función de la tasa de interés:
 # 
 # $$ r = -\frac{1}{j}\frac{M_o^s}{P_o} + \frac{k}{j}Y $$
 
-# In[9]:
+# In[11]:
 
 
 # Parameters
@@ -400,7 +417,7 @@ def i_LM( k, j, Ms, P, Y):
 i = i_LM( k, j, Ms, P, Y)
 
 
-# In[10]:
+# In[12]:
 
 
 # Gráfico de la curva LM
@@ -425,11 +442,11 @@ ax.legend()
 plt.show()
 
 
-# ## 3. Estática comparativa:
+# ## Estática comparativa
 
-# ### 3.1 Política monetaria expansiva: incremento en la Masa Monetaria $(M^s)$:
+# ### Política monetaria expansiva: incremento en la Masa Monetaria $(M^s)$
 
-# In[11]:
+# In[13]:
 
 
 #--------------------------------------------------
@@ -468,7 +485,7 @@ def i_LM_Ms( k, j, Ms, P, Y):
 i_Ms = i_LM_Ms( k, j, Ms, P, Y)
 
 
-# In[12]:
+# In[14]:
 
 
 # Dimensiones del gráfico
@@ -490,10 +507,4 @@ ax.legend()
 
 
 plt.show()
-
-
-# In[ ]:
-
-
-
 

@@ -4,36 +4,45 @@
 # In[1]:
 
 
-#pip install sympy
+# !pip install sympy
+# !pip install ipywidgets
+# !pip install causalgraphicalmodels
+# !pip install ipympl
+# !pip install ipywidgets
 
 
 # In[2]:
 
 
-#pip install ipywidgets
-
-
-# In[3]:
-
-
+import ipympl
 get_ipython().run_line_magic('matplotlib', 'widget')
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
 import matplotlib.pyplot as plt
+import matplotlib.widgets as widget
 import numpy as np
 import sympy as sy
 from sympy import *
 import pandas as pd
 from causalgraphicalmodels import CausalGraphicalModel
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'
+from IPython.display import Image
+import warnings
+warnings.filterwarnings('ignore')
 
 
-# ### MERCADO DE BIENES: CONSUMO, INVERSIÓN, DETERMINACIÓN DEL PRODUCTO Y LA POLÍTICA FISCAL
+# # Mercado de Bienes: Consumo, Inversión, Determinación del Precio, y la Política Fiscal
 
-# #### 1. Modelo Keynesiano: 
+# ## Modelo Keynesiano: 
 
-# ![Lab2.jpg](attachment:Lab2.jpg)
+# In[3]:
 
-# #### 2. El modelo de Ingreso-Gasto Keynesiano:
+
+Image('tutorial2.jpg')
+
+
+# ## El modelo de Ingreso-Gasto Keynesiano:
 
 # La ecuación de equilibrio para el Ingreso Agregado se deriva de la condición de equilibrio donde el ingreso es igual a la demanda agregada: $DA = Y$:
 # 
@@ -67,7 +76,7 @@ from causalgraphicalmodels import CausalGraphicalModel
 
 # El ingreso de Equilibrio a corto plazo se grafica de la siguiente forma:
 
-# In[66]:
+# In[4]:
 
 
 # Parámetros
@@ -95,7 +104,7 @@ def DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y):
 DA_IS_K = DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y)
 
 
-# In[65]:
+# In[5]:
 
 
 # Recta de 45°
@@ -109,7 +118,7 @@ def L_45(a, Y):
 L_45 = L_45(a, Y)
 
 
-# In[70]:
+# In[6]:
 
 
 # Gráfico
@@ -146,13 +155,7 @@ ax.legend() #mostrar leyenda
 plt.show()
 
 
-# In[74]:
-
-
-DA_IS_K
-
-
-# In[72]:
+# In[7]:
 
 
 # líneas punteadas autómaticas
@@ -187,7 +190,7 @@ intersec = line_intersection((A, B), (C, D))
 intersec # (y,x)
 
 
-# In[73]:
+# In[8]:
 
 
 # Gráfico
@@ -224,11 +227,11 @@ ax.legend() #mostrar leyenda
 plt.show()
 
 
-# #### 2.1. Estática comparativa del modelo de Ingreso-Gasto Keynesiano:
+# ### Estática comparativa del modelo de Ingreso-Gasto Keynesiano:
 
-# #### - Política Fiscal contractiva con reducción del Gasto del Gobierno $(G_0)$:
+# #### Política Fiscal contractiva con reducción del Gasto del Gobierno $(G_0)$:
 
-# In[77]:
+# In[9]:
 
 
 #--------------------------------------------------
@@ -271,7 +274,7 @@ def DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y):
 DA_G = DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y)
 
 
-# In[78]:
+# In[10]:
 
 
 # Gráfico
@@ -307,7 +310,7 @@ ax.legend()
 plt.show()
 
 
-# In[80]:
+# In[11]:
 
 
 # Gráfico con movimiento
@@ -347,7 +350,7 @@ widgets.interact(DA_K, Go = Go_slide) #widgets.interact(nombre_función, paráme
 # 
 # $$ ↓Go → ↓DA → DA < Y → ↓Y $$
 
-# In[81]:
+# In[12]:
 
 
 # Gráfico de causalidad
@@ -380,7 +383,7 @@ sprinkler.draw()
 # $$ ∆Y = (+)(-) $$
 # $$ ∆Y < 0 $$
 
-# In[83]:
+# In[13]:
 
 
 # Diferenciales
@@ -396,9 +399,9 @@ df_Go = diff(f, Go) # diff(función, variable_analizar
 df_Go #∆Y/∆Go
 
 
-# #### - Política fiscal expansiva con una reducción de la Tasa de Tributación $(t)$:
+# #### Política fiscal expansiva con una reducción de la Tasa de Tributación $(t)$:
 
-# In[84]:
+# In[14]:
 
 
 #--------------------------------------------------
@@ -441,7 +444,7 @@ def DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y):
 DA_t = DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y)
 
 
-# In[85]:
+# In[15]:
 
 
 # Gráfico
@@ -477,12 +480,12 @@ ax.legend()
 plt.show()
 
 
-# In[87]:
+# In[16]:
 
 
 # Gráfico con movimiento
 
-    # Parámetros
+# Parámetros
 Y_size = 100 
 
 Co = 35
@@ -521,13 +524,12 @@ widgets.interact(DA_K, t = t_slide) #widgets.interact(nombre_función, parámetr
 
 # - Matemáticamente: $∆t < 0  →  ¿∆Y?$
 
-# In[88]:
+# In[17]:
 
 
 Co, Io, Go, Xo, h, r, b, m, t = symbols('Co Io Go Xo h r b m t')
 
 f = (Co + Io + Go + Xo - h*r)/(1-(b-m)*(1-t))
-
 
 df_t = diff(f, t)
 df_t #∆Y/∆t

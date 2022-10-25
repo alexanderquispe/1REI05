@@ -3,3 +3,6 @@ matplotlib
 numpy
 panel
 holoviews
+ipympl
+ipywidgets
+sympy

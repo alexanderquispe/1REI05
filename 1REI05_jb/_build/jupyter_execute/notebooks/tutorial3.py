@@ -4,110 +4,94 @@
 # In[1]:
 
 
+import ipympl
 get_ipython().run_line_magic('matplotlib', 'widget')
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
 import matplotlib.pyplot as plt
 import numpy as np
 import sympy as sy
-from sympy import *
 import pandas as pd
 from causalgraphicalmodels import CausalGraphicalModel
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'
+import warnings
+warnings.filterwarnings('ignore')
 
 
-# #### 2. El modelo de Ingreso-Gasto Keynesiano:
+# # La curva IS (Inversión-Ahorro)
 
-# La ecuación de equilibrio para el Ingreso Agregado se deriva de la condición de equilibrio donde el ingreso es igual a la demanda agregada: $DA = Y$:
+# ## Derivación de la curva IS
+
+# La curva IS se deriva de la igualdad entre el ingreso $(Y)$ y la demanda agregada $(DA)$:
 # 
-# $$ DA = C + I + G + X - M $$
+# $$ Y = C + I + G + X - M $$
 # 
-# Donde:
+
+# Considerando que: 
 # 
 # $$ C = C_0 + bY^d $$
+# 
 # $$ I = I_0 - hr $$
+# 
 # $$ G = G_0 $$
+# 
+# $$ T = tY $$
+# 
 # $$ X = X_0 $$
+# 
 # $$ M = mY^d $$
-# 
-# $$ Y^d = 1 - t $$
 
-# Entonces: 
+# Para llegar al equilibrio Ahorro-Inversión, debemos restar la tributación $(T)$ de ambos miembros de la igualdad.
 # 
-# $$ DA = C_0 + I_0 + G_0 + X_0 - hr + Y(b - m)(1 - t) $$
+# $$ Y - T = C + I - T + G + X - M $$
 # 
-# De forma corta:
-# 
-# $$ DA = α_0 + α_1Y $$
-# 
-# Donde $ α_0 = (C_0 + I_0 + G_0 + X_0 -hr)$ es el intercepto y $ α_1 = (b - m)(1 - t) $ es la pendiente de la función
+# $$ Y^d = C + I - T + G + X - M $$
 
-# Ahora, considerando la condición de equilibrio $Y = DA$, la ecuación del ingreso de equilibrio a corto plazo es:
+# Esta igualdad se puede reescribir de la siguiente forma:
 # 
-# $$ Y = C_0 + bY^d + I_0 -hr + G_0 + X_0 - mY^d $$
+# $$ (Y^d - C) + (T - G) + (M - X) = I $$
+
+# Las tres partes de la derecha constituyen los tres componentes del ahorro total $ (S) $: ahorro privado $ (S_p) $, ahorro del gobierno $ (S_g) $ y ahorro externo $ (S_e) $:
 # 
-# $$ Y = \frac{1}{1 - (b - m)(1 - t)} (C_0 + I_0 + G_0 + X_0 - hr) $$
-
-# El ingreso de Equilibrio a corto plazo se grafica de la siguiente forma:
-
-# ## - Política fiscal expansiva con una reducción de la Tasa de Tributación $(t)$:
-
-# ## Intuición
-
-# - Intuición: ¿contradicción?
-# 
-# $$ t↓ → Co↑ → DA↑ → DA > Y → Y↑ $$
-# $$ t↓ → M↑ → DA↓ → DA < Y → Y↓ $$
+# $$ S = S_p + S_g + S_e $$
 # 
 
-# ## Matemática
-
-# - Matemáticamente: $∆t < 0  →  ¿∆Y?$
-
-# In[36]:
-
-
-# Cómo encontrar el diferencial?
-#1. Encontrar la ecuación de equilibrio 
-Yequi = (1 / (1-(b-m)*(1-t))) * (Co + Io + Go + Xo - h*r)
-
-#2. Declarar cada elemento/variable(excepto Y) como symbol 
-Co, Io, Go, Xo, h, r, b, m, t = symbols('Co Io Go Xo h r b m t')
-
-#3. Ejecutar la funcion diff para encontrar el diferencial
-dYequi_t = diff(Yequi, t)
-dYequi_t #∆Y/∆t
-
-
-# Considernado el diferencial de $∆t$:
+# Entonces, el ahorro total es igual a la inversión
 # 
-# $$ \frac{∆Y}{∆t} = \frac{(m-b)(Co + Go + Io + Xo - hr)}{(1-(1-t)(b-m)+1)^2} $$
+# $$ S_p + S_g + S_e = I $$
 # 
-# - Sabiendo que b > m, entonces $(m-b) < 0$
-# - Los componentes autónomos no cambian: $∆C_0 = ∆I_0 = ∆X_0 = ∆h = ∆r = 0$
-# - Cualquier número elevado al cuadrado será positivo: $ (1-(1-t)(b-m)+1)^2 > 0 $
-# 
-# Entonces:
-# 
-# $$ \frac{∆Y}{∆t} = \frac{(-)}{(+)} $$
-# 
-# Dado que $∆t < 0$, la división de dos positivos da otro positivo:
-# 
-# $$ \frac{∆Y}{(-)} = \frac{(-)}{(+)} $$
-# 
-# $$ ∆Y = \frac{(-)(-)}{(+)} $$
-# 
-# $$ ∆Y > 0 $$
-# 
+# $$ S(Y) = I(r) $$
 
-# ## Gráficamente
+# Haciendo reemplazos se obtiene que:
+# 
+# $$ S_p + S_g + S_e = I_0 - hr $$
+# 
+# $$ (Y^d - C_0 - bY^d) + (T - G_0) + (mY^d - X_0) = I_0 - hr $$
 
-# In[37]:
+# Considerando las observaciones anteriores sobre los componentes de la condición de equilibrio $(Y)$:
+# 
+# $$ [1 - (b - m)(1 - t)]Y - (C_0 + G_0 + X_0) = I_0 - hr $$
 
+# La curva IS se puede expresar con una ecuación donde la tasa de interés es una función del ingreso:
+# 
+# $$ hr = (C_0 + G_0 + I_0 + X_0) - (1 - (b - m)(1 - t))Y $$
+# 
+# $$ r = \frac{1}{h}(C_0 + G_0 + I_0 + X_0) - \frac{1 - (b - m)(1 - t)}{h}Y $$
 
-#--------------------------------------------------
-# Curva de ingreso de equilibrio ORIGINAL
+# Y puede simplificarse en:
+# 
+# $$ r = \frac{B_0}{h} - \frac{B_1}{h}Y $$
+# 
+# Donde $ B_0 = C_0 + G_0 + I_0 + X_0  $ es el intercepto y $  B_1 = 1 - (b - m)(1 - t) $ es la pendiente.
+
+# Y la curva IS se grafica de la siguiente manera:
+
+# In[2]:
+
 
 # Parámetros
+
 Y_size = 100 
 
 Co = 35
@@ -117,12 +101,83 @@ Xo = 2
 h = 0.7
 b = 0.8
 m = 0.2
-t = 0.3 #tasa de tributación
+t = 0.3
+
+Y = np.arange(Y_size)
+
+
+# Ecuación 
+def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
+    r_IS = (Co + Io + Go + Xo - Y * (1-(b-m)*(1-t)))/h
+    return r_IS
+
+r = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
+
+
+# In[3]:
+
+
+# Gráfico de la curva IS
+
+# Dimensiones del gráfico
+y_max = np.max(r)
+fig, ax = plt.subplots(figsize=(10, 8))
+
+# Curvas a graficar
+ax.plot(Y, r, label = "IS", color = "#8B0A50") #Demanda agregada
+
+# Eliminar las cantidades de los ejes
+ax.yaxis.set_major_locator(plt.NullLocator())   
+ax.xaxis.set_major_locator(plt.NullLocator())
+
+# Título, ejes y leyenda
+ax.set(title = "Curva IS", xlabel= 'Y', ylabel= 'r')
+ax.legend()
+
+plt.show()
+
+
+# ## Derivación de la curva IS a partir de la Demanda Agregada
+
+# Recordemos la ecuación del ingreso de equilibrio a corto plazo que fue obtenida a partir del equilibrio $(Y = DA)$:
+# 
+# $$ Y = \frac{1}{1 - (b - m)(1 - t)} (C_0 + I_0 + G_0 + X_0 - hr) $$
+
+# Esta ecuación, después de algunas operaciones, puede expresarse en función de la tasa de interés $(r)$:
+# 
+# $$ r = \frac{1}{h}(C_0 + G_0 + I_0 + X_0) - \frac{1 - (b - m)(1 - t)}{h}Y $$
+
+# Entonces, la curva IS puede ser simplificada de la siguiente manera:
+# 
+# $$ r = \frac{B_0}{h} - \frac{B_1}{h}Y $$
+# 
+# Donde $ B_0 = C_0 + G_0 + I_0 + X_0  $ y $  B_1 = 1 - (b - m)(1 - t) $
+
+# Para la derivación gráfica, se tiene que recordar la ecuación de la Demanda Agregada $(DA)$:
+
+# - **Demanda Agregada**:
+
+# In[4]:
+
+
+# Parámetros
+
+Y_size = 100 
+
+Co = 35
+Io = 40
+Go = 70
+Xo = 2
+h = 0.7
+b = 0.8
+m = 0.2
+t = 0.3
 r = 0.9
 
 Y = np.arange(Y_size)
 
-    # Ecuación 
+# Ecuación de la curva del ingreso de equilibrio
+
 def DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y):
     DA_K = (Co + Io + Go + Xo - h*r) + ((b - m)*(1 - t)*Y)
     return DA_K
@@ -130,98 +185,36 @@ def DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y):
 DA_IS_K = DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y)
 
 #--------------------------------------------------
-# NUEVA curva de ingreso de equilibrio
+# Recta de 45°
 
-# Definir SOLO el parámetro cambiado
-t = 0.01
+a = 2.5 
 
-# Generar la ecuación con el nuevo parámetros
+def L_45(a, Y):
+    L_45 = a*Y
+    return L_45
+
+L_45 = L_45(a, Y)
+
+#--------------------------------------------------
+# Segunda curva de ingreso de equilibrio
+
+    # Definir cualquier parámetro autónomo
+Go = 35
+
+# Generar la ecuación con el nuevo parámetro
 def DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y):
     DA_K = (Co + Io + Go + Xo - h*r) + ((b - m)*(1 - t)*Y)
     return DA_K
 
-DA_t = DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y)
+DA_G = DA_K(Co, Io, Go, Xo, h, r, b, m, t, Y)
 
 
-# In[38]:
+# **- Curva IS**:
 
+# In[5]:
 
-# Gráfico
-y_max = np.max(DA_IS_K)
-fig, ax = plt.subplots(figsize=(10, 8))
-
-
-# Curvas a graficar
-ax.plot(Y, DA_IS_K, label = "DA", color = "#3D59AB") #curva ORIGINAL
-ax.plot(Y, DA_t, label = "DA_t", color = "#EE7600", linestyle = 'dashed') #NUEVA curva
-ax.plot(Y, L_45, color = "#404040") #línea de 45º
-
-# Lineas punteadas
-plt.axvline(x = 70.5, ymin= 0, ymax = 0.69, linestyle = ":", color = "grey")
-plt.axhline(y = 176, xmin= 0, xmax = 0.7, linestyle = ":", color = "grey")
-plt.axvline(x = 77,  ymin= 0, ymax = 0.75, linestyle = ":", color = "grey")
-plt.axhline(y = 192, xmin= 0, xmax = 0.75, linestyle = ":", color = "grey")
-
-# Texto agregado
-plt.text(0, 180, '$DA^e$', fontsize = 11.5, color = 'black')
-plt.text(0, 200, '$DA_t$', fontsize = 11.5, color = '#EE7600')
-plt.text(6, 4, '$45°$', fontsize = 11.5, color = 'black')
-plt.text(2.5, -3, '$◝$', fontsize = 30, color = '#404040')
-plt.text(72, 0, '$Y^e$', fontsize = 12, color = 'black')
-plt.text(80, 0, '$Y_t$', fontsize = 12, color = '#EE7600')
-plt.text(72, 45, '$→$', fontsize = 18, color = 'grey')
-plt.text(20, 180, '$↑$', fontsize = 18, color = 'grey')
-
-# Título y leyenda
-ax.set(title = "Reducción de la Tasa de Tributación", xlabel = r'Y', ylabel = r'DA')
-ax.legend()
-
-plt.show()
-
-
-# In[40]:
-
-
-# Gráfico con movimiento
 
 # Parámetros
-Y_size = 100 
-
-Co = 35
-Io = 40
-Go = 70
-Xo = 2
-h = 0.7
-b = 0.8
-m = 0.2
-t = 0.3
-r = 0.9
-
-Y = np.arange(Y_size)
-
-    # Definir ecuación y gráfico para el parámetro específico
-def DA_K(t): # ecuación
-    DA_K = (Co + Io + Go + Xo - h*r) + ((b - m)*(1 - t)*Y)
-    
-    # gráfico
-    plt.subplots(figsize=(10, 8))
-    plt.plot(Y, DA_K, label = "DA", color = "#3D59AB") #Demanda agregada
-    plt.plot(Y, L_45, color = "#404040")
-    plt.title('Tasa de Tributación')
-    plt.legend()    
-    
-    # crear gráfico con movimiento/control
-t_slide = widgets.FloatSlider(value = 0.3, min = 0, max = 3)  #widgets.FloatSlider(valor_inicial, min, max)
-widgets.interact(DA_K, t = t_slide) #widgets.interact(nombre_función, parámetro = parámetro:_con_mov)
-
-
-# # IS CURVE
-
-# In[41]:
-
-
-# Curves to plot
-# Parameters
 
 Y_size = 100 
 
@@ -237,49 +230,24 @@ t = 0.3
 Y = np.arange(Y_size)
 
 
-# Equation 
+# Ecuación 
 def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
-    r_IS = (1/h)*(Co + Io + Go + Xo) - (1/h)*(1-(b-m)*(1-t))*Y
+    r_IS = (Co + Io + Go + Xo - Y * (1-(b-m)*(1-t)))/h
     return r_IS
 
 r = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
 
 
-# In[42]:
+# In[6]:
 
 
-# Graph of the IS curve
+# Gráfico de la derivación de la curva IS a partir de la igualdad (DA = Y)
 
-
-# Dimensions
-y_max = np.max(r)
-fig, ax = plt.subplots(figsize=(10, 8))
-
-# Curves to plot
-ax.plot(Y, r, label = "IS", color = "C1") #Demanda agregada
-
-# Remove the quantities from the axes
-ax.yaxis.set_major_locator(plt.NullLocator())   
-ax.xaxis.set_major_locator(plt.NullLocator())
-
-# Title, axes adn legend
-ax.set(title = "IS Curve", xlabel= 'Y', ylabel= 'r')
-ax.legend()
-
-plt.show()
-
-
-# In[23]:
-
-
-# Plot of the derivation of the IS curve from equality (DA = Y)
-
-    # Two graphs in one frame
+    # Dos gráficos en un solo cuadro (ax1 para el primero y ax2 para el segundo)
 fig, (ax1, ax2) = plt.subplots(2, figsize=(8, 16)) 
 
 #---------------------------------
-    # Graph 1: Short-Term Equilibrium Income
-    
+    # Gráfico 1: ingreso de Equilibrio
 ax1.yaxis.set_major_locator(plt.NullLocator())   
 ax1.xaxis.set_major_locator(plt.NullLocator())
 
@@ -297,11 +265,11 @@ ax1.text(56, 0, '$Y_1$', fontsize = 12, color = 'black')
 ax1.text(67, 185, 'E_0', fontsize = 12, color = 'black')
 ax1.text(50, 142, 'E_1', fontsize = 12, color = 'black')
 
-ax1.set(title = "Derivation of the IS curve", xlabel = r'Y', ylabel = r'DA')
+ax1.set(title = "Derivación de la curva IS a partir del equilibrio $Y=DA$", xlabel = r'Y', ylabel = r'DA')
 ax1.legend()
 
 #---------------------------------
-    # Graph 2: IS Curve
+    # Gráfico 2: Curva IS
 
 ax2.yaxis.set_major_locator(plt.NullLocator())   
 ax2.xaxis.set_major_locator(plt.NullLocator())
@@ -320,19 +288,22 @@ ax2.text(1, 167, '$r_1$', fontsize = 12, color = 'black')
 ax2.text(72, 152, 'E_0', fontsize = 12, color = 'black')
 ax2.text(55, 166, 'E_1', fontsize = 12, color = 'black')
 
-ax2.set(title = " IS", xlabel= 'Y', ylabel= 'r')
 ax2.legend()
 
 plt.show()
 
 
-# In[43]:
+# ## Estática comparativa en la curva IS
+
+# ### Disminución en el Gasto de Gobierno $(G_0)$:
+
+# In[7]:
 
 
 #--------------------------------------------------
-    # ORIGINAL IS Curve
+    # Curva IS ORIGINAL
 
-# Parameters
+# Parámetros
 
 Y_size = 100 
 
@@ -348,7 +319,7 @@ t = 0.3
 Y = np.arange(Y_size)
 
 
-# Equation 
+# Ecuación 
 def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
     r_IS = (Co + Io + Go + Xo - Y * (1-(b-m)*(1-t)))/h
     return r_IS
@@ -357,12 +328,12 @@ r = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
 
 
 #--------------------------------------------------
-    # New IS Curve
-
-# Define ONLY the changed parameter
+    # NUEVA curva IS
+    
+# Definir SOLO el parámetro cambiado
 Go = 60
 
-# Equation with the changed parameter
+# Generar la ecuación con el nuevo parámetro
 def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
     r_IS = (Co + Io + Go + Xo - Y * (1-(b-m)*(1-t)))/h
     return r_IS
@@ -370,37 +341,82 @@ def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
 r_G = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
 
 
-# In[45]:
+# In[8]:
 
 
-# Graph
+# Gráfico
 
-# Dimensions
+# Dimensiones del gráfico
 y_max = np.max(r)
 fig, ax = plt.subplots(figsize=(10, 8))
 
-# Curves to plot
+# Curvas a graficar
 ax.plot(Y, r, label = "IS", color = "black") #IS orginal
-ax.plot(Y, r_G, label = "IS_G", color = "C1", linestyle = 'dashed') #New IS
+ax.plot(Y, r_G, label = "IS_G", color = "C1", linestyle = 'dashed') #Nueva IS
 
-# Text added
+# Texto agregado
 plt.text(47, 162, '∆Go', fontsize=12, color='black')
 plt.text(49, 159, '←', fontsize=15, color='grey')
 
-# Title and legend
-ax.set(title = "Increase in Goverment Spending $(G_0)$", xlabel= 'Y', ylabel= 'r')
+# Título, ejes y leyenda
+ax.set(title = "Incremento en el Gasto de Gobierno $(G_0)$", xlabel= 'Y', ylabel= 'r')
 ax.legend()
 
 plt.show()
 
 
-# In[50]:
+# In[9]:
+
+
+# Gráfico con movimiento
+
+# Parámetros
+
+Y_size = 100 
+
+Co = 35
+Io = 40
+Go = 70
+Xo = 2
+h = 0.7
+b = 0.8
+m = 0.2
+t = 0.3
+
+Y = np.arange(Y_size)
+
+def r_IS(b, m, t, Co, Io, Go, Xo, h, Y): # ecuación original
+    r_IS = (Co + Io + Go + Xo - Y * (1-(b-m)*(1-t)))/h
+    return r_IS
+
+r_G = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
+
+
+    # Definir ecuación y gráfico para el parámetro específico
+def r_IS_1(Go):
+    r_IS_1 = (Co + Io + Go + Xo - Y * (1-(b-m)*(1-t)))/h  
+    
+    # gráfico
+    plt.subplots(figsize=(10, 8))
+    plt.plot(r_IS_1, label = "IS", color = "C1") # Curva IS orginal
+    plt.plot(r_G, label = "IS_Go", color = "black") # Curva IS con movimiento
+    plt.title('Gasto de Gobierno')
+    plt.legend()    
+    
+    # crear gráfico con movimiento/control
+Go_slide = widgets.FloatSlider(value = 70, min = 0, max = 110)  #widgets.FloatSlider(valor_inicial, min, max)
+widgets.interact(r_IS_1, Go = Go_slide) #widgets.interact(nombre_función, parámetro = parámetro:_con_mov)
+
+
+# ### Incremento en la tasa impositiva $(t)$:
+
+# In[10]:
 
 
 #--------------------------------------------------
-# ORIGINAL IS Curve
+    # Curva IS ORIGINAL
 
-# Parameters
+# Parámetros
 
 Y_size = 100 
 
@@ -416,7 +432,7 @@ t = 0.3
 Y = np.arange(Y_size)
 
 
-# Equation 
+# Ecuación 
 def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
     r_IS = (Co + Io + Go + Xo - Y * (1-(b-m)*(1-t)))/h
     return r_IS
@@ -425,50 +441,49 @@ r = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
 
 
 #--------------------------------------------------
-    # New IS Curve
+    # NUEVA curva IS
+    
+# Definir SOLO el parámetro cambiado
+t = 0.7
 
-# Define ONLY the changed parameter
-Go = 100
-
-# Equation with the changed parameter
+# Generar la ecuación con el nuevo parámetro
 def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
     r_IS = (Co + Io + Go + Xo - Y * (1-(b-m)*(1-t)))/h
     return r_IS
 
-r_G = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
+r_t = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
 
 
-# In[52]:
+# In[11]:
 
 
-# Graph
+# Gráfico
 
-# Dimensions
+# Dimensiones del gráfico
 y_max = np.max(r)
 fig, ax = plt.subplots(figsize=(10, 8))
 
-# Curves to plot
-ax.plot(Y, r, label = "IS_G0", color = "black") #IS orginal
-ax.plot(Y, r_G, label = "IS_G1" , color = "C1", linestyle = 'dashed') #New IS
+# Curvas a graficar
+ax.plot(Y, r, label = "IS", color = "black") #IS orginal
+ax.plot(Y, r_t, label = "IS_t", color = "C1", linestyle = 'dashed') #Nueva IS
 
-# Text added
-# plt.text(47, 162, '∆Go', fontsize=12, color='black')
-# plt.text(49, 159, '←', fontsize=15, color='grey')
+# Texto agregado
+plt.text(47, 162, '∆t', fontsize=12, color='black')
+plt.text(47, 158, '←', fontsize=15, color='grey')
 
-# Title and legend
-ax.set(title = "Increase in Goverment Spending $(G_0)$", xlabel= 'Y', ylabel= 'r')
+# Título, ejes y leyenda
+ax.set(title = "Incremento en la Tasa de Interés $(t)$", xlabel= 'Y', ylabel= 'r')
 ax.legend()
 
 plt.show()
 
 
-# In[56]:
+# In[12]:
 
 
-#--------------------------------------------------
-# ORIGINAL IS Curve
+# Gráfico con movimiento
 
-# Parameters
+# Parámetros
 
 Y_size = 100 
 
@@ -483,52 +498,24 @@ t = 0.3
 
 Y = np.arange(Y_size)
 
-
-# Equation 
-def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
+def r_IS(b, m, t, Co, Io, Go, Xo, h, Y): # ecuación original
     r_IS = (Co + Io + Go + Xo - Y * (1-(b-m)*(1-t)))/h
     return r_IS
 
-r = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
+r_t = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
 
-
-#--------------------------------------------------
-    # New IS Curve
-
-# Define ONLY the changed parameter
-h = 0.8
-
-# Equation with the changed parameter
-def r_IS(b, m, t, Co, Io, Go, Xo, h, Y):
-    r_IS = (Co + Io + Go + Xo - Y * (1-(b-m)*(1-t)))/h
-    return r_IS
-
-r_G = r_IS(b, m, t, Co, Io, Go, Xo, h, Y)
-
-
-# Graph
-
-# Dimensions
-y_max = np.max(r)
-fig, ax = plt.subplots(figsize=(10, 8))
-
-# Curves to plot
-ax.plot(Y, r, label = "IS_t0", color = "black") #IS orginal
-ax.plot(Y, r_G, label = "IS_t1" , color = "C1", linestyle = 'dashed') #New IS
-
-# Text added
-# plt.text(47, 162, '∆Go', fontsize=12, color='black')
-# plt.text(49, 159, '←', fontsize=15, color='grey')
-
-# Title and legend
-ax.set(title = "Increase in Goverment Spending $(G_0)$", xlabel= 'Y', ylabel= 'r')
-ax.legend()
-
-plt.show()
-
-
-# In[ ]:
-
-
-
+    # Definir ecuación y gráfico para el parámetro específico
+def r_IS_1(t):
+    r_IS_1 = (Co + Io + Go + Xo - Y * (1-(b-m)*(1-t)))/h  
+    
+    # gráfico
+    plt.subplots(figsize=(10, 8))
+    plt.plot(r_IS_1, label = "IS", color = "C1") # Curva IS orginal
+    plt.plot(r_t, label = "IS_t", color = "black") # Curva IS con movimiento
+    plt.title('Tasa de Interés $(t)$')
+    plt.legend()    
+    
+    # crear gráfico con movimiento/control
+t_slide = widgets.FloatSlider(value = 0.3, min = 0, max = 1)  #widgets.FloatSlider(valor_inicial, min, max)
+widgets.interact(r_IS_1, t = t_slide) #widgets.interact(nombre_función, parámetro = parámetro:_con_mov)
 

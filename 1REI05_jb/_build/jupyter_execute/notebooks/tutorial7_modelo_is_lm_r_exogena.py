@@ -4,6 +4,7 @@
 # In[1]:
 
 
+import ipympl
 get_ipython().run_line_magic('matplotlib', 'widget')
 get_ipython().run_line_magic('matplotlib', 'inline')
 import ipywidgets as widgets
@@ -12,12 +13,17 @@ import numpy as np
 import sympy as sy
 from sympy import *
 import pandas as pd
-#from causalgraphicalmodels import CausalGraphicalModel
+from causalgraphicalmodels import CausalGraphicalModel
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'
+from IPython.display import Image
+import warnings
+warnings.filterwarnings('ignore')
 
 
-# ### MODELO IS-LM CON TASA DE INTERÉS EXÓGENA $(r)$ FIJADA POR EL BANCO CENTRAL:
+# # Modelo IS-LM con Tasa de Interés Exógena $(r)$ fijada por el Banco Central:
 
-# #### 2. Ecuaciones:
+# ## Ecuaciones
 
 # - Ecuación de la IS: 
 # 
@@ -59,7 +65,7 @@ import pandas as pd
 # 
 # $$ M^s = P_0(kY - jr) $$
 
-# #### 3. Equilibrio IS-LM con $r$ exógena:
+# ## Equilibrio IS-LM con $r$ exógena
 
 # - Ingreso de equilibrio: es igual a la ecuación de la IS
 # 
@@ -74,9 +80,9 @@ import pandas as pd
 # 
 # $$ M^e_s = P_0k(\frac{1}{1 - (b - m)(1 - t)} (C_o + I_o + G_o + X_o - hr)) - P_0jr $$
 
-# ### Curva IS
+# ## Curva IS
 
-# In[ ]:
+# In[2]:
 
 
 #--------------------------------------------------
@@ -105,9 +111,9 @@ def IS_CB(Co, b, t, Io, h, Xo, m, Go):
 IS_CB = IS_CB(Co, b, t, Io, h, Xo, m, Go)
 
 
-# ### Curva LM
+# ## Curva LM
 
-# In[22]:
+# In[3]:
 
 
 #--------------------------------------------------
@@ -133,9 +139,9 @@ def LM_CB(Y, P, k, j, r):
 LM_CB = LM_CB(Y, P, k, j, r)
 
 
-# ### Funcion para encontrar el cruce de rectas
+# ## Funcion para encontrar el cruce de rectas
 
-# In[23]:
+# In[4]:
 
 
 # líneas punteadas autómaticas
@@ -160,7 +166,7 @@ def line_intersection(line1, line2):
 
 # ### Encontrar puntos de cruce
 
-# In[26]:
+# In[5]:
 
 
 r_ec = np.full((100), 15)
@@ -178,9 +184,9 @@ intersec_1 = line_intersection((A, B), (C, D))
 intersec_1 # (y,x)
 
 
-# ### Gráfico del modelo IS-LM-PM
+# ## Gráfico del modelo IS-LM-PM
 
-# In[27]:
+# In[6]:
 
 
 # Gráfico del modelo IS-PM
@@ -209,9 +215,9 @@ ax.legend()
 plt.show()
 
 
-# ### 4. Estática comparativa:
+# ## Estática comparativa
 
-# In[29]:
+# In[7]:
 
 
 # nombrar variables como símbolos
@@ -226,11 +232,11 @@ Y_eq = (Co + Io + Go + Xo - h*r/(1-(b-m)*(1-t)))
 Ms_eq = (Co + Io + Go + Xo - h*r/(1-(b-m)*(1-t)))*(P*k) - (P*j*r)
 
 
-# #### Incremento tasa de interés $(r)$:
+# ### Incremento tasa de interés $(r)$
 
 # - Matemática:
 
-# In[30]:
+# In[8]:
 
 
 df_Y_eq_r = diff(Y_eq, r)
@@ -247,7 +253,7 @@ print("El Diferencial del Producto con respecto al diferencial de la tasa de int
 # 
 # 
 
-# In[31]:
+# In[9]:
 
 
 df_Ms_eq_r = diff(Ms_eq, r)
@@ -273,7 +279,7 @@ print("El Diferencial de la Masa Monetaria con respecto al diferencial de la tas
 
 # - Gráfico:
 
-# In[32]:
+# In[10]:
 
 
 #--------------------------------------------------
@@ -335,7 +341,7 @@ def LM_CB_2(Y, P, k, j, r):
 LM_CB_2 = LM_CB_2(Y, P, k, j, r)
 
 
-# In[33]:
+# In[11]:
 
 
 r_ec = np.full((100), 15)
@@ -353,7 +359,7 @@ intersec_1 = line_intersection((A, B), (C, D))
 intersec_1 # (y,x)
 
 
-# In[34]:
+# In[12]:
 
 
 r_ec_2 = np.full((100), 20)
@@ -371,7 +377,7 @@ intersec_2 = line_intersection((A, B), (C, D))
 intersec_2 # (y,x)
 
 
-# In[35]:
+# In[13]:
 
 
 # Gráfico del modelo IS-PM
@@ -405,204 +411,204 @@ ax.legend()
 plt.show()
 
 
-# In[38]:
+# In[14]:
 
 
-#     # Gráfico del modelo IS-PM
+# Gráfico del modelo IS-PM
 
-# # Dimensiones del gráfico
-# y_max = np.max(Y)
-# fig, ax = plt.subplots(figsize=(10, 8))
+# Dimensiones del gráfico
+y_max = np.max(Y)
+fig, ax = plt.subplots(figsize=(10, 8))
 
-# # Curvas a graficar
-# ax.plot(LM_CB, label = "LM", color = "C0") #LM
-# plt.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = "C8", label = 'YY')
-# plt.axvline(x=intersec_2[1], ymin= 0, ymax= 1, color = "C8", label = 'YY_t', linestyle = 'dashed')
+# Curvas a graficar
+ax.plot(LM_CB, label = "LM", color = "C0") #LM
+plt.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = "C8", label = 'YY')
+plt.axvline(x=intersec_2[1], ymin= 0, ymax= 1, color = "C8", label = 'YY_t', linestyle = 'dashed')
 
-# plt.axhline(y=145, xmin= 0, xmax= 0.5, color = "grey", linestyle = ':')
-# plt.axhline(y=65, xmin= 0, xmax= 0.38, color = "grey", linestyle = ':')
+plt.axhline(y=145, xmin= 0, xmax= 0.5, color = "grey", linestyle = ':')
+plt.axhline(y=65, xmin= 0, xmax= 0.38, color = "grey", linestyle = ':')
 
-# ax.text(0, 160, '$m_0^s$', fontsize = 13, color = 'black')
-# ax.text(51, -155, '$Y_0$', fontsize = 13, color = 'black')
+ax.text(0, 160, '$m_0^s$', fontsize = 13, color = 'black')
+ax.text(51, -155, '$Y_0$', fontsize = 13, color = 'black')
 
-# ax.text(0, 75, '$m_1^s$', fontsize = 13, color = 'C8')
-# ax.text(38, -155, '$Y_1$', fontsize = 13, color = 'C8')
+ax.text(0, 75, '$m_1^s$', fontsize = 13, color = 'C8')
+ax.text(38, -155, '$Y_1$', fontsize = 13, color = 'C8')
 
-# ax.yaxis.set_major_locator(plt.NullLocator())   
-# ax.xaxis.set_major_locator(plt.NullLocator())
+ax.yaxis.set_major_locator(plt.NullLocator())   
+ax.xaxis.set_major_locator(plt.NullLocator())
 
-# ax.set(title="Incremento de la tasa de interés en el plano $(Y, m)$", xlabel= 'Y', ylabel= '$m^s$')
-# ax.legend()
+ax.set(title="Incremento de la tasa de interés en el plano $(Y, m)$", xlabel= 'Y', ylabel= '$m^s$')
+ax.legend()
 
-# plt.show()
-
-
-# In[39]:
+plt.show()
 
 
-# # Dos gráficos en un solo cuadro
-# fig, (ax1, ax2) = plt.subplots(2, figsize=(8, 16)) 
-
-# #---------------------------------
-#     # IS_PM
-
-# # Curvas a graficar
-# ax1.plot(IS_CB, label = "IS", color = "C1") #IS
-# ax1.plot(r_ec, color = "red", label ="PM") #r: tasa de interés
-# ax1.plot(r_ec_2, color = "red", label ="PM_2", linestyle = 'dashed') #r: tasa de interés
-
-# ax1.axline((intersec_1[1], intersec_1[0]), slope=0.25, color="C0", label = 'LM')
-# ax1.axline((intersec_2[1], intersec_2[0]), slope=0.25, color="C0", label = 'LM_2', linestyle = 'dashed')
-
-# ax1.axvline(x=intersec_1[1], ymin= 0, ymax= 1, linestyle = ":", color = "grey")
-# ax1.axvline(x=intersec_2[1], ymin= 0, ymax= 1, linestyle = ":", color = "grey")
-
-# ax1.text(0, 16, '$r_0$', fontsize = 13, color = 'black')
-# ax1.text(51, -5, '$Y_0$', fontsize = 13, color = 'black')
-# ax1.text(48, 16.5, '$E_0$', fontsize = 13, color = 'black')
-
-# ax1.text(0, 21, '$r_1$', fontsize = 13, color = 'red')
-# ax1.text(40, -5, '$Y_1$', fontsize = 13, color = 'red')
-# ax1.text(35, 22, '$E_1$', fontsize = 13, color = 'red')
-
-# ax1.set(title="Incremento de la tasa de interés $(r)$", xlabel= 'Y', ylabel= 'r')
-# ax1.legend()
+# In[15]:
 
 
-# #---------------------------------
-#     # YY-MM
+# Dos gráficos en un solo cuadro
+fig, (ax1, ax2) = plt.subplots(2, figsize=(8, 16)) 
+
+#---------------------------------
+    # IS_PM
+
+# Curvas a graficar
+ax1.plot(IS_CB, label = "IS", color = "C1") #IS
+ax1.plot(r_ec, color = "red", label ="PM") #r: tasa de interés
+ax1.plot(r_ec_2, color = "red", label ="PM_2", linestyle = 'dashed') #r: tasa de interés
+
+ax1.axline((intersec_1[1], intersec_1[0]), slope=0.25, color="C0", label = 'LM')
+ax1.axline((intersec_2[1], intersec_2[0]), slope=0.25, color="C0", label = 'LM_2', linestyle = 'dashed')
+
+ax1.axvline(x=intersec_1[1], ymin= 0, ymax= 1, linestyle = ":", color = "grey")
+ax1.axvline(x=intersec_2[1], ymin= 0, ymax= 1, linestyle = ":", color = "grey")
+
+ax1.text(0, 16, '$r_0$', fontsize = 13, color = 'black')
+ax1.text(51, -5, '$Y_0$', fontsize = 13, color = 'black')
+ax1.text(48, 16.5, '$E_0$', fontsize = 13, color = 'black')
+
+ax1.text(0, 21, '$r_1$', fontsize = 13, color = 'red')
+ax1.text(40, -5, '$Y_1$', fontsize = 13, color = 'red')
+ax1.text(35, 22, '$E_1$', fontsize = 13, color = 'red')
+
+ax1.set(title="Incremento de la tasa de interés $(r)$", xlabel= 'Y', ylabel= 'r')
+ax1.legend()
+
+
+#---------------------------------
+    # YY-MM
     
-# ax2.plot(LM_CB, label = "LM", color = "C0") #LM
-# ax2.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = "C8", label = 'YY')
-# ax2.axvline(x=intersec_2[1], ymin= 0, ymax= 1, color = "C8", label = 'YY_t', linestyle = 'dashed')
+ax2.plot(LM_CB, label = "LM", color = "C0") #LM
+ax2.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = "C8", label = 'YY')
+ax2.axvline(x=intersec_2[1], ymin= 0, ymax= 1, color = "C8", label = 'YY_t', linestyle = 'dashed')
 
-# ax2.axhline(y=145, xmin= 0, xmax= 0.5, color = "grey", linestyle = ':')
-# ax2.axhline(y=65, xmin= 0, xmax= 0.38, color = "grey", linestyle = ':')
+ax2.axhline(y=145, xmin= 0, xmax= 0.5, color = "grey", linestyle = ':')
+ax2.axhline(y=65, xmin= 0, xmax= 0.38, color = "grey", linestyle = ':')
 
-# ax2.text(0, 160, '$m_0^s$', fontsize = 13, color = 'black')
-# ax2.text(51, -155, '$Y_0$', fontsize = 13, color = 'black')
+ax2.text(0, 160, '$m_0^s$', fontsize = 13, color = 'black')
+ax2.text(51, -155, '$Y_0$', fontsize = 13, color = 'black')
 
-# ax2.text(0, 75, '$m_1^s$', fontsize = 13, color = 'C8')
-# ax2.text(38, -155, '$Y_1$', fontsize = 13, color = 'C8')
+ax2.text(0, 75, '$m_1^s$', fontsize = 13, color = 'C8')
+ax2.text(38, -155, '$Y_1$', fontsize = 13, color = 'C8')
 
-# ax2.set(xlabel= 'Y', ylabel= '$m^s$')
-# ax2.legend()
+ax2.set(xlabel= 'Y', ylabel= '$m^s$')
+ax2.legend()
 
-# plt.show()
-
-
-# In[40]:
+plt.show()
 
 
-# #--------------------------------------------------
-#     # Curva LM
+# In[16]:
+
+
+#--------------------------------------------------
+    # Curva LM
     
-# # Parámetros
+# Parámetros
 
-# Y_size = 100
+Y_size = 100
 
-# P = 3.5
-# k = 1.76
-# j = 3
-# r = 15
+P = 3.5
+k = 1.76
+j = 3
+r = 15
 
-# Y = np.arange(Y_size)
+Y = np.arange(Y_size)
 
-# # Ecuación
+# Ecuación
 
-# def LM_CB(Y, P, k, j, r):
-#     LM_CB = P*(k*Y - j*r)
-#     return LM_CB
+def LM_CB(Y, P, k, j, r):
+    LM_CB = P*(k*Y - j*r)
+    return LM_CB
 
-# LM_CB = LM_CB(Y, P, k, j, r)
-
-
-# In[41]:
+LM_CB = LM_CB(Y, P, k, j, r)
 
 
-#     # Gráfico del modelo IS-PM
-
-# # Dimensiones del gráfico
-# y_max = np.max(Y)
-# fig, ax = plt.subplots(figsize=(10, 8))
-
-# # Curvas a graficar
-# ax.plot(LM_CB, label = "LM", color = "C0") #IS
-# plt.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = "C8", label = 'YY')
-
-# plt.axhline(y=145, xmin= 0, xmax= 0.5, color = "grey", linestyle = ':')
-
-# ax.text(0, 160, '$m_0^s$', fontsize = 13, color = 'black')
-# ax.text(51, -155, '$Y_0$', fontsize = 13, color = 'black')
-# ax.text(45, 160, '$E_0$', fontsize = 13, color = 'black')
-
-# ax.yaxis.set_major_locator(plt.NullLocator())   
-# ax.xaxis.set_major_locator(plt.NullLocator())
-
-# ax.set(title="IS-LM con tasa de interés $(r)$ exógena en el plano $(Y, m)$", xlabel= 'Y', ylabel= '$m^s$')
-# ax.legend()
-
-# plt.show()
+# In[17]:
 
 
-# In[42]:
+# Gráfico del modelo IS-PM
+
+# Dimensiones del gráfico
+y_max = np.max(Y)
+fig, ax = plt.subplots(figsize=(10, 8))
+
+# Curvas a graficar
+ax.plot(LM_CB, label = "LM", color = "C0") #IS
+plt.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = "C8", label = 'YY')
+
+plt.axhline(y=145, xmin= 0, xmax= 0.5, color = "grey", linestyle = ':')
+
+ax.text(0, 160, '$m_0^s$', fontsize = 13, color = 'black')
+ax.text(51, -155, '$Y_0$', fontsize = 13, color = 'black')
+ax.text(45, 160, '$E_0$', fontsize = 13, color = 'black')
+
+ax.yaxis.set_major_locator(plt.NullLocator())   
+ax.xaxis.set_major_locator(plt.NullLocator())
+
+ax.set(title="IS-LM con tasa de interés $(r)$ exógena en el plano $(Y, m)$", xlabel= 'Y', ylabel= '$m^s$')
+ax.legend()
+
+plt.show()
 
 
-# # Dos gráficos en un solo cuadro
-# fig, (ax1, ax2) = plt.subplots(2, figsize=(8, 16)) 
-
-# #---------------------------------
-#     # IS_PM
-
-# # Curvas a graficar
-# ax1.plot(IS_CB, label = "IS", color = "C1") #IS
-# ax1.plot(r_ec, color = "red", label ="PM") #r: tasa de interés
-
-# ax1.axvline(intersec_1[1], ymin= 0, ymax= 1, linestyle = ":", color = "grey")
-# ax1.axline((intersec_1[1], intersec_1[0]), slope=0.25, color="C0", label = 'LM')
-
-# ax1.yaxis.set_major_locator(plt.NullLocator())   
-# ax1.xaxis.set_major_locator(plt.NullLocator())
-
-# ax1.text(0, 16, '$r_0$', fontsize = 13, color = 'black')
-# ax1.text(51, -5, '$Y_0$', fontsize = 13, color = 'black')
-# ax1.text(48, 16.5, '$E_0$', fontsize = 13, color = 'black')
-
-# ax1.set(title="IS-LM con r exógena", xlabel= 'Y', ylabel= 'r')
-# ax1.legend()
+# In[18]:
 
 
-# #---------------------------------
-#     # YY-MM
+# Dos gráficos en un solo cuadro
+fig, (ax1, ax2) = plt.subplots(2, figsize=(8, 16)) 
+
+#---------------------------------
+    # IS_PM
+
+# Curvas a graficar
+ax1.plot(IS_CB, label = "IS", color = "C1") #IS
+ax1.plot(r_ec, color = "red", label ="PM") #r: tasa de interés
+
+ax1.axvline(intersec_1[1], ymin= 0, ymax= 1, linestyle = ":", color = "grey")
+ax1.axline((intersec_1[1], intersec_1[0]), slope=0.25, color="C0", label = 'LM')
+
+ax1.yaxis.set_major_locator(plt.NullLocator())   
+ax1.xaxis.set_major_locator(plt.NullLocator())
+
+ax1.text(0, 16, '$r_0$', fontsize = 13, color = 'black')
+ax1.text(51, -5, '$Y_0$', fontsize = 13, color = 'black')
+ax1.text(48, 16.5, '$E_0$', fontsize = 13, color = 'black')
+
+ax1.set(title="IS-LM con r exógena", xlabel= 'Y', ylabel= 'r')
+ax1.legend()
+
+
+#---------------------------------
+    # YY-MM
     
-# ax2.plot(LM_CB, label = "MM", color = "C0") #IS
-# ax2.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = "C8", label = 'YY')
+ax2.plot(LM_CB, label = "MM", color = "C0") #IS
+ax2.axvline(x=intersec_1[1], ymin= 0, ymax= 1, color = "C8", label = 'YY')
 
-# ax2.axhline(y=145, xmin= 0, xmax= 0.5, color = "grey", linestyle = ':')
+ax2.axhline(y=145, xmin= 0, xmax= 0.5, color = "grey", linestyle = ':')
 
-# ax1.yaxis.set_major_locator(plt.NullLocator())   
-# ax1.xaxis.set_major_locator(plt.NullLocator())
+ax1.yaxis.set_major_locator(plt.NullLocator())   
+ax1.xaxis.set_major_locator(plt.NullLocator())
 
-# ax2.text(0, 160, '$m_0^s$', fontsize = 13, color = 'black')
-# ax2.text(51, -155, '$Y_0$', fontsize = 13, color = 'black')
+ax2.text(0, 160, '$m_0^s$', fontsize = 13, color = 'black')
+ax2.text(51, -155, '$Y_0$', fontsize = 13, color = 'black')
 
-# ax2.set(xlabel= 'Y', ylabel= 'm')
-# ax2.legend()
+ax2.set(xlabel= 'Y', ylabel= 'm')
+ax2.legend()
 
-# plt.show()
-
-
-# In[43]:
+plt.show()
 
 
-# # nombrar variables como símbolos
-# Co, Io, Go, Xo, h, b, m, t, P, k, j, r, beta_0, beta_1 = symbols('Co, Io, Go, Xo, h, b, m, t, P, k, j, r, beta_0, beta_1')
+# In[19]:
 
-# # # Beta_0 y beta_1
-# # beta_0 = (Co + Io + Go + Xo - h*r)
-# # beta_1 = (1-(b-m)*(1-t))
 
-# # Producto de equilibrio y la tasa de interes de equilibrio en el modelo IS-LM
-# Y_eq = (Co + Io + Go + Xo - h*r/(1-(b-m)*(1-t)))
-# Ms_eq = (Co + Io + Go + Xo - h*r/(1-(b-m)*(1-t)))*(P*k) - (P*j*r)
+# nombrar variables como símbolos
+Co, Io, Go, Xo, h, b, m, t, P, k, j, r, beta_0, beta_1 = symbols('Co, Io, Go, Xo, h, b, m, t, P, k, j, r, beta_0, beta_1')
+
+# # Beta_0 y beta_1
+# beta_0 = (Co + Io + Go + Xo - h*r)
+# beta_1 = (1-(b-m)*(1-t))
+
+# Producto de equilibrio y la tasa de interes de equilibrio en el modelo IS-LM
+Y_eq = (Co + Io + Go + Xo - h*r/(1-(b-m)*(1-t)))
+Ms_eq = (Co + Io + Go + Xo - h*r/(1-(b-m)*(1-t)))*(P*k) - (P*j*r)
 

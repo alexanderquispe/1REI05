@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EL MERCADO MONETARIO &#8212; 1REI05 at PUCP (Python scripts)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3. El Mercado Monetario &#8212; Fundamentos de Macroeconomía</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,19 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -38,25 +37,27 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="EL MODELO MACROECONÓMICO IS-LM:" href="tutorial5_modelo_is_lm.html" />
-    <link rel="prev" title="2. El modelo de Ingreso-Gasto Keynesiano:" href="tutorial3.html" />
+    <link rel="next" title="4. El Modelo Macroeconómico IS-LM" href="tutorial5_modelo_is_lm.html" />
+    <link rel="prev" title="2. La curva IS (Inversión-Ahorro)" href="tutorial3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -64,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -85,7 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">1REI05 at PUCP (Python scripts)</h1>
+      <h1 class="site-logo" id="site-title">Fundamentos de Macroeconomía</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -93,225 +109,365 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../md/intro.html">
-   Fundamentals of Macroeconomics
-  </a>
- </li>
-</ul>
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../md/intro.html">
+                    Fundamentos de Macroeconomía
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tópicos
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial2_modelo_keynesiano.html">
-   MERCADO DE BIENES: CONSUMO, INVERSIÓN, DETERMINACIÓN DEL PRODUCTO Y LA POLÍTICA FISCAL
+   1. Mercado de Bienes: Consumo, Inversión, Determinación del Precio, y la Política Fiscal
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial3.html">
-   2. El modelo de Ingreso-Gasto Keynesiano:
+   2. La curva IS (Inversión-Ahorro)
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   EL MERCADO MONETARIO
+   3. El Mercado Monetario
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial5_modelo_is_lm.html">
-   EL MODELO MACROECONÓMICO IS-LM:
+   4. El Modelo Macroeconómico IS-LM
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial6_modelo_da_oa.html">
-   MODELO DE DEMANDA Y OFERTA AGREGADA
+   5. Modelo de Oferta y Demanda Agregada
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial7_modelo_is_lm_r_exogena.html">
-   MODELO IS-LM CON TASA DE INTERÉS EXÓGENA
+   6. Modelo IS-LM con Tasa de Interés Exógena
    <span class="math notranslate nohighlight">
     \((r)\)
    </span>
-   FIJADA POR EL BANCO CENTRAL:
+   fijada por el Banco Central:
   </a>
  </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/tutorial4_mercado_monetario_curva_lm.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/alexanderquispe/1REI05"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/alexanderquispe/1REI05/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tutorial4_mercado_monetario_curva_lm.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/alexanderquispe/1REI05/edit/jupyterbook/1REI05_jb/_build/jupyter_execute/notebooks/tutorial4_mercado_monetario_curva_lm.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/alexanderquispe/1REI05/jupyterbook?urlpath=tree/1REI05_jb/_build/jupyter_execute/notebooks/tutorial4_mercado_monetario_curva_lm.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/alexanderquispe/1REI05/blob/jupyterbook/1REI05_jb/_build/jupyter_execute/notebooks/tutorial4_mercado_monetario_curva_lm.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   EL MERCADO MONETARIO
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#el-equilibrio-en-el-mercado-de-dinero">
-   1. El equilibrio en el Mercado de Dinero:
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-que-sucede-en-el-mercado-de-dinero-si-el-producto-se-incrementa">
-     a. Qué sucede en el mercado de dinero si el producto se incrementa?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-que-sucede-en-el-mercado-de-dinero-si-la-cantidad-de-dinero-se-incrementa">
-   a. Qué sucede en el mercado de dinero si la cantidad de dinero se incrementa?
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#derivacion-de-la-curva-lm-a-partir-del-equilibrio-en-el-mercado-de-dinero">
-     3. Derivación de la Curva LM a partir del Equilibrio en el Mercado de Dinero:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#curva-lm">
-   2. Curva LM:
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estatica-comparativa">
-     3. Estática comparativa:
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#politica-monetaria-expansiva-incremento-en-la-masa-monetaria-m-s">
-       3.1 Política monetaria expansiva: incremento en la Masa Monetaria
-       <span class="math notranslate nohighlight">
-        \((M^s)\)
-       </span>
-       :
-      </a>
-     </li>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/alexanderquispe/1REI05/main/1REI05_jb?urlpath=tree/_build/jupyter_execute/notebooks/tutorial4_mercado_monetario_curva_lm.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/alexanderquispe/1REI05/blob/main/1REI05_jb/_build/jupyter_execute/notebooks/tutorial4_mercado_monetario_curva_lm.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
     </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/alexanderquispe/1REI05/tree/main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/alexanderquispe/1REI05/tree/main/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tutorial4_mercado_monetario_curva_lm.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/tree/main/edit/main/1REI05_jb/_build/jupyter_execute/notebooks/tutorial4_mercado_monetario_curva_lm.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/tutorial4_mercado_monetario_curva_lm.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-equilibrio-en-el-mercado-de-dinero">
+   3.1. El equilibrio en el Mercado de Dinero
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#que-sucede-en-el-mercado-de-dinero-si-el-producto-se-incrementa">
+     3.1.1. ¿Qué sucede en el Mercado de Dinero si el producto se incrementa?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#que-sucede-en-el-mercado-de-dinero-si-la-cantidad-de-dinero-se-incrementa">
+     3.1.2. ¿Qué sucede en el Mercado de Dinero si la cantidad de dinero se incrementa?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivacion-de-la-curva-lm-a-partir-del-equilibrio-en-el-mercado-de-dinero">
+   3.2. Derivación de la Curva LM a partir del Equilibrio en el Mercado de Dinero
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#curva-lm">
+   3.3. Curva LM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estatica-comparativa">
+   3.4. Estática comparativa
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#politica-monetaria-expansiva-incremento-en-la-masa-monetaria-m-s">
+     3.4.1. Política monetaria expansiva: incremento en la Masa Monetaria
+     <span class="math notranslate nohighlight">
+      \((M^s)\)
+     </span>
+    </a>
    </li>
   </ul>
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>EL MERCADO MONETARIO</h1>
+                <h1>El Mercado Monetario</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -321,55 +477,45 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   EL MERCADO MONETARIO
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#el-equilibrio-en-el-mercado-de-dinero">
-   1. El equilibrio en el Mercado de Dinero:
+   3.1. El equilibrio en el Mercado de Dinero
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-que-sucede-en-el-mercado-de-dinero-si-el-producto-se-incrementa">
-     a. Qué sucede en el mercado de dinero si el producto se incrementa?
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#que-sucede-en-el-mercado-de-dinero-si-el-producto-se-incrementa">
+     3.1.1. ¿Qué sucede en el Mercado de Dinero si el producto se incrementa?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#que-sucede-en-el-mercado-de-dinero-si-la-cantidad-de-dinero-se-incrementa">
+     3.1.2. ¿Qué sucede en el Mercado de Dinero si la cantidad de dinero se incrementa?
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-que-sucede-en-el-mercado-de-dinero-si-la-cantidad-de-dinero-se-incrementa">
-   a. Qué sucede en el mercado de dinero si la cantidad de dinero se incrementa?
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivacion-de-la-curva-lm-a-partir-del-equilibrio-en-el-mercado-de-dinero">
+   3.2. Derivación de la Curva LM a partir del Equilibrio en el Mercado de Dinero
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#derivacion-de-la-curva-lm-a-partir-del-equilibrio-en-el-mercado-de-dinero">
-     3. Derivación de la Curva LM a partir del Equilibrio en el Mercado de Dinero:
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#curva-lm">
-   2. Curva LM:
+   3.3. Curva LM
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estatica-comparativa">
-     3. Estática comparativa:
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estatica-comparativa">
+   3.4. Estática comparativa
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#politica-monetaria-expansiva-incremento-en-la-masa-monetaria-m-s">
+     3.4.1. Política monetaria expansiva: incremento en la Masa Monetaria
+     <span class="math notranslate nohighlight">
+      \((M^s)\)
+     </span>
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#politica-monetaria-expansiva-incremento-en-la-masa-monetaria-m-s">
-       3.1 Política monetaria expansiva: incremento en la Masa Monetaria
-       <span class="math notranslate nohighlight">
-        \((M^s)\)
-       </span>
-       :
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -379,12 +525,15 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipympl</span>
+<span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
@@ -399,16 +548,47 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 <span class="kn">from</span> <span class="nn">statsmodels.iolib.summary2</span> <span class="kn">import</span> <span class="n">summary_col</span>
 <span class="kn">from</span> <span class="nn">causalgraphicalmodels</span> <span class="kn">import</span> <span class="n">CausalGraphicalModel</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="s1">&#39;C:/Program Files/Graphviz/bin/&#39;</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\sandr\anaconda3\lib\site-packages\statsmodels\tsa\base\tsa_model.py:7: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+  from pandas import (to_datetime, Int64Index, DatetimeIndex, Period,
+C:\Users\sandr\anaconda3\lib\site-packages\statsmodels\tsa\base\tsa_model.py:7: FutureWarning: pandas.Float64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+  from pandas import (to_datetime, Int64Index, DatetimeIndex, Period,
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="el-mercado-monetario">
-<h1>EL MERCADO MONETARIO<a class="headerlink" href="#el-mercado-monetario" title="Permalink to this headline">¶</a></h1>
-<p><img alt="Lab3.png" src="notebooks/attachment:Lab3.png" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="el-mercado-monetario">
+<h1><span class="section-number">3. </span>El Mercado Monetario<a class="headerlink" href="#el-mercado-monetario" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;tutorial3.png&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="el-equilibrio-en-el-mercado-de-dinero">
-<h1>1. El equilibrio en el Mercado de Dinero:<a class="headerlink" href="#el-equilibrio-en-el-mercado-de-dinero" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tutorial4_mercado_monetario_curva_lm_2_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_2_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;tutorial4.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tutorial4_mercado_monetario_curva_lm_3_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_3_0.png" />
+</div>
+</div>
+<section id="el-equilibrio-en-el-mercado-de-dinero">
+<h2><span class="section-number">3.1. </span>El equilibrio en el Mercado de Dinero<a class="headerlink" href="#el-equilibrio-en-el-mercado-de-dinero" title="Permalink to this headline">#</a></h2>
 <p>El equilibrio en el Mercado de Dinero se deriva del equilibrio entre la Oferta de Dinero <span class="math notranslate nohighlight">\((M^s)\)</span> y Demanda de Dinero <span class="math notranslate nohighlight">\((M^d)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ M^s = M^d \]</div>
@@ -482,11 +662,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/tutorial4_mercado_monetario_curva_lm_7_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_7_0.png" />
+<img alt="../_images/tutorial4_mercado_monetario_curva_lm_8_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_8_0.png" />
 </div>
 </div>
-<div class="section" id="a-que-sucede-en-el-mercado-de-dinero-si-el-producto-se-incrementa">
-<h2>a. Qué sucede en el mercado de dinero si el producto se incrementa?<a class="headerlink" href="#a-que-sucede-en-el-mercado-de-dinero-si-el-producto-se-incrementa" title="Permalink to this headline">¶</a></h2>
+<section id="que-sucede-en-el-mercado-de-dinero-si-el-producto-se-incrementa">
+<h3><span class="section-number">3.1.1. </span>¿Qué sucede en el Mercado de Dinero si el producto se incrementa?<a class="headerlink" href="#que-sucede-en-el-mercado-de-dinero-si-el-producto-se-incrementa" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters con cambio en el nivel del producto</span>
@@ -552,13 +732,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/tutorial4_mercado_monetario_curva_lm_9_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_9_0.png" />
+<img alt="../_images/tutorial4_mercado_monetario_curva_lm_10_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_10_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-que-sucede-en-el-mercado-de-dinero-si-la-cantidad-de-dinero-se-incrementa">
-<h1>a. Qué sucede en el mercado de dinero si la cantidad de dinero se incrementa?<a class="headerlink" href="#a-que-sucede-en-el-mercado-de-dinero-si-la-cantidad-de-dinero-se-incrementa" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="que-sucede-en-el-mercado-de-dinero-si-la-cantidad-de-dinero-se-incrementa">
+<h3><span class="section-number">3.1.2. </span>¿Qué sucede en el Mercado de Dinero si la cantidad de dinero se incrementa?<a class="headerlink" href="#que-sucede-en-el-mercado-de-dinero-si-la-cantidad-de-dinero-se-incrementa" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters con cambio en el nivel del producto</span>
@@ -635,11 +814,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/tutorial4_mercado_monetario_curva_lm_12_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_12_0.png" />
+<img alt="../_images/tutorial4_mercado_monetario_curva_lm_13_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_13_0.png" />
 </div>
 </div>
-<div class="section" id="derivacion-de-la-curva-lm-a-partir-del-equilibrio-en-el-mercado-de-dinero">
-<h2>3. Derivación de la Curva LM a partir del Equilibrio en el Mercado de Dinero:<a class="headerlink" href="#derivacion-de-la-curva-lm-a-partir-del-equilibrio-en-el-mercado-de-dinero" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="derivacion-de-la-curva-lm-a-partir-del-equilibrio-en-el-mercado-de-dinero">
+<h2><span class="section-number">3.2. </span>Derivación de la Curva LM a partir del Equilibrio en el Mercado de Dinero<a class="headerlink" href="#derivacion-de-la-curva-lm-a-partir-del-equilibrio-en-el-mercado-de-dinero" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1----------------------Equilibrio mercado monetario</span>
@@ -776,13 +957,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/tutorial4_mercado_monetario_curva_lm_15_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_15_0.png" />
+<img alt="../_images/tutorial4_mercado_monetario_curva_lm_16_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_16_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="curva-lm">
-<h1>2. Curva LM:<a class="headerlink" href="#curva-lm" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="curva-lm">
+<h2><span class="section-number">3.3. </span>Curva LM<a class="headerlink" href="#curva-lm" title="Permalink to this headline">#</a></h2>
 <p>Siguiendo la última ecuación de equilibrio, la curva LM se da en función de la tasa de interés:</p>
 <div class="math notranslate nohighlight">
 \[ r = -\frac{1}{j}\frac{M_o^s}{P_o} + \frac{k}{j}Y \]</div>
@@ -836,13 +1016,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/tutorial4_mercado_monetario_curva_lm_19_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_19_0.png" />
+<img alt="../_images/tutorial4_mercado_monetario_curva_lm_20_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_20_0.png" />
 </div>
 </div>
-<div class="section" id="estatica-comparativa">
-<h2>3. Estática comparativa:<a class="headerlink" href="#estatica-comparativa" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="politica-monetaria-expansiva-incremento-en-la-masa-monetaria-m-s">
-<h3>3.1 Política monetaria expansiva: incremento en la Masa Monetaria <span class="math notranslate nohighlight">\((M^s)\)</span>:<a class="headerlink" href="#politica-monetaria-expansiva-incremento-en-la-masa-monetaria-m-s" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="estatica-comparativa">
+<h2><span class="section-number">3.4. </span>Estática comparativa<a class="headerlink" href="#estatica-comparativa" title="Permalink to this headline">#</a></h2>
+<section id="politica-monetaria-expansiva-incremento-en-la-masa-monetaria-m-s">
+<h3><span class="section-number">3.4.1. </span>Política monetaria expansiva: incremento en la Masa Monetaria <span class="math notranslate nohighlight">\((M^s)\)</span><a class="headerlink" href="#politica-monetaria-expansiva-incremento-en-la-masa-monetaria-m-s" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#--------------------------------------------------</span>
@@ -908,19 +1089,19 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/tutorial4_mercado_monetario_curva_lm_23_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_23_0.png" />
+<img alt="../_images/tutorial4_mercado_monetario_curva_lm_24_0.png" src="../_images/tutorial4_mercado_monetario_curva_lm_24_0.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
             repo: "alexanderquispe/1REI05",
-            ref: "jupyterbook",
+            ref: "main/1REI05_jb",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -937,41 +1118,47 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="tutorial3.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">2. El modelo de Ingreso-Gasto Keynesiano:</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>La curva IS (Inversión-Ahorro)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="tutorial5_modelo_is_lm.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">EL MODELO MACROECONÓMICO IS-LM:</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>El Modelo Macroeconómico IS-LM</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MSc. Alexander Quispe Rojas, Valeria Albarracín, Sandra Martínez Gutiérrez<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      By M.Sc. Alexander Quispe Rojas<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

@@ -1,0 +1,71 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "d0667977",
+   "metadata": {},
+   "source": [
+    "# Reporte 6"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3eab8df5",
+   "metadata": {},
+   "source": [
+    "**Nombre:** $ Héctor  Delgado $   **Código:** $20200449$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "16dd8789",
+   "metadata": {},
+   "source": [
+    "El paper habla sobre la diferencia en la elección universitaria entre estudiantes de alto rendimiento con altos recursos y bajos recursos.Además, el paper toma en cuenta el factor de que las universidades promocionan becas y otras ayudas economicas aunque esto no puede aplicar como regla universal. En ese sentido, Los autores realizan un ensayo aleatorio y controlado que permita evaluar si las comunicaciones dirigidas influyen en las decisiones universitarias de estudiantes con bajos ingresos especificamente. Partiendo de preguntarse ¿Cuál es la repercusión de las comunicaciones dirigidas y personalizadas en las decisiones universitarias de estudiantes de alto rendimiento y bajos ingresos? esta pregunta incluye la variable de la beca High Achieving Involved Leader (HAIL) de la Universidad de Michigan, la cual proporciona una garantía anticipada e incondicional de matrícula gratuita y la reducción de trámites administrativos para acceder a ella. Como resultado, se demostró que la oferta de becas incondicionales y por adelantado cambia el comportamiento de los estudiantes, aumentando significativamente sus probabilidades de inscribirse, matricularse y permanecer en la universidad.\n",
+    "\n",
+    "Una fortaleza clara es el caracter experimental de la investigación el cual permite el uso de la aleatoriedad como técnica para evitar los sesgos en la misma. En ese sentido, la muestra se dividió en cuatro grupos según el número de estudiantes aptos para HAIL y se aleatorizó dentro de cada estrato. Otro punto a favor es la trayectoria de los autores y el hecho de que sean varios lo cual puede aportar en mayor medida.Sin embargo, este enfoque tiene ciertas debilidades que son parte de utilizar un metodo experimental ya que tienen una estandarización local, por lo que sus resultados no pueden ser aplicados a nivel macro en tanto los efectos no necesariamente serán los mismos. En otras palabras, los grupos de control no necesariamente extrapolan los resultados a analisis mas grande ya que, aunque el experimento fue a gran escala, sus resultados pueden ser aplicados para la población de los estudiantes con alto desempeño y bajos recursos en Michigan, pero no para los estudiantes de otro pais o continente. Así mismo, el margen de error presente en cualquier paper estadistico y experimental suele ser alto y en este caso no queda claro.\n",
+    "\n",
+    "Por otro lado, el paper representa una contribución a su materia y desemboca en que se siga investigando sobre este tema. Por ejemplo, este estudio llena el vacío teórico y la importancia dejado por los modelos estándar de inversión en capital humano. Esto se debe a que ejemplifica a la perfección como los costos de solicitar ayuda financiera y acceder a una universidad son pequeños comparados a los beneficios a largo plazo. Así mismo, un paso para seguir esta pregunta sería el de tener en cuenta los costos de vida de un estudiante universitario promedio ya que esto influiría tambien en la decisión de la universidad que escojan ya que, por ejemplo, no es lo mismo estudiar en un estado con altos impuestos en uno en donde los impuestos son mas bajos ya que esto podria influir en el estilo de vida. Como menciona Alberto Rico esta variable: \"debe servir como insumo en el análisis y evaluación de la gestión presupuestal y financiera de la Universidad y los estudiantes\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bcf26f1d",
+   "metadata": {},
+   "source": [
+    "**bibliografia**\n",
+    "\n",
+    "Alberto Rico (2017) ESTUDIO DE COSTOS POR ESTUDIANTE EN LA UNIVERSIDAD NACIONAL DE COLOMBIA SEDE MEDELLÍN. Oficina de Planeación estadistica. https://planeacion.medellin.unal.edu.co/images/documentos/Estudio_CostosEstudiante.pdf"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "258a3953",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

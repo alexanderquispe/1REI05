@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "69608a4c",
+   "id": "255da62b",
    "metadata": {},
    "source": [
     "# REPORT 10\n",
@@ -12,7 +12,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "fae3b075",
+   "id": "9800c174",
    "metadata": {},
    "source": [
     "### Primera parte - Lectura\n",
@@ -25,7 +25,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "2079e626",
+   "id": "aba34705",
    "metadata": {},
    "source": [
     "### Código\n",
@@ -35,7 +35,7 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "368ae45a",
+   "id": "8c3553f0",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -50,7 +50,7 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "cca642da",
+   "id": "177826c0",
    "metadata": {},
    "outputs": [
     {
@@ -76,7 +76,7 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "d0857f0b",
+   "id": "c554b366",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -86,7 +86,7 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "ac7da6f2",
+   "id": "08f16113",
    "metadata": {},
    "outputs": [
     {
@@ -113,7 +113,7 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "325d415f",
+   "id": "5c49f2d9",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -123,7 +123,7 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "0a8e3060",
+   "id": "56c24b4e",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -132,7 +132,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7241f466",
+   "id": "6b568107",
    "metadata": {},
    "source": [
     "Regresión Discontinua\n",
@@ -154,7 +154,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "97710d08",
+   "id": "52859d1a",
    "metadata": {},
    "source": [
     "Aplicaciones - Ejemplo 1"
@@ -163,7 +163,7 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "02dce921",
+   "id": "e12172c5",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -184,7 +184,7 @@
   {
    "cell_type": "code",
    "execution_count": 14,
-   "id": "35448ce5",
+   "id": "7625bb2b",
    "metadata": {},
    "outputs": [
     {
@@ -213,7 +213,7 @@
   {
    "cell_type": "code",
    "execution_count": 15,
-   "id": "d0e805d5",
+   "id": "c0da8228",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -230,7 +230,7 @@
   {
    "cell_type": "code",
    "execution_count": 16,
-   "id": "3721aa0e",
+   "id": "7d83290c",
    "metadata": {},
    "outputs": [
     {
@@ -258,7 +258,7 @@
   {
    "cell_type": "code",
    "execution_count": 17,
-   "id": "b850b42a",
+   "id": "571e5961",
    "metadata": {},
    "outputs": [
     {
@@ -278,7 +278,7 @@
   {
    "cell_type": "code",
    "execution_count": 18,
-   "id": "61f5069a",
+   "id": "a40cb63e",
    "metadata": {},
    "outputs": [
     {
@@ -310,7 +310,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b807a293",
+   "id": "81d761b5",
    "metadata": {},
    "source": [
     "Aplicaciones - Ejemplo 2"
@@ -319,7 +319,7 @@
   {
    "cell_type": "code",
    "execution_count": 19,
-   "id": "78b908d2",
+   "id": "98904720",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -340,7 +340,7 @@
   {
    "cell_type": "code",
    "execution_count": 20,
-   "id": "8102972d",
+   "id": "6e371ca0",
    "metadata": {},
    "outputs": [
     {
@@ -369,7 +369,7 @@
   {
    "cell_type": "code",
    "execution_count": 21,
-   "id": "c7819736",
+   "id": "89517bf1",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -386,7 +386,7 @@
   {
    "cell_type": "code",
    "execution_count": 22,
-   "id": "90c55ccf",
+   "id": "bce3e1f3",
    "metadata": {},
    "outputs": [
     {
@@ -414,7 +414,7 @@
   {
    "cell_type": "code",
    "execution_count": 23,
-   "id": "21ee9d60",
+   "id": "c56281c1",
    "metadata": {},
    "outputs": [
     {
@@ -434,7 +434,7 @@
   {
    "cell_type": "code",
    "execution_count": 24,
-   "id": "3ceb1a53",
+   "id": "adc17205",
    "metadata": {},
    "outputs": [
     {
@@ -467,7 +467,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "10b2a218",
+   "id": "ffd6ef27",
    "metadata": {},
    "outputs": [],
    "source": []

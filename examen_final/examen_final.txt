@@ -1,0 +1,31 @@
+# Examen Final 
+Indicaciones
+
+- **Subir su Jupyter Notebook a esta carpeta**
+- **Tienen desde las 15:00 hasta las 18:00 horas, pasado este horario su nota es cero.**
+
+## 1. (4 puntos) Instrumental Variables (IV)
+Suponga que estamos interesados en estudiar la relación entre educación(X) y el nivel de ingresos(Y). 
+Un investigador propone utilizar como variable instrumental(Z) el numero de horas que una persona utilizó para ver televisión cuando era niño. 
+
+- ¿Es válido este instrumento? Por qué? Explique todos los supuestos que deben cumplirse. 
+- Explique el procedimiento para encontrar el efecto causal en este escenario. Puede utilizar ecuaciones
+- Puede concluir que al correr una regresión los resultados muestran relaciones causales o solamente de correlación? 
+
+## 2. (4 puntos) Regression Discontinuity Design (RDD)
+Supongamos que estamos estudiando la eficacia de un programa de becas creado por el gobierno Peruano sobre las notas de los alumnos al final del primer semestre en la universidad. PRONABEC ha decidido que entregará becas a aquellos postulantes que tengan un promedio superior durante la secundaria igual a 16 . 
+
+- Indetifique todos los elementos necesarios para implementar un RDD en este ejemplo. 
+- Explique el procedimiento para encontrar el efecto causal en este escenario. Puede utilizar ecuaciones.
+- Por qué decimos que un RDD es  lo más parecido a un Experimento Aleatorio? 
+
+## 3. (4 puntos) Difference in Difference (DiD)
+Supongamos que estamos interesados ​​en estudiar el impacto de la migración en la tasa de empleo en dos regiones del Perú en 2017-2018. Tenemos datos anuales sobre la tasa de empleo en Lima, que experimentó una afluencia significativa de inmigrantes en 2018,  y Puno que no experimentó el ingreso de migrantes (2017 ninguna de las regiones experimentó afluencia de migrantes). Podemos usar un análisis DID para comparar el cambio en las tasas de empleo entre las dos regiones a lo largo del tiempo para ver si la migración tuvo algún efecto.
+
+- Indetifique todos los elementos necesarios para implementar un DiD en este ejemplo. 
+- Explique el procedimiento para encontrar el efecto causal en este escenario. Puede utilizar ecuaciones.
+
+## 4. (4 puntos) Lecturas
+- [Bell, A., Chetty, R., Jaravel, X., Petkova, N., & Van Reenen, J. (2019). Who becomes an inventor in America? The importance of exposure to innovation. The Quarterly Journal of Economics, 134(2), 647-713.](https://www.nber.org/system/files/working_papers/w24062/w24062.pdf),  ¿Cuáles son las debilidades del enfoque del paper para responder su pregunta de investigación?
+- [Dell, M. (2010). The persistent effects of Peru's mining mita. Econometrica, 78(6), 1863-1903](https://scholar.harvard.edu/files/dell/files/ecta8121_0.pdf), ¿Cuáles serían dos próximos pasos específicos para avanzar en su pregunta de investigación? 
+
